@@ -1,0 +1,12 @@
+c:\users\magdi\source\repos\enetiy\enetiy\bin\enetiy.dll.config
+c:\users\magdi\source\repos\enetiy\enetiy\bin\enetiy.dll
+c:\users\magdi\source\repos\enetiy\enetiy\bin\enetiy.pdb
+c:\users\magdi\source\repos\enetiy\enetiy\bin\EntityFramework.dll
+c:\users\magdi\source\repos\enetiy\enetiy\bin\EntityFramework.SqlServer.dll
+c:\users\magdi\source\repos\enetiy\enetiy\bin\Microsoft.CodeDom.Providers.DotNetCompilerPlatform.dll
+c:\users\magdi\source\repos\enetiy\enetiy\bin\EntityFramework.xml
+c:\users\magdi\source\repos\enetiy\enetiy\bin\EntityFramework.SqlServer.xml
+c:\users\magdi\source\repos\enetiy\enetiy\bin\Microsoft.CodeDom.Providers.DotNetCompilerPlatform.xml
+c:\users\magdi\source\repos\enetiy\enetiy\obj\Debug\enetiy.csproj.CoreCompileInputs.cache
+c:\users\magdi\source\repos\enetiy\enetiy\obj\Debug\enetiy.dll
+c:\users\magdi\source\repos\enetiy\enetiy\obj\Debug\enetiy.pdb

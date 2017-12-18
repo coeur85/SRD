@@ -1,0 +1,439 @@
+﻿<Project ToolsVersion="12.0" DefaultTargets="Build" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <Import Project="..\packages\Microsoft.CodeDom.Providers.DotNetCompilerPlatform.1.0.7\build\net45\Microsoft.CodeDom.Providers.DotNetCompilerPlatform.props" Condition="Exists('..\packages\Microsoft.CodeDom.Providers.DotNetCompilerPlatform.1.0.7\build\net45\Microsoft.CodeDom.Providers.DotNetCompilerPlatform.props')" />
+  <Import Project="..\packages\Microsoft.Net.Compilers.2.1.0\build\Microsoft.Net.Compilers.props" Condition="Exists('..\packages\Microsoft.Net.Compilers.2.1.0\build\Microsoft.Net.Compilers.props')" />
+  <Import Project="$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props" Condition="Exists('$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props')" />
+  <PropertyGroup>
+    <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
+    <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
+    <ProductVersion>
+    </ProductVersion>
+    <SchemaVersion>2.0</SchemaVersion>
+    <ProjectGuid>{37A5A2A8-ED90-49DB-9CA9-C7D047DA1A39}</ProjectGuid>
+    <ProjectTypeGuids>{349c5851-65df-11da-9384-00065b846f21};{fae04ec0-301f-11d3-bf4b-00c04f79efbc}</ProjectTypeGuids>
+    <OutputType>Library</OutputType>
+    <AppDesignerFolder>Properties</AppDesignerFolder>
+    <RootNamespace>LoanSystem</RootNamespace>
+    <AssemblyName>LoanSystem</AssemblyName>
+    <TargetFrameworkVersion>v4.6.1</TargetFrameworkVersion>
+    <UseIISExpress>true</UseIISExpress>
+    <Use64BitIISExpress />
+    <IISExpressSSLPort />
+    <IISExpressAnonymousAuthentication />
+    <IISExpressWindowsAuthentication />
+    <IISExpressUseClassicPipelineMode />
+    <UseGlobalApplicationHostFile />
+    <NuGetPackageImportStamp>
+    </NuGetPackageImportStamp>
+    <WebGreaseLibPath>..\packages\WebGrease.1.5.2\lib</WebGreaseLibPath>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
+    <DebugSymbols>true</DebugSymbols>
+    <DebugType>full</DebugType>
+    <Optimize>false</Optimize>
+    <OutputPath>bin\</OutputPath>
+    <DefineConstants>DEBUG;TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|AnyCPU' ">
+    <DebugSymbols>true</DebugSymbols>
+    <DebugType>pdbonly</DebugType>
+    <Optimize>true</Optimize>
+    <OutputPath>bin\</OutputPath>
+    <DefineConstants>TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <ItemGroup>
+    <Reference Include="Antlr3.Runtime, Version=3.4.1.9004, Culture=neutral, PublicKeyToken=eb42632606e9261f, processorArchitecture=MSIL">
+      <HintPath>..\packages\Antlr.3.4.1.9004\lib\Antlr3.Runtime.dll</HintPath>
+    </Reference>
+    <Reference Include="EntityFramework, Version=6.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089, processorArchitecture=MSIL">
+      <HintPath>..\packages\EntityFramework.6.1.3\lib\net45\EntityFramework.dll</HintPath>
+    </Reference>
+    <Reference Include="EntityFramework.SqlServer, Version=6.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089, processorArchitecture=MSIL">
+      <HintPath>..\packages\EntityFramework.6.1.3\lib\net45\EntityFramework.SqlServer.dll</HintPath>
+    </Reference>
+    <Reference Include="Microsoft.CodeDom.Providers.DotNetCompilerPlatform, Version=1.0.7.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL">
+      <HintPath>..\packages\Microsoft.CodeDom.Providers.DotNetCompilerPlatform.1.0.7\lib\net45\Microsoft.CodeDom.Providers.DotNetCompilerPlatform.dll</HintPath>
+    </Reference>
+    <Reference Include="Microsoft.CSharp" />
+    <Reference Include="System.Net.Http" />
+    <Reference Include="System.Runtime.Serialization" />
+    <Reference Include="System.Security" />
+    <Reference Include="System.Web.DynamicData" />
+    <Reference Include="System.Web.Entity" />
+    <Reference Include="System.Web.ApplicationServices" />
+    <Reference Include="System.ComponentModel.DataAnnotations" />
+    <Reference Include="System" />
+    <Reference Include="System.Data" />
+    <Reference Include="System.Core" />
+    <Reference Include="System.Data.DataSetExtensions" />
+    <Reference Include="System.Web.Extensions" />
+    <Reference Include="System.Web.Optimization, Version=1.1.0.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL">
+      <HintPath>..\packages\Microsoft.AspNet.Web.Optimization.1.1.3\lib\net40\System.Web.Optimization.dll</HintPath>
+    </Reference>
+    <Reference Include="System.Xml.Linq" />
+    <Reference Include="System.Drawing" />
+    <Reference Include="System.Web" />
+    <Reference Include="System.Xml" />
+    <Reference Include="System.Configuration" />
+    <Reference Include="System.Web.Services" />
+    <Reference Include="System.EnterpriseServices" />
+    <Reference Include="WebGrease, Version=1.5.2.14234, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL">
+      <HintPath>..\packages\WebGrease.1.5.2\lib\WebGrease.dll</HintPath>
+    </Reference>
+  </ItemGroup>
+  <ItemGroup>
+    <Reference Include="System.Web.Razor">
+      <HintPath>..\packages\Microsoft.AspNet.Razor.3.2.3\lib\net45\System.Web.Razor.dll</HintPath>
+    </Reference>
+    <Reference Include="System.Web.Webpages">
+      <HintPath>..\packages\Microsoft.AspNet.Webpages.3.2.3\lib\net45\System.Web.Webpages.dll</HintPath>
+    </Reference>
+    <Reference Include="System.Web.Webpages.Deployment">
+      <HintPath>..\packages\Microsoft.AspNet.Webpages.3.2.3\lib\net45\System.Web.Webpages.Deployment.dll</HintPath>
+    </Reference>
+    <Reference Include="System.Web.Webpages.Razor">
+      <HintPath>..\packages\Microsoft.AspNet.Webpages.3.2.3\lib\net45\System.Web.Webpages.Razor.dll</HintPath>
+    </Reference>
+    <Reference Include="System.Web.Helpers">
+      <HintPath>..\packages\Microsoft.AspNet.Webpages.3.2.3\lib\net45\System.Web.Helpers.dll</HintPath>
+    </Reference>
+    <Reference Include="Microsoft.Web.Infrastructure">
+      <HintPath>..\packages\Microsoft.Web.Infrastructure.1.0.0.0\lib\net40\Microsoft.Web.Infrastructure.dll</HintPath>
+    </Reference>
+    <Reference Include="System.Web.Mvc">
+      <HintPath>..\packages\Microsoft.AspNet.Mvc.5.2.3\lib\net45\System.Web.Mvc.dll</HintPath>
+    </Reference>
+    <Reference Include="Newtonsoft.Json">
+      <HintPath>..\packages\Newtonsoft.Json.6.0.4\lib\net45\Newtonsoft.Json.dll</HintPath>
+    </Reference>
+    <Reference Include="System.Net.Http.Formatting">
+      <HintPath>..\packages\Microsoft.AspNet.WebApi.Client.5.2.3\lib\net45\System.Net.Http.Formatting.dll</HintPath>
+    </Reference>
+    <Reference Include="System.Web.Http">
+      <HintPath>..\packages\Microsoft.AspNet.WebApi.Core.5.2.3\lib\net45\System.Web.Http.dll</HintPath>
+    </Reference>
+    <Reference Include="System.Web.Http.WebHost">
+      <HintPath>..\packages\Microsoft.AspNet.WebApi.WebHost.5.2.3\lib\net45\System.Web.Http.WebHost.dll</HintPath>
+    </Reference>
+  </ItemGroup>
+  <ItemGroup>
+    <Content Include="Content\bootstrap-theme.css" />
+    <Content Include="Content\bootstrap-theme.min.css" />
+    <Content Include="Content\bootstrap.css" />
+    <Content Include="Content\bootstrap.min.css" />
+    <Content Include="fonts\glyphicons-halflings-regular.svg" />
+    <Content Include="Global.asax" />
+    <Content Include="fonts\glyphicons-halflings-regular.woff2" />
+    <Content Include="fonts\glyphicons-halflings-regular.woff" />
+    <Content Include="fonts\glyphicons-halflings-regular.ttf" />
+    <Content Include="fonts\glyphicons-halflings-regular.eot" />
+    <Content Include="Content\bootstrap.min.css.map" />
+    <Content Include="Content\bootstrap.css.map" />
+    <Content Include="Content\bootstrap-theme.min.css.map" />
+    <Content Include="Content\bootstrap-theme.css.map" />
+    <Content Include="Models\DataB\_LSdb.Context.tt">
+      <Generator>TextTemplatingFileGenerator</Generator>
+      <LastGenOutput>_LSdb.Context.cs</LastGenOutput>
+      <DependentUpon>_LSdb.edmx</DependentUpon>
+    </Content>
+    <Content Include="Models\DataB\_LSdb.tt">
+      <Generator>TextTemplatingFileGenerator</Generator>
+      <DependentUpon>_LSdb.edmx</DependentUpon>
+      <LastGenOutput>_LSdb.cs</LastGenOutput>
+    </Content>
+    <Content Include="Scripts\App_Settings.js" />
+    <Content Include="_Design\css\app-helpers.css" />
+    <Content Include="_Design\css\app-production.css" />
+    <Content Include="_Design\css\minified\aui-helpers.min.css" />
+    <Content Include="_Design\css\minified\aui-production.min.css" />
+    <Content Include="_Design\css\minified\components\calendar.min.css" />
+    <Content Include="_Design\css\minified\components\chat.min.css" />
+    <Content Include="_Design\css\minified\components\dashboard_panels.min.css" />
+    <Content Include="_Design\css\minified\components\login-page.min.css" />
+    <Content Include="_Design\css\minified\components\messages.min.css" />
+    <Content Include="_Design\css\minified\components\notifications.min.css" />
+    <Content Include="_Design\css\minified\components\progress.min.css" />
+    <Content Include="_Design\css\minified\components\social_boxes.min.css" />
+    <Content Include="_Design\css\minified\components\tile_buttons.min.css" />
+    <Content Include="_Design\css\minified\components\timeline.min.css" />
+    <Content Include="_Design\css\minified\components\todo.min.css" />
+    <Content Include="_Design\css\minified\elements\badges.min.css" />
+    <Content Include="_Design\css\minified\elements\boxes.min.css" />
+    <Content Include="_Design\css\minified\elements\buttons.min.css" />
+    <Content Include="_Design\css\minified\elements\forms.min.css" />
+    <Content Include="_Design\css\minified\elements\icons.min.css" />
+    <Content Include="_Design\css\minified\elements\infoboxes.min.css" />
+    <Content Include="_Design\css\minified\elements\information-boxes.min.css" />
+    <Content Include="_Design\css\minified\elements\menus.min.css" />
+    <Content Include="_Design\css\minified\elements\tables.min.css" />
+    <Content Include="_Design\css\minified\elements\typo.min.css" />
+    <Content Include="_Design\css\minified\helpers\animate.min.css" />
+    <Content Include="_Design\css\minified\helpers\boilerplate.min.css" />
+    <Content Include="_Design\css\minified\helpers\border-radius.min.css" />
+    <Content Include="_Design\css\minified\helpers\colors.min.css" />
+    <Content Include="_Design\css\minified\helpers\demo.min.css" />
+    <Content Include="_Design\css\minified\helpers\grid.min.css" />
+    <Content Include="_Design\css\minified\helpers\responsive-elements.min.css" />
+    <Content Include="_Design\css\minified\helpers\size.min.css" />
+    <Content Include="_Design\css\minified\helpers\spacing.min.css" />
+    <Content Include="_Design\css\minified\helpers\utils.min.css" />
+    <Content Include="_Design\css\minified\widgets\charts.min.css" />
+    <Content Include="_Design\css\minified\widgets\colorpicker.min.css" />
+    <Content Include="_Design\css\minified\widgets\datepicker.min.css" />
+    <Content Include="_Design\css\minified\widgets\dialog.min.css" />
+    <Content Include="_Design\css\minified\widgets\dropdown.min.css" />
+    <Content Include="_Design\css\minified\widgets\dropzone.min.css" />
+    <Content Include="_Design\css\minified\widgets\input-toggle.min.css" />
+    <Content Include="_Design\css\minified\widgets\jcrop-image.min.css" />
+    <Content Include="_Design\css\minified\widgets\jquery.orgchart.css" />
+    <Content Include="_Design\css\minified\widgets\loadingbar.min.css" />
+    <Content Include="_Design\css\minified\widgets\multiselect.min.css" />
+    <Content Include="_Design\css\minified\widgets\notifications.min.css" />
+    <Content Include="_Design\css\minified\widgets\nprogress.css" />
+    <Content Include="_Design\css\minified\widgets\popovers.min.css" />
+    <Content Include="_Design\css\minified\widgets\progressbar.min.css" />
+    <Content Include="_Design\css\minified\widgets\slider.min.css" />
+    <Content Include="_Design\css\minified\widgets\smartwizard.min.css" />
+    <Content Include="_Design\css\minified\widgets\tabs.min.css" />
+    <Content Include="_Design\css\minified\widgets\theme-switcher.min.css" />
+    <Content Include="_Design\css\minified\widgets\timepicker.min.css" />
+    <Content Include="_Design\css\minified\widgets\tooltip.min.css" />
+    <Content Include="_Design\css\minified\widgets\vectormaps.min.css" />
+    <Content Include="_Design\css\minified\widgets\xcharts.min.css" />
+    <Content Include="_Design\css\MyStyles.css" />
+    <Content Include="_Design\fonts\font_awesome\fontawesome-webfont.svg" />
+    <Content Include="_Design\images\animated-overlay.gif" />
+    <Content Include="_Design\images\colorpicker.png" />
+    <Content Include="_Design\images\dummy\image1.jpg" />
+    <Content Include="_Design\images\gravatar.jpg" />
+    <Content Include="_Design\images\icons\apple-touch-icon-114-precomposed.png" />
+    <Content Include="_Design\images\icons\apple-touch-icon-144-precomposed.png" />
+    <Content Include="_Design\images\icons\apple-touch-icon-57-precomposed.png" />
+    <Content Include="_Design\images\icons\apple-touch-icon-72-precomposed.png" />
+    <Content Include="_Design\images\icons\favicon.png" />
+    <Content Include="_Design\images\jcrop.gif" />
+    <Content Include="_Design\images\loader-dark.gif" />
+    <Content Include="_Design\images\loader-light.gif" />
+    <Content Include="_Design\images\login-bg.png" />
+    <Content Include="_Design\js\aui-core.js" />
+    <Content Include="_Design\js\aui-interactions.js" />
+    <Content Include="_Design\js\aui-production.js" />
+    <Content Include="_Design\js\aui-widgets.js" />
+    <Content Include="_Design\js\jquery-2.0.3.js" />
+    <Content Include="_Design\js\minified\aui-core.min.js" />
+    <Content Include="_Design\js\minified\aui-interactions.min.js" />
+    <Content Include="_Design\js\minified\aui-production.min.js" />
+    <Content Include="_Design\js\minified\aui-widgets.min.js" />
+    <Content Include="_Design\js\minified\core\d3.min.js" />
+    <Content Include="_Design\js\minified\core\jquery.min.js" />
+    <Content Include="_Design\js\minified\core\modernizr.min.js" />
+    <Content Include="_Design\js\minified\core\raphael.min.js" />
+    <Content Include="_Design\js\minified\interactions\jquery.min.js" />
+    <Content Include="_Design\js\minified\widgets\bootstrap-dropdown.min.js" />
+    <Content Include="_Design\js\minified\widgets\bootstrap-timepicker.min.js" />
+    <Content Include="_Design\js\minified\widgets\bootstrap-tooltip.min.js" />
+    <Content Include="_Design\js\minified\widgets\bootstrap-wpopover.min.js" />
+    <Content Include="_Design\js\minified\widgets\charts-justgage.min.js" />
+    <Content Include="_Design\js\minified\widgets\charts-morris.min.js" />
+    <Content Include="_Design\js\minified\widgets\charts-piegage.min.js" />
+    <Content Include="_Design\js\minified\widgets\charts-sparklines.min.js" />
+    <Content Include="_Design\js\minified\widgets\charts-xchart.min.js" />
+    <Content Include="_Design\js\minified\widgets\jquery.orgchart.js" />
+    <Content Include="_Design\js\minified\widgets\jqueryui-accordion.min.js" />
+    <Content Include="_Design\js\minified\widgets\jqueryui-autocomplete.min.js" />
+    <Content Include="_Design\js\minified\widgets\jqueryui-button.min.js" />
+    <Content Include="_Design\js\minified\widgets\jqueryui-datepicker.min.js" />
+    <Content Include="_Design\js\minified\widgets\jqueryui-dialog.min.js" />
+    <Content Include="_Design\js\minified\widgets\jqueryui-menu.min.js" />
+    <Content Include="_Design\js\minified\widgets\jqueryui-progressbar.min.js" />
+    <Content Include="_Design\js\minified\widgets\jqueryui-slider.min.js" />
+    <Content Include="_Design\js\minified\widgets\jqueryui-spinner.min.js" />
+    <Content Include="_Design\js\minified\widgets\jqueryui-tabs.min.js" />
+    <Content Include="_Design\js\minified\widgets\nprogress.js" />
+    <Content Include="_Design\js\minified\widgets\other-animation.min.js" />
+    <Content Include="_Design\js\minified\widgets\other-calendar.min.js" />
+    <Content Include="_Design\js\minified\widgets\other-chosen.min.js" />
+    <Content Include="_Design\js\minified\widgets\other-colorpicker.min.js" />
+    <Content Include="_Design\js\minified\widgets\other-datatables.min.js" />
+    <Content Include="_Design\js\minified\widgets\other-dropzone.min.js" />
+    <Content Include="_Design\js\minified\widgets\other-gmaps.min.js" />
+    <Content Include="_Design\js\minified\widgets\other-inputmask.min.js" />
+    <Content Include="_Design\js\minified\widgets\other-inputtoggle.min.js" />
+    <Content Include="_Design\js\minified\widgets\other-jcrop.min.js" />
+    <Content Include="_Design\js\minified\widgets\other-jgrowl.min.js" />
+    <Content Include="_Design\js\minified\widgets\other-knob.min.js" />
+    <Content Include="_Design\js\minified\widgets\other-loadingbar.min.js" />
+    <Content Include="_Design\js\minified\widgets\other-multiselect.min.js" />
+    <Content Include="_Design\js\minified\widgets\other-noty.min.js" />
+    <Content Include="_Design\js\minified\widgets\other-overlay.min.js" />
+    <Content Include="_Design\js\minified\widgets\other-progressbar.min.js" />
+    <Content Include="_Design\js\minified\widgets\other-scrollbar.min.js" />
+    <Content Include="_Design\js\minified\widgets\other-smartwizard.min.js" />
+    <Content Include="_Design\js\minified\widgets\other-textarea.min.js" />
+    <Content Include="_Design\js\minified\widgets\other-toggle.min.js" />
+    <Content Include="_Design\js\minified\widgets\other-uniform.min.js" />
+    <Content Include="_Design\js\minified\widgets\other-validation.min.js" />
+    <Content Include="_Design\js\minified\widgets\other-vectormaps.min.js" />
+    <Content Include="_Design\js\minified\widgets\xbootstrap-buttons.min.js" />
+    <Content Include="_Design\loginPage\city-skyline-wallpapers-008.jpg" />
+    <Content Include="_Design\loginPage\css\style.css" />
+    <Content Include="_Design\loginPage\js\prefixfree.min.js" />
+    <Content Include="_Design\themes\fides\animations.css" />
+    <Content Include="_Design\themes\fides\color-schemes\dark-blue.css" />
+    <Content Include="_Design\themes\fides\color-schemes\dark-gray.css" />
+    <Content Include="_Design\themes\fides\color-schemes\dark-green.css" />
+    <Content Include="_Design\themes\fides\color-schemes\dark-orange.css" />
+    <Content Include="_Design\themes\fides\color-schemes\inverse-blue.css" />
+    <Content Include="_Design\themes\fides\color-schemes\white-blue.css" />
+    <Content Include="_Design\themes\fides\color-schemes\white-green.css" />
+    <Content Include="_Design\themes\fides\color-schemes\white-orange.css" />
+    <Content Include="_Design\themes\fides\common.css" />
+    <Content Include="_Design\themes\fides\responsive.css" />
+    <Content Include="_Design\themes\minified\fides\animations.min.css" />
+    <Content Include="_Design\themes\minified\fides\color-schemes\dark-blue.min.css" />
+    <Content Include="_Design\themes\minified\fides\color-schemes\dark-gray.min.css" />
+    <Content Include="_Design\themes\minified\fides\color-schemes\dark-green.min.css" />
+    <Content Include="_Design\themes\minified\fides\color-schemes\dark-orange.min.css" />
+    <Content Include="_Design\themes\minified\fides\color-schemes\inverse-blue.min.css" />
+    <Content Include="_Design\themes\minified\fides\color-schemes\white-blue.min.css" />
+    <Content Include="_Design\themes\minified\fides\color-schemes\white-green.min.css" />
+    <Content Include="_Design\themes\minified\fides\color-schemes\white-orange.min.css" />
+    <Content Include="_Design\themes\minified\fides\common.min.css" />
+    <Content Include="_Design\themes\minified\fides\responsive.min.css" />
+    <EntityDeploy Include="Models\DataB\_LSdb.edmx">
+      <Generator>EntityModelCodeGenerator</Generator>
+      <LastGenOutput>_LSdb.Designer.cs</LastGenOutput>
+    </EntityDeploy>
+    <Content Include="Models\DataB\_LSdb.edmx.diagram">
+      <DependentUpon>_LSdb.edmx</DependentUpon>
+    </Content>
+    <None Include="Scripts\jquery-1.9.1.intellisense.js" />
+    <Content Include="Scripts\bootstrap.js" />
+    <Content Include="Scripts\bootstrap.min.js" />
+    <Content Include="Scripts\jquery-1.9.1.js" />
+    <Content Include="Scripts\jquery-1.9.1.min.js" />
+    <Content Include="Web.config" />
+    <Content Include="_Design\fonts\font_awesome\fontawesome-webfont.eot" />
+    <Content Include="_Design\fonts\font_awesome\fontawesome-webfont.ttf" />
+    <Content Include="_Design\fonts\font_awesome\fontawesome-webfont.woff" />
+    <Content Include="_Design\fonts\font_awesome\FontAwesome.otf" />
+    <Content Include="_Design\images\icons\icons.psd" />
+    <Content Include="Views\Shared\_Layout.cshtml" />
+    <Content Include="Views\Shared\_LayoutWeb.cshtml" />
+    <Content Include="Views\Home\Index.cshtml" />
+  </ItemGroup>
+  <ItemGroup>
+    <Compile Include="App_Start\BundelConfig.cs" />
+    <Compile Include="App_Start\RouteConfig.cs" />
+    <Compile Include="App_Start\WebApiConfig.cs" />
+    <Compile Include="Controllers\BanksController.cs" />
+    <Compile Include="Controllers\HomeController.cs" />
+    <Compile Include="Controllers\LoanController.cs" />
+    <Compile Include="Global.asax.cs">
+      <DependentUpon>Global.asax</DependentUpon>
+    </Compile>
+    <Compile Include="Models\Classes\Overided.cs" />
+    <Compile Include="Models\Classes\_app.cs" />
+    <Compile Include="Models\DataB\Agent.cs">
+      <DependentUpon>_LSdb.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Models\DataB\Bank.cs">
+      <DependentUpon>_LSdb.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Models\DataB\Customer.cs">
+      <DependentUpon>_LSdb.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Models\DataB\Login.cs">
+      <DependentUpon>_LSdb.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Models\DataB\LonsRequest.cs">
+      <DependentUpon>_LSdb.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Models\DataB\PersonalInformation.cs">
+      <DependentUpon>_LSdb.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Models\DataB\RequestStatus.cs">
+      <DependentUpon>_LSdb.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Models\DataB\_LSdb.Context.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>_LSdb.Context.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Models\DataB\_LSdb.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>_LSdb.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Models\DataB\_LSdb.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>_LSdb.edmx</DependentUpon>
+    </Compile>
+    <Compile Include="Properties\AssemblyInfo.cs" />
+  </ItemGroup>
+  <ItemGroup>
+    <Content Include="Views\web.config" />
+    <None Include="packages.config" />
+    <Content Include="Scripts\jquery-1.9.1.min.map" />
+    <Content Include="Views\Banks\Index.cshtml" />
+    <Content Include="Views\Partial\_Customers.cshtml" />
+    <Content Include="Views\Banks\Details.cshtml" />
+    <Content Include="Views\Partial\_LoanRequests.cshtml" />
+    <Content Include="Views\Loan\Index.cshtml" />
+    <None Include="Web.Debug.config">
+      <DependentUpon>Web.config</DependentUpon>
+    </None>
+    <None Include="Web.Release.config">
+      <DependentUpon>Web.config</DependentUpon>
+    </None>
+  </ItemGroup>
+  <ItemGroup>
+    <Folder Include="App_Data\" />
+  </ItemGroup>
+  <ItemGroup>
+    <Service Include="{508349B6-6B84-4DF5-91F0-309BEEBAD82D}" />
+  </ItemGroup>
+  <PropertyGroup>
+    <VisualStudioVersion Condition="'$(VisualStudioVersion)' == ''">10.0</VisualStudioVersion>
+    <VSToolsPath Condition="'$(VSToolsPath)' == ''">$(MSBuildExtensionsPath32)\Microsoft\VisualStudio\v$(VisualStudioVersion)</VSToolsPath>
+  </PropertyGroup>
+  <Import Project="$(MSBuildBinPath)\Microsoft.CSharp.targets" />
+  <Import Project="$(VSToolsPath)\WebApplications\Microsoft.WebApplication.targets" Condition="'$(VSToolsPath)' != ''" />
+  <Import Project="$(MSBuildExtensionsPath32)\Microsoft\VisualStudio\v10.0\WebApplications\Microsoft.WebApplication.targets" Condition="false" />
+  <ProjectExtensions>
+    <VisualStudio>
+      <FlavorProperties GUID="{349c5851-65df-11da-9384-00065b846f21}">
+        <WebProjectProperties>
+          <UseIIS>True</UseIIS>
+          <AutoAssignPort>True</AutoAssignPort>
+          <DevelopmentServerPort>51826</DevelopmentServerPort>
+          <DevelopmentServerVPath>/</DevelopmentServerVPath>
+          <IISUrl>http://localhost:51826/</IISUrl>
+          <NTLMAuthentication>False</NTLMAuthentication>
+          <UseCustomServer>False</UseCustomServer>
+          <CustomServerUrl>
+          </CustomServerUrl>
+          <SaveServerSettingsInUserFile>False</SaveServerSettingsInUserFile>
+        </WebProjectProperties>
+      </FlavorProperties>
+    </VisualStudio>
+  </ProjectExtensions>
+  <Target Name="EnsureNuGetPackageBuildImports" BeforeTargets="PrepareForBuild">
+    <PropertyGroup>
+      <ErrorText>This project references NuGet package(s) that are missing on this computer. Use NuGet Package Restore to download them.  For more information, see http://go.microsoft.com/fwlink/?LinkID=322105. The missing file is {0}.</ErrorText>
+    </PropertyGroup>
+    <Error Condition="!Exists('..\packages\Microsoft.Net.Compilers.2.1.0\build\Microsoft.Net.Compilers.props')" Text="$([System.String]::Format('$(ErrorText)', '..\packages\Microsoft.Net.Compilers.2.1.0\build\Microsoft.Net.Compilers.props'))" />
+    <Error Condition="!Exists('..\packages\Microsoft.CodeDom.Providers.DotNetCompilerPlatform.1.0.7\build\net45\Microsoft.CodeDom.Providers.DotNetCompilerPlatform.props')" Text="$([System.String]::Format('$(ErrorText)', '..\packages\Microsoft.CodeDom.Providers.DotNetCompilerPlatform.1.0.7\build\net45\Microsoft.CodeDom.Providers.DotNetCompilerPlatform.props'))" />
+  </Target>
+  <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 
+       Other similar extension points exist, see Microsoft.Common.targets.
+  <Target Name="BeforeBuild">
+  </Target>
+  <Target Name="AfterBuild">
+  </Target>
+  -->
+</Project>

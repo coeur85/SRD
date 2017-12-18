@@ -1,0 +1,22 @@
+﻿
+@model MovieStore.Models.Movie
+
+@{
+    ViewBag.Title = "Details";
+    Layout = "~/Views/Shared/_Layout.cshtml";
+}
+
+
+
+
+@if (Model != null) { 
+<h2>Details for @Model.Name</h2>
+
+<span>This Movie was released in : @Model.RelaseYear</span>
+
+}
+
+else{
+
+    <h2>@ViewBag.error</h2>
+}

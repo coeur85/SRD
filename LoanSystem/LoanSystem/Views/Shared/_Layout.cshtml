@@ -1,0 +1,70 @@
+﻿<!DOCTYPE html>
+
+<html>
+<head>
+    <meta name="viewport" content="width=device-width" />
+    <title>@ViewBag.Title</title>
+
+
+
+
+
+    @System.Web.Optimization.Styles.Render("~/App/Css")
+
+    <script src="~/_Design/js/jquery-2.0.3.js"></script>
+
+    @System.Web.Optimization.Scripts.Render("~/App/Js")
+    <script src="~/Scripts/App_Settings.js"></script>
+
+
+
+
+
+    <!-- Favicons -->
+
+    <link rel="apple-touch-icon-precomposed" sizes="144x144" href="/_Design/images/icons/apple-touch-icon-144-precomposed.png" />
+    <link rel="apple-touch-icon-precomposed" sizes="114x114" href="/_Design/images/icons/apple-touch-icon-114-precomposed.png" />
+    <link rel="apple-touch-icon-precomposed" sizes="72x72" href="/_Design/images/icons/apple-touch-icon-72-precomposed.png" />
+    <link rel="apple-touch-icon-precomposed" href="/_Design/images/icons/apple-touch-icon-57-precomposed.png" />
+    <link rel="shortcut icon" href="/_Design/images/icons/favicon.png" />
+
+
+
+    <!-- Fides Admin JS -->
+
+
+    <script>
+
+        $(document).ready(function () {
+
+
+            var wait_loading = window.setTimeout(function () {
+                $('#loading').slideUp('fast');
+                jQuery('body').css('overflow', 'auto');
+            }, 1000
+               );
+
+
+        })
+
+
+
+    </script>
+
+
+    @if (_app.ui.msg != null)
+    {
+        <script type="text/javascript">
+            _app.msgBox.redAlert('@_app.ui.msg');
+
+        </script>
+
+    }
+
+</head>
+<body>
+    <div>
+        @RenderBody()
+    </div>
+</body>
+</html>

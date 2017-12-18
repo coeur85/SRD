@@ -1,0 +1,23 @@
+<?xml version="1.0" encoding="utf-8"?>
+<edmx:Edmx Version="3.0" xmlns:edmx="http://schemas.microsoft.com/ado/2009/11/edmx">
+ <!-- EF Designer content (DO NOT EDIT MANUALLY BELOW HERE) -->
+  <edmx:Designer xmlns="http://schemas.microsoft.com/ado/2009/11/edmx">
+    <!-- Diagram content (shape and connector positions) -->
+    <edmx:Diagrams>
+      <Diagram DiagramId="ad2f29a9c2354b3f8cb9c6f6bcd8a86e" Name="Diagram1">
+        <EntityTypeShape EntityType="LoansSystemDBModel.Bank" Width="1.5" PointX="3.5" PointY="3.375" IsExpanded="true" />
+        <EntityTypeShape EntityType="LoansSystemDBModel.Customer" Width="1.5" PointX="0.75" PointY="0.75" IsExpanded="true" />
+        <EntityTypeShape EntityType="LoansSystemDBModel.LonsRequest" Width="1.5" PointX="5.5" PointY="0.625" IsExpanded="true" />
+        <EntityTypeShape EntityType="LoansSystemDBModel.RequestStatus" Width="1.5" PointX="7.625" PointY="1.625" IsExpanded="true" />
+        <AssociationConnector Association="LoansSystemDBModel.FK_LonsRequests_Banks" ManuallyRouted="false" />
+        <AssociationConnector Association="LoansSystemDBModel.FK_LonsRequests_Customers" ManuallyRouted="false" />
+        <AssociationConnector Association="LoansSystemDBModel.FK_LonsRequests_RequestStatus" ManuallyRouted="false" />
+        <EntityTypeShape EntityType="LoansSystemDBModel.Agent" Width="1.5" PointX="3.25" PointY="7.375" />
+        <EntityTypeShape EntityType="LoansSystemDBModel.Login" Width="1.5" PointX="5.375" PointY="6.75" />
+        <EntityTypeShape EntityType="LoansSystemDBModel.PersonalInformation" Width="1.5" PointX="1" PointY="7.125" />
+        <AssociationConnector Association="LoansSystemDBModel.FK_Agents_PersonalInformation1" />
+        <AssociationConnector Association="LoansSystemDBModel.FK_LonsRequests_Agents" />
+      </Diagram>
+    </edmx:Diagrams>
+  </edmx:Designer>
+</edmx:Edmx>

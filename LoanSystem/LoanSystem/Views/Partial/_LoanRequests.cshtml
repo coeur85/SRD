@@ -1,0 +1,94 @@
+﻿
+
+@model List<LoanSystem.Models.DataB.LonsRequest>
+
+
+
+
+@if (Model.Count > 0)
+{
+
+<table class=" table" id="tbl_loand">
+    <thead>
+        <tr>
+            <td>اسم العميل</td>
+            <td>البتك</td>
+            <td>اسم المندوب</td>
+            <td>تاريخ الطلب</td>
+            <td>المبلغ المطلوب</td>
+            <td>حاله الطلب</td>
+        </tr>
+    </thead>
+    <tbody>
+        @foreach (var b in Model)
+
+        {
+            <tr>
+                <td>@b.Customer.Name</td>
+                <td>@b.Bank.BankName</td>
+                <td>@b.Agent.PersonalInformation.PersonfName  @b.Agent.PersonalInformation.PersonlName</td>
+                <td>@b.LR_Date.ToString("dd/MMMM/yyyy")</td>
+                <td>@b.LoanAmount.ToString() ر س</td>
+                <td>@b.RequestStatu.StatusName</td>
+            </tr>
+
+        }
+
+    </tbody>
+
+</table>
+
+
+
+<script type="text/javascript">
+
+
+
+    $(document).ready(function () {
+        _app.jsTool.intDaTatable();
+
+
+    });
+
+         //$(document).ready(function () {
+         //    $('#tbl_loand').dataTable({
+         //         "oLanguage": {
+         //             "sUrl": "https://cdn.datatables.net/plug-ins/1.10.16/i18n/Arabic.json"
+			      // }
+         //        } );
+         //       } );
+
+
+
+//$(document).ready(function(){
+   
+//    $('#tbl_loand').dataTable(
+//        {
+//            "language": 
+//            {
+//                "sProcessing": "جارٍ التحميل...",
+//                "sLengthMenu": "أظهر _MENU_ مدخلات",
+//                "sZeroRecords": "لم يعثر على أية سجلات",
+//                "sInfo": "إظهار _START_ إلى _END_ من أصل _TOTAL_ مدخل",
+//                "sInfoEmpty": "يعرض 0 إلى 0 من أصل 0 سجل",
+//                "sInfoFiltered": "(منتقاة من مجموع _MAX_ مُدخل)",
+//                "sInfoPostFix": "",
+//                "sSearch": "ابحث:",
+//                "sUrl": "",
+//                "oPaginate": {
+//                    "sFirst": "الأول",
+//                    "sPrevious": "السابق",
+//                    "sNext": "التالي",
+//                    "sLast": "الأخير"
+//                }
+//            }
+//        }
+//    );
+	 
+
+
+//});
+</script>
+}
+else {
+<span class=" alert-info">لايوجد اي طلبات مقدمه الي هذا البنك</span>}

@@ -1,0 +1,170 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Schema Namespace="LoansSystemDBModel.Store" Provider="System.Data.SqlClient" ProviderManifestToken="2012" Alias="Self" xmlns:store="http://schemas.microsoft.com/ado/2007/12/edm/EntityStoreSchemaGenerator" xmlns:customannotation="http://schemas.microsoft.com/ado/2013/11/edm/customannotation" xmlns="http://schemas.microsoft.com/ado/2009/11/edm/ssdl">
+  <EntityType Name="Agents">
+    <Key>
+      <PropertyRef Name="AgentID" />
+    </Key>
+    <Property Name="AgentID" Type="int" Nullable="false" />
+    <Property Name="AgnetOrgName" Type="nvarchar" MaxLength="50" />
+  </EntityType>
+  <EntityType Name="Banks">
+    <Key>
+      <PropertyRef Name="BankID" />
+    </Key>
+    <Property Name="BankID" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="BankName" Type="nvarchar" MaxLength="50" Nullable="false" />
+    <Property Name="isAvailable" Type="bit" />
+  </EntityType>
+  <EntityType Name="Customers">
+    <Key>
+      <PropertyRef Name="CustomerID" />
+    </Key>
+    <Property Name="CustomerID" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="Name" Type="nvarchar" MaxLength="50" Nullable="false" />
+    <Property Name="NationalID" Type="int" Nullable="false" />
+    <Property Name="DOB" Type="smalldatetime" Nullable="false" />
+    <Property Name="IsMale" Type="bit" Nullable="false" />
+    <Property Name="Job" Type="nvarchar" MaxLength="50" Nullable="false" />
+    <Property Name="Address" Type="nvarchar(max)" />
+    <Property Name="PhoneNumber" Type="nchar" MaxLength="20" />
+  </EntityType>
+  <EntityType Name="Logins">
+    <Key>
+      <PropertyRef Name="PersonID" />
+    </Key>
+    <Property Name="PersonID" Type="int" Nullable="false" />
+    <Property Name="LoginUsername" Type="nvarchar" MaxLength="50" Nullable="false" />
+    <Property Name="LoginPassword" Type="nvarchar" MaxLength="50" Nullable="false" />
+    <Property Name="ActiveAccount" Type="bit" Nullable="false" />
+  </EntityType>
+  <EntityType Name="LonsRequests">
+    <Key>
+      <PropertyRef Name="LR_ID" />
+    </Key>
+    <Property Name="LR_ID" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="LR_Date" Type="smalldatetime" Nullable="false" />
+    <Property Name="CustomerID" Type="int" Nullable="false" />
+    <Property Name="BankID" Type="int" Nullable="false" />
+    <Property Name="Employer" Type="nvarchar" MaxLength="50" Nullable="false" />
+    <Property Name="LenthOfService" Type="int" Nullable="false" />
+    <Property Name="LoanAmount" Type="decimal" Precision="18" Scale="2" Nullable="false" />
+    <Property Name="InstalmentsPeriod" Type="int" Nullable="false" />
+    <Property Name="FixedSalary" Type="decimal" Precision="18" Scale="2" Nullable="false" />
+    <Property Name="VariableBonus" Type="decimal" Precision="18" Scale="0" Nullable="false" />
+    <Property Name="LoanRequestStatus" Type="int" Nullable="false" />
+    <Property Name="ByAgent" Type="int" Nullable="false" />
+    <Property Name="HasCreditCard" Type="bit" />
+    <Property Name="CreditCardLimit" Type="decimal" Precision="18" Scale="2" />
+    <Property Name="HasOverdraft" Type="bit" />
+    <Property Name="OverdraftAmount" Type="decimal" Precision="18" Scale="2" />
+    <Property Name="HasOtherMonthlyPayments" Type="bit" />
+    <Property Name="OtherMonthlyPaymentAmount" Type="decimal" Precision="18" Scale="2" />
+  </EntityType>
+  <EntityType Name="PersonalInformation">
+    <Key>
+      <PropertyRef Name="PersonID" />
+    </Key>
+    <Property Name="PersonID" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="PersonfName" Type="nvarchar" MaxLength="50" Nullable="false" />
+    <Property Name="PersonlName" Type="nvarchar" MaxLength="50" Nullable="false" />
+    <Property Name="DOB" Type="smalldatetime" Nullable="false" />
+    <Property Name="PhoneNumber" Type="nvarchar" MaxLength="50" />
+    <Property Name="Email" Type="nvarchar" MaxLength="50" />
+  </EntityType>
+  <EntityType Name="RequestStatus">
+    <Key>
+      <PropertyRef Name="StatusID" />
+    </Key>
+    <Property Name="StatusID" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="StatusName" Type="nchar" MaxLength="10" Nullable="false" />
+  </EntityType>
+  <Association Name="FK_Agents_PersonalInformation1">
+    <End Role="PersonalInformation" Type="Self.PersonalInformation" Multiplicity="1" />
+    <End Role="Agents" Type="Self.Agents" Multiplicity="0..1" />
+    <ReferentialConstraint>
+      <Principal Role="PersonalInformation">
+        <PropertyRef Name="PersonID" />
+      </Principal>
+      <Dependent Role="Agents">
+        <PropertyRef Name="AgentID" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_LonsRequests_Agents">
+    <End Role="Agents" Type="Self.Agents" Multiplicity="1" />
+    <End Role="LonsRequests" Type="Self.LonsRequests" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="Agents">
+        <PropertyRef Name="AgentID" />
+      </Principal>
+      <Dependent Role="LonsRequests">
+        <PropertyRef Name="ByAgent" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_LonsRequests_Banks">
+    <End Role="Banks" Type="Self.Banks" Multiplicity="1" />
+    <End Role="LonsRequests" Type="Self.LonsRequests" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="Banks">
+        <PropertyRef Name="BankID" />
+      </Principal>
+      <Dependent Role="LonsRequests">
+        <PropertyRef Name="BankID" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_LonsRequests_Customers">
+    <End Role="Customers" Type="Self.Customers" Multiplicity="1" />
+    <End Role="LonsRequests" Type="Self.LonsRequests" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="Customers">
+        <PropertyRef Name="CustomerID" />
+      </Principal>
+      <Dependent Role="LonsRequests">
+        <PropertyRef Name="CustomerID" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_LonsRequests_RequestStatus">
+    <End Role="RequestStatus" Type="Self.RequestStatus" Multiplicity="1" />
+    <End Role="LonsRequests" Type="Self.LonsRequests" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="RequestStatus">
+        <PropertyRef Name="StatusID" />
+      </Principal>
+      <Dependent Role="LonsRequests">
+        <PropertyRef Name="LoanRequestStatus" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <EntityContainer Name="LoansSystemDBModelStoreContainer">
+    <EntitySet Name="Agents" EntityType="Self.Agents" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="Banks" EntityType="Self.Banks" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="Customers" EntityType="Self.Customers" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="Logins" EntityType="Self.Logins" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="LonsRequests" EntityType="Self.LonsRequests" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="PersonalInformation" EntityType="Self.PersonalInformation" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="RequestStatus" EntityType="Self.RequestStatus" Schema="dbo" store:Type="Tables" />
+    <AssociationSet Name="FK_Agents_PersonalInformation1" Association="Self.FK_Agents_PersonalInformation1">
+      <End Role="PersonalInformation" EntitySet="PersonalInformation" />
+      <End Role="Agents" EntitySet="Agents" />
+    </AssociationSet>
+    <AssociationSet Name="FK_LonsRequests_Agents" Association="Self.FK_LonsRequests_Agents">
+      <End Role="Agents" EntitySet="Agents" />
+      <End Role="LonsRequests" EntitySet="LonsRequests" />
+    </AssociationSet>
+    <AssociationSet Name="FK_LonsRequests_Banks" Association="Self.FK_LonsRequests_Banks">
+      <End Role="Banks" EntitySet="Banks" />
+      <End Role="LonsRequests" EntitySet="LonsRequests" />
+    </AssociationSet>
+    <AssociationSet Name="FK_LonsRequests_Customers" Association="Self.FK_LonsRequests_Customers">
+      <End Role="Customers" EntitySet="Customers" />
+      <End Role="LonsRequests" EntitySet="LonsRequests" />
+    </AssociationSet>
+    <AssociationSet Name="FK_LonsRequests_RequestStatus" Association="Self.FK_LonsRequests_RequestStatus">
+      <End Role="RequestStatus" EntitySet="RequestStatus" />
+      <End Role="LonsRequests" EntitySet="LonsRequests" />
+    </AssociationSet>
+  </EntityContainer>
+</Schema>

@@ -1,0 +1,24 @@
+﻿
+@model List< MovieStore.Models.Movie>
+
+@{
+    ViewBag.Title = "Index";
+    Layout = "~/Views/Shared/_Layout.cshtml";
+}
+
+<h2>All my movies</h2>
+
+
+<ul>
+
+    @foreach (var m in Model)
+
+    {
+        <li> @Html.ActionLink(m.Name,"Details",new {MovieID = m.id })
+    <div>
+        <span>Realse year :</span><span>@m.RelaseYear</span>
+    </div>    
+    </li>
+    }
+
+</ul>

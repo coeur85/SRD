@@ -1,0 +1,54 @@
+﻿
+@model List<LoanSystem.Models.DataB.Customer>
+
+
+
+
+<table>
+    <thead>
+        <tr>
+            <td>
+                الاسم
+            </td>
+            <td>
+                رقم الهاتف
+            </td>
+            <td>
+                رقم الهويه
+            </td>
+            <td>
+                التوع
+            </td>
+            <td>
+                تاريخ الميلاد
+            </td>
+            <td>الوظيفه</td>
+            <td>العنوان</td>
+            
+        </tr>
+    </thead>
+    <tbody>
+        
+        @foreach (var c in Model)
+        {
+            <tr>
+                <td>@c.Name</td>
+                <td>@c.PhoneNumber</td>
+                <td>@c.NationalID</td>
+                <td>@if (c.IsMale) {<text>ذكر</text> }
+                else {<text>انثي</text> }
+                </td>
+                <td>@c.DOB</td>
+                <td>@c.Job</td>
+                <td>@c.Address</td>
+            </tr>
+        }
+
+
+    </tbody>
+    <tfoot>
+
+    </tfoot>
+
+
+</table>

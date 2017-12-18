@@ -1,0 +1,21 @@
+﻿@model List<LoanSystem.Models.DataB.LonsRequest>
+
+@{
+    ViewBag.Title = "Index";
+    Layout = "~/Views/Shared/_LayoutWeb.cshtml";
+}
+
+<h2>القروض</h2>
+
+<div class="profile-box content-box">
+    <div class="content-box-header clearfix bg-info">
+
+        <div class="user-details">
+            @Html.Partial("~/Views/Partial/_loanRequests.cshtml", Model.ToList())
+        </div>
+    </div>
+    <div>
+
+    </div>
+</div>
+

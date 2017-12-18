@@ -1,0 +1,92 @@
+﻿@model LoanSystem.Models.DataB.Bank
+
+
+@{
+    ViewBag.Title = "Details";
+    Layout = "~/Views/Shared/_LayoutWeb.cshtml";
+}
+
+<h2>معلومات بنك : @Model.BankName</h2>
+
+<div class="form-row" id="dform">
+<div class="col-md-12">
+
+    <div class="profile-box content-box">
+        <div class="content-box-header clearfix bg-blue-alt">
+
+            <div class="user-details">
+                @Model.BankName
+            </div>
+        </div>
+        <div>
+        </div>
+    </div>
+
+
+
+
+    <fieldset>
+
+
+        <div class="example-box">
+            <div class="example-code clearfix">
+                <div class="col-md-12">
+                    <input type="hidden" id="PersonID" name="BankID" value="@Model.BankID" />
+
+                    <div class="col-md-7">
+                        <div class="form-row">
+                            <div class="form-label col-md-3 font-size-16">
+                                <label for="" class="">
+                                    اســـم البنك:
+                                </label>
+                            </div>
+                            
+                                <div class="form-input col-md-5">
+                                    @*@Html.EditorFor(model => model.BankName)
+                @Html.ValidationMessageFor(model => model.BankName)*@
+                                    @Html.Label(Model.BankName)
+                            </div>
+                        </div>
+                        <div class="form-row">
+                            <div class="form-label col-md-3">
+                                <label for="isAvailable">
+                                    حاله البنك:
+                                </label>
+                            </div>
+                            <div class="form-input col-md-5">
+                                <div class="col-md-3">
+                                    @Html.CheckBoxFor(model => model.isAvailable.Value, new { @checked = "true", @disabled = "disabled" })
+                                </div>
+                                <div class="col-md-9 font-size-13">
+                                    مسموح التعمل عليه
+                                 </div>
+                                    
+                                </div>
+                        </div>
+
+                    </div>
+
+                </div>
+
+
+            </div>
+        </div>
+    </fieldset>
+
+
+
+    <div class="profile-box content-box">
+        <div class="content-box-header clearfix bg-info">
+
+            <div class="user-details">
+                @Html.Partial("~/Views/Partial/_loanRequests.cshtml",Model.LonsRequests.ToList())
+            </div>
+        </div>
+        <div>
+
+        </div>
+        </div>
+    </div>
+</div>
+
+

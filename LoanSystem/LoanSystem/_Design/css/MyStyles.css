@@ -1,0 +1,44 @@
+﻿
+html, body {
+height: 100%;
+direction:rtl;
+}
+
+
+* {
+font-family:'Segoe UI';
+
+}
+
+.RoundedImg {
+border-radius: 50%;
+}
+
+.img32 {
+    width:32px;
+    height:32px;
+}
+.img64 {
+    width:64px;
+    height:64px;
+}
+.img128 {
+    width:128px;
+    height:128px;
+}
+
+.gm-style {
+font-family:'Segoe UI';
+font-size:13px;
+
+}
+
+.active {
+
+background-color:lightgreen;
+border-radius:3px;
+}
+
+
+
+

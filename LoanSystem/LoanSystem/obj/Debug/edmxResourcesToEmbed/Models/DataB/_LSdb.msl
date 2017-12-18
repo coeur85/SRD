@@ -1,0 +1,90 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Mapping Space="C-S" xmlns="http://schemas.microsoft.com/ado/2009/11/mapping/cs">
+  <EntityContainerMapping StorageEntityContainer="LoansSystemDBModelStoreContainer" CdmEntityContainer="LoansSystemDBEntities">
+    <EntitySetMapping Name="Banks">
+      <EntityTypeMapping TypeName="LoansSystemDBModel.Bank">
+        <MappingFragment StoreEntitySet="Banks">
+          <ScalarProperty Name="isAvailable" ColumnName="isAvailable" />
+          <ScalarProperty Name="BankID" ColumnName="BankID" />
+          <ScalarProperty Name="BankName" ColumnName="BankName" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="Customers">
+      <EntityTypeMapping TypeName="LoansSystemDBModel.Customer">
+        <MappingFragment StoreEntitySet="Customers">
+          <ScalarProperty Name="CustomerID" ColumnName="CustomerID" />
+          <ScalarProperty Name="Name" ColumnName="Name" />
+          <ScalarProperty Name="NationalID" ColumnName="NationalID" />
+          <ScalarProperty Name="DOB" ColumnName="DOB" />
+          <ScalarProperty Name="IsMale" ColumnName="IsMale" />
+          <ScalarProperty Name="Job" ColumnName="Job" />
+          <ScalarProperty Name="Address" ColumnName="Address" />
+          <ScalarProperty Name="PhoneNumber" ColumnName="PhoneNumber" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="LonsRequests">
+      <EntityTypeMapping TypeName="LoansSystemDBModel.LonsRequest">
+        <MappingFragment StoreEntitySet="LonsRequests">
+          <ScalarProperty Name="ByAgent" ColumnName="ByAgent" />
+          <ScalarProperty Name="LR_ID" ColumnName="LR_ID" />
+          <ScalarProperty Name="LR_Date" ColumnName="LR_Date" />
+          <ScalarProperty Name="CustomerID" ColumnName="CustomerID" />
+          <ScalarProperty Name="BankID" ColumnName="BankID" />
+          <ScalarProperty Name="Employer" ColumnName="Employer" />
+          <ScalarProperty Name="LenthOfService" ColumnName="LenthOfService" />
+          <ScalarProperty Name="LoanAmount" ColumnName="LoanAmount" />
+          <ScalarProperty Name="InstalmentsPeriod" ColumnName="InstalmentsPeriod" />
+          <ScalarProperty Name="FixedSalary" ColumnName="FixedSalary" />
+          <ScalarProperty Name="VariableBonus" ColumnName="VariableBonus" />
+          <ScalarProperty Name="LoanRequestStatus" ColumnName="LoanRequestStatus" />
+          <ScalarProperty Name="HasCreditCard" ColumnName="HasCreditCard" />
+          <ScalarProperty Name="CreditCardLimit" ColumnName="CreditCardLimit" />
+          <ScalarProperty Name="HasOverdraft" ColumnName="HasOverdraft" />
+          <ScalarProperty Name="OverdraftAmount" ColumnName="OverdraftAmount" />
+          <ScalarProperty Name="HasOtherMonthlyPayments" ColumnName="HasOtherMonthlyPayments" />
+          <ScalarProperty Name="OtherMonthlyPaymentAmount" ColumnName="OtherMonthlyPaymentAmount" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="ReqStatus">
+      <EntityTypeMapping TypeName="LoansSystemDBModel.RequestStatus">
+        <MappingFragment StoreEntitySet="RequestStatus">
+          <ScalarProperty Name="StatusID" ColumnName="StatusID" />
+          <ScalarProperty Name="StatusName" ColumnName="StatusName" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="Agents">
+      <EntityTypeMapping TypeName="LoansSystemDBModel.Agent">
+        <MappingFragment StoreEntitySet="Agents">
+          <ScalarProperty Name="AgnetOrgName" ColumnName="AgnetOrgName" />
+          <ScalarProperty Name="AgentID" ColumnName="AgentID" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="Logins">
+      <EntityTypeMapping TypeName="LoansSystemDBModel.Login">
+        <MappingFragment StoreEntitySet="Logins">
+          <ScalarProperty Name="ActiveAccount" ColumnName="ActiveAccount" />
+          <ScalarProperty Name="LoginPassword" ColumnName="LoginPassword" />
+          <ScalarProperty Name="LoginUsername" ColumnName="LoginUsername" />
+          <ScalarProperty Name="PersonID" ColumnName="PersonID" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="PersonalInformations">
+      <EntityTypeMapping TypeName="LoansSystemDBModel.PersonalInformation">
+        <MappingFragment StoreEntitySet="PersonalInformation">
+          <ScalarProperty Name="Email" ColumnName="Email" />
+          <ScalarProperty Name="PhoneNumber" ColumnName="PhoneNumber" />
+          <ScalarProperty Name="DOB" ColumnName="DOB" />
+          <ScalarProperty Name="PersonlName" ColumnName="PersonlName" />
+          <ScalarProperty Name="PersonfName" ColumnName="PersonfName" />
+          <ScalarProperty Name="PersonID" ColumnName="PersonID" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+  </EntityContainerMapping>
+</Mapping>

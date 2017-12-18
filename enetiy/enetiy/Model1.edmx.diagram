@@ -1,0 +1,36 @@
+<?xml version="1.0" encoding="utf-8"?>
+<edmx:Edmx Version="3.0" xmlns:edmx="http://schemas.microsoft.com/ado/2009/11/edmx">
+ <!-- EF Designer content (DO NOT EDIT MANUALLY BELOW HERE) -->
+  <edmx:Designer xmlns="http://schemas.microsoft.com/ado/2009/11/edmx">
+    <!-- Diagram content (shape and connector positions) -->
+    <edmx:Diagrams>
+      <Diagram DiagramId="84ec3fbe26a4423c99a093fcf1ac459f" Name="Diagram1">
+        <EntityTypeShape EntityType="LoanAppDBModel.Audit" Width="1.5" PointX="5.25" PointY="23" />
+        <EntityTypeShape EntityType="LoanAppDBModel.BankRepresentative" Width="1.5" PointX="5.25" PointY="11.125" />
+        <EntityTypeShape EntityType="LoanAppDBModel.Bank" Width="1.5" PointX="3" PointY="11" />
+        <EntityTypeShape EntityType="LoanAppDBModel.Branch" Width="1.5" PointX="0.75" PointY="9.125" />
+        <EntityTypeShape EntityType="LoanAppDBModel.Commitment" Width="1.5" PointX="9.75" PointY="14.625" />
+        <EntityTypeShape EntityType="LoanAppDBModel.Customer" Width="1.5" PointX="5.25" PointY="14.625" />
+        <EntityTypeShape EntityType="LoanAppDBModel.Job" Width="1.5" PointX="3" PointY="19.375" />
+        <EntityTypeShape EntityType="LoanAppDBModel.LoansRequest" Width="1.5" PointX="7.5" PointY="13" />
+        <EntityTypeShape EntityType="LoanAppDBModel.LoanStatus" Width="1.5" PointX="5.25" PointY="8.25" />
+        <EntityTypeShape EntityType="LoanAppDBModel.SalesRepresentative" Width="1.5" PointX="5.25" PointY="20.625" />
+        <AssociationConnector Association="LoanAppDBModel.FK_BankRepresentatives_Banks" />
+        <AssociationConnector Association="LoanAppDBModel.FK_LoansRequests_BankRepresentatives" />
+        <AssociationConnector Association="LoanAppDBModel.FK_LoansRequests_Banks" />
+        <AssociationConnector Association="LoanAppDBModel.FK_LoansRequests_Branchs" />
+        <AssociationConnector Association="LoanAppDBModel.FK_Commitments_LoansRequests" />
+        <AssociationConnector Association="LoanAppDBModel.FK_Customers_Jobs" />
+        <AssociationConnector Association="LoanAppDBModel.FK_LoansRequests_Customers" />
+        <AssociationConnector Association="LoanAppDBModel.FK_LoansRequests_LoanStatuses" />
+        <AssociationConnector Association="LoanAppDBModel.FK_LoansRequests_SalesRepresentatives" />
+        <EntityTypeShape EntityType="LoanAppDBModel.UsersInfo" Width="1.5" PointX="3" PointY="6.375" />
+        <AssociationConnector Association="LoanAppDBModel.FK_Audits_UsersInfo" />
+        <AssociationConnector Association="LoanAppDBModel.FK_BankRepresentatives_UsersInfo" />
+        <AssociationConnector Association="LoanAppDBModel.FK_Customers_UsersInfo" />
+        <AssociationConnector Association="LoanAppDBModel.FK_SalesRepresentatives_UsersInfo" />
+        <AssociationConnector Association="LoanAppDBModel.Employees" />
+      </Diagram>
+    </edmx:Diagrams>
+  </edmx:Designer>
+</edmx:Edmx>

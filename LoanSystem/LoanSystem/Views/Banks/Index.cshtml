@@ -1,0 +1,72 @@
+﻿
+ @model List<LoanSystem.Models.DataB.Bank>
+  
+
+
+
+
+    @{
+        ViewBag.Title = "Index";
+        Layout = "~/Views/Shared/_LayoutWeb.cshtml";
+       
+
+    }
+
+    <h2>All Banks</h2>
+
+
+
+
+<div class="row mrg20B">
+
+
+    @foreach (var b in Model)
+    {
+
+
+        <div class="col-lg-3">
+
+
+
+            <a href="@Url.Action("Details","Banks",new { id = b.BankID })"
+               @if (b.isAvailable == true) { <text> class="tile-button tile-button-alt btn bg-blue-alt" </text>  }
+               else {<text> class= "tile-button tile-button-alt btn bg-orange"</text>}
+               title="">
+                <div class="tile-header">
+
+                    @if (@b.isAvailable == true)
+                    { <span> يقبل الطلبات</span> }
+                    else
+                    { <span> البنك لا يقبل الطلبات</span> }
+
+                    <div class="float-right">
+                        
+
+                    </div>
+                </div>
+                <div class="tile-content-wrapper">
+                    <i class="glyph-icon icon-money"></i>
+                    <div class="tile-content">
+                        @b.BankName
+                    </div>
+                </div>
+            </a>
+
+        </div>
+
+
+    }
+
+   
+    
+
+
+    </div>
+
+
+
+
+
+
+
+
