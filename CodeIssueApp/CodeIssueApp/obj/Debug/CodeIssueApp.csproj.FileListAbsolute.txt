@@ -1,0 +1,12 @@
+C:\Users\Magdi\source\repos\CodeIssueApp\CodeIssueApp\bin\CodeIssueApp.dll.config
+C:\Users\Magdi\source\repos\CodeIssueApp\CodeIssueApp\bin\CodeIssueApp.dll
+C:\Users\Magdi\source\repos\CodeIssueApp\CodeIssueApp\bin\CodeIssueApp.pdb
+C:\Users\Magdi\source\repos\CodeIssueApp\CodeIssueApp\bin\EntityFramework.dll
+C:\Users\Magdi\source\repos\CodeIssueApp\CodeIssueApp\bin\EntityFramework.SqlServer.dll
+C:\Users\Magdi\source\repos\CodeIssueApp\CodeIssueApp\bin\Microsoft.CodeDom.Providers.DotNetCompilerPlatform.dll
+C:\Users\Magdi\source\repos\CodeIssueApp\CodeIssueApp\bin\EntityFramework.xml
+C:\Users\Magdi\source\repos\CodeIssueApp\CodeIssueApp\bin\EntityFramework.SqlServer.xml
+C:\Users\Magdi\source\repos\CodeIssueApp\CodeIssueApp\bin\Microsoft.CodeDom.Providers.DotNetCompilerPlatform.xml
+C:\Users\Magdi\source\repos\CodeIssueApp\CodeIssueApp\obj\Debug\CodeIssueApp.csproj.CoreCompileInputs.cache
+C:\Users\Magdi\source\repos\CodeIssueApp\CodeIssueApp\obj\Debug\CodeIssueApp.dll
+C:\Users\Magdi\source\repos\CodeIssueApp\CodeIssueApp\obj\Debug\CodeIssueApp.pdb

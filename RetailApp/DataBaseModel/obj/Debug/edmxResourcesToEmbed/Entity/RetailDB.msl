@@ -1,0 +1,100 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Mapping Space="C-S" xmlns="http://schemas.microsoft.com/ado/2009/11/mapping/cs">
+  <EntityContainerMapping StorageEntityContainer="RetailModelStoreContainer" CdmEntityContainer="RetailEntities">
+    <EntitySetMapping Name="sys_item">
+      <EntityTypeMapping TypeName="RetailModel.sys_item">
+        <MappingFragment StoreEntitySet="sys_item">
+          <ScalarProperty Name="add_tax" ColumnName="add_tax" />
+          <ScalarProperty Name="sales_tax" ColumnName="sales_tax" />
+          <ScalarProperty Name="item_image" ColumnName="item_image" />
+          <ScalarProperty Name="transtype" ColumnName="transtype" />
+          <ScalarProperty Name="price_class" ColumnName="price_class" />
+          <ScalarProperty Name="active" ColumnName="active" />
+          <ScalarProperty Name="entry_date" ColumnName="entry_date" />
+          <ScalarProperty Name="basic_item" ColumnName="basic_item" />
+          <ScalarProperty Name="module_no" ColumnName="module_no" />
+          <ScalarProperty Name="module_group" ColumnName="module_group" />
+          <ScalarProperty Name="big_supermarket" ColumnName="big_supermarket" />
+          <ScalarProperty Name="nationalty" ColumnName="nationalty" />
+          <ScalarProperty Name="whole_sale" ColumnName="whole_sale" />
+          <ScalarProperty Name="purchase_date" ColumnName="purchase_date" />
+          <ScalarProperty Name="transdate" ColumnName="transdate" />
+          <ScalarProperty Name="pluupd" ColumnName="pluupd" />
+          <ScalarProperty Name="transid" ColumnName="transid" />
+          <ScalarProperty Name="userid" ColumnName="userid" />
+          <ScalarProperty Name="statusdate" ColumnName="statusdate" />
+          <ScalarProperty Name="status" ColumnName="status" />
+          <ScalarProperty Name="class_b" ColumnName="class_b" />
+          <ScalarProperty Name="bin_location" ColumnName="bin_location" />
+          <ScalarProperty Name="zone" ColumnName="zone" />
+          <ScalarProperty Name="ordered_from" ColumnName="ordered_from" />
+          <ScalarProperty Name="range_cal" ColumnName="range_cal" />
+          <ScalarProperty Name="class_c" ColumnName="class_c" />
+          <ScalarProperty Name="expirycheck" ColumnName="expirycheck" />
+          <ScalarProperty Name="loss_rate" ColumnName="loss_rate" />
+          <ScalarProperty Name="profit" ColumnName="profit" />
+          <ScalarProperty Name="itemtype" ColumnName="itemtype" />
+          <ScalarProperty Name="goodstype" ColumnName="goodstype" />
+          <ScalarProperty Name="shelfinterval" ColumnName="shelfinterval" />
+          <ScalarProperty Name="storeinterval" ColumnName="storeinterval" />
+          <ScalarProperty Name="home_delivery" ColumnName="home_delivery" />
+          <ScalarProperty Name="class_a" ColumnName="class_a" />
+          <ScalarProperty Name="hyper_market" ColumnName="hyper_market" />
+          <ScalarProperty Name="measure" ColumnName="measure" />
+          <ScalarProperty Name="size" ColumnName="size" />
+          <ScalarProperty Name="color" ColumnName="color" />
+          <ScalarProperty Name="referenceno" ColumnName="referenceno" />
+          <ScalarProperty Name="category" ColumnName="category" />
+          <ScalarProperty Name="producerno" ColumnName="producerno" />
+          <ScalarProperty Name="brand" ColumnName="brand" />
+          <ScalarProperty Name="flavor" ColumnName="flavor" />
+          <ScalarProperty Name="shortname" ColumnName="shortname" />
+          <ScalarProperty Name="l_name" ColumnName="l_name" />
+          <ScalarProperty Name="a_name" ColumnName="a_name" />
+          <ScalarProperty Name="department" ColumnName="department" />
+          <ScalarProperty Name="itemgroup" ColumnName="itemgroup" />
+          <ScalarProperty Name="section" ColumnName="section" />
+          <ScalarProperty Name="itemclass" ColumnName="itemclass" />
+          <ScalarProperty Name="itemean" ColumnName="itemean" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="sys_item_units">
+      <EntityTypeMapping TypeName="RetailModel.sys_item_units">
+        <MappingFragment StoreEntitySet="sys_item_units">
+          <ScalarProperty Name="last_modified_time" ColumnName="last_modified_time" />
+          <ScalarProperty Name="wholeprice" ColumnName="wholeprice" />
+          <ScalarProperty Name="policyid" ColumnName="policyid" />
+          <ScalarProperty Name="suggested_price" ColumnName="suggested_price" />
+          <ScalarProperty Name="discountvalue" ColumnName="discountvalue" />
+          <ScalarProperty Name="peicesno" ColumnName="peicesno" />
+          <ScalarProperty Name="velocity_code" ColumnName="velocity_code" />
+          <ScalarProperty Name="entry_date" ColumnName="entry_date" />
+          <ScalarProperty Name="old_retailprice" ColumnName="old_retailprice" />
+          <ScalarProperty Name="old_costprice" ColumnName="old_costprice" />
+          <ScalarProperty Name="retailprice" ColumnName="retailprice" />
+          <ScalarProperty Name="costprice" ColumnName="costprice" />
+          <ScalarProperty Name="peices" ColumnName="peices" />
+          <ScalarProperty Name="flavour" ColumnName="flavour" />
+          <ScalarProperty Name="country" ColumnName="country" />
+          <ScalarProperty Name="barcode_print" ColumnName="barcode_print" />
+          <ScalarProperty Name="transdate" ColumnName="transdate" />
+          <ScalarProperty Name="transid" ColumnName="transid" />
+          <ScalarProperty Name="userid" ColumnName="userid" />
+          <ScalarProperty Name="sellunit" ColumnName="sellunit" />
+          <ScalarProperty Name="usage" ColumnName="usage" />
+          <ScalarProperty Name="buyunit" ColumnName="buyunit" />
+          <ScalarProperty Name="height" ColumnName="height" />
+          <ScalarProperty Name="width" ColumnName="width" />
+          <ScalarProperty Name="length" ColumnName="length" />
+          <ScalarProperty Name="weight" ColumnName="weight" />
+          <ScalarProperty Name="barcode" ColumnName="barcode" />
+          <ScalarProperty Name="originalcode" ColumnName="originalcode" />
+          <ScalarProperty Name="codingmethod" ColumnName="codingmethod" />
+          <ScalarProperty Name="unit" ColumnName="unit" />
+          <ScalarProperty Name="itemean" ColumnName="itemean" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+  </EntityContainerMapping>
+</Mapping>

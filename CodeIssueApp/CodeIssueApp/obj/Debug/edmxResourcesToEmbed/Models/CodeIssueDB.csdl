@@ -1,0 +1,129 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Schema Namespace="CodeIssueModel" Alias="Self" annotation:UseStrongSpatialTypes="false" xmlns:annotation="http://schemas.microsoft.com/ado/2009/02/edm/annotation" xmlns:customannotation="http://schemas.microsoft.com/ado/2013/11/edm/customannotation" xmlns="http://schemas.microsoft.com/ado/2009/11/edm">
+  <EntityType Name="HQ_sys_item">
+    <Key>
+      <PropertyRef Name="itemean" />
+      <PropertyRef Name="itemclass" />
+      <PropertyRef Name="section" />
+      <PropertyRef Name="itemgroup" />
+      <PropertyRef Name="department" />
+    </Key>
+    <Property Name="itemean" Type="String" MaxLength="13" FixedLength="true" Unicode="false" Nullable="false" />
+    <Property Name="itemclass" Type="Int16" Nullable="false" />
+    <Property Name="section" Type="Int16" Nullable="false" />
+    <Property Name="itemgroup" Type="Int16" Nullable="false" />
+    <Property Name="department" Type="Int16" Nullable="false" />
+    <Property Name="a_name" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+    <Property Name="l_name" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+    <Property Name="shortname" Type="String" MaxLength="16" FixedLength="false" Unicode="false" />
+    <Property Name="flavor" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+    <Property Name="brand" Type="Int16" />
+    <Property Name="producerno" Type="Int32" />
+    <Property Name="category" Type="Int16" />
+    <Property Name="referenceno" Type="String" MaxLength="30" FixedLength="true" Unicode="false" />
+    <Property Name="color" Type="Int16" />
+    <Property Name="size" Type="Decimal" Precision="7" Scale="2" />
+    <Property Name="measure" Type="Int16" />
+    <Property Name="hyper_market" Type="Int16" />
+    <Property Name="class_a" Type="Int16" />
+    <Property Name="home_delivery" Type="Int16" />
+    <Property Name="storeinterval" Type="Int16" />
+    <Property Name="shelfinterval" Type="Int16" />
+    <Property Name="goodstype" Type="Int16" />
+    <Property Name="itemtype" Type="Int16" />
+    <Property Name="profit" Type="Decimal" Precision="6" Scale="2" />
+    <Property Name="loss_rate" Type="Decimal" Precision="7" Scale="2" />
+    <Property Name="expirycheck" Type="Int16" />
+    <Property Name="class_c" Type="Int16" />
+    <Property Name="range_cal" Type="Int16" />
+    <Property Name="ordered_from" Type="Int16" />
+    <Property Name="zone" Type="Int16" />
+    <Property Name="bin_location" Type="String" MaxLength="20" FixedLength="false" Unicode="false" />
+    <Property Name="class_b" Type="Int16" />
+    <Property Name="status" Type="Int16" />
+    <Property Name="statusdate" Type="DateTime" Precision="0" />
+    <Property Name="userid" Type="Int32" />
+    <Property Name="transid" Type="Int16" />
+    <Property Name="pluupd" Type="Int16" />
+    <Property Name="transdate" Type="DateTime" Precision="0" />
+    <Property Name="purchase_date" Type="DateTime" Precision="0" />
+    <Property Name="whole_sale" Type="Int16" />
+    <Property Name="nationalty" Type="Int16" />
+    <Property Name="big_supermarket" Type="Int16" />
+    <Property Name="module_group" Type="Int16" />
+    <Property Name="module_no" Type="Int16" />
+    <Property Name="basic_item" Type="Int16" />
+    <Property Name="entry_date" Type="DateTime" Precision="0" />
+    <Property Name="active" Type="Int16" />
+    <Property Name="price_class" Type="Int16" />
+    <Property Name="transtype" Type="Int16" />
+    <Property Name="item_image" Type="String" MaxLength="100" FixedLength="false" Unicode="false" />
+    <Property Name="sales_tax" Type="Int16" />
+    <Property Name="add_tax" Type="Int16" />
+  </EntityType>
+  <EntityType Name="WARD_sys_item">
+    <Key>
+      <PropertyRef Name="itemean" />
+      <PropertyRef Name="itemclass" />
+      <PropertyRef Name="section" />
+      <PropertyRef Name="itemgroup" />
+      <PropertyRef Name="department" />
+    </Key>
+    <Property Name="itemean" Type="String" MaxLength="13" FixedLength="true" Unicode="false" Nullable="false" />
+    <Property Name="itemclass" Type="Int16" Nullable="false" />
+    <Property Name="section" Type="Int16" Nullable="false" />
+    <Property Name="itemgroup" Type="Int16" Nullable="false" />
+    <Property Name="department" Type="Int16" Nullable="false" />
+    <Property Name="a_name" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+    <Property Name="l_name" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+    <Property Name="shortname" Type="String" MaxLength="16" FixedLength="false" Unicode="false" />
+    <Property Name="flavor" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+    <Property Name="brand" Type="Int16" />
+    <Property Name="producerno" Type="Int32" />
+    <Property Name="category" Type="Int16" />
+    <Property Name="referenceno" Type="String" MaxLength="30" FixedLength="true" Unicode="false" />
+    <Property Name="color" Type="Int16" />
+    <Property Name="size" Type="Decimal" Precision="7" Scale="2" />
+    <Property Name="measure" Type="Int16" />
+    <Property Name="hyper_market" Type="Int16" />
+    <Property Name="class_a" Type="Int16" />
+    <Property Name="home_delivery" Type="Int16" />
+    <Property Name="storeinterval" Type="Int16" />
+    <Property Name="shelfinterval" Type="Int16" />
+    <Property Name="goodstype" Type="Int16" />
+    <Property Name="itemtype" Type="Int16" />
+    <Property Name="profit" Type="Decimal" Precision="6" Scale="2" />
+    <Property Name="loss_rate" Type="Decimal" Precision="7" Scale="2" />
+    <Property Name="expirycheck" Type="Int16" />
+    <Property Name="class_c" Type="Int16" />
+    <Property Name="range_cal" Type="Int16" />
+    <Property Name="ordered_from" Type="Int16" />
+    <Property Name="zone" Type="Int16" />
+    <Property Name="bin_location" Type="String" MaxLength="20" FixedLength="false" Unicode="false" />
+    <Property Name="class_b" Type="Int16" />
+    <Property Name="status" Type="Int16" />
+    <Property Name="statusdate" Type="DateTime" Precision="0" />
+    <Property Name="userid" Type="Int32" />
+    <Property Name="transid" Type="Int16" />
+    <Property Name="pluupd" Type="Int16" />
+    <Property Name="transdate" Type="DateTime" Precision="0" />
+    <Property Name="purchase_date" Type="DateTime" Precision="0" />
+    <Property Name="whole_sale" Type="Int16" />
+    <Property Name="nationalty" Type="Int16" />
+    <Property Name="big_supermarket" Type="Int16" />
+    <Property Name="module_group" Type="Int16" />
+    <Property Name="module_no" Type="Int16" />
+    <Property Name="basic_item" Type="Int16" />
+    <Property Name="entry_date" Type="DateTime" Precision="0" />
+    <Property Name="active" Type="Int16" />
+    <Property Name="price_class" Type="Int16" />
+    <Property Name="transtype" Type="Int16" />
+    <Property Name="item_image" Type="String" MaxLength="100" FixedLength="false" Unicode="false" />
+    <Property Name="sales_tax" Type="Int16" />
+    <Property Name="add_tax" Type="Int16" />
+  </EntityType>
+  <EntityContainer Name="CodeIssueEntities" annotation:LazyLoadingEnabled="true">
+    <EntitySet Name="HQ_sys_item" EntityType="Self.HQ_sys_item" />
+    <EntitySet Name="WARD_sys_item" EntityType="Self.WARD_sys_item" />
+  </EntityContainer>
+</Schema>

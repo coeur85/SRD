@@ -1,0 +1,14 @@
+C:\Users\Magdi\source\repos\RetailApp\DataBaseModel\bin\Debug\DataBaseModel.dll.config
+C:\Users\Magdi\source\repos\RetailApp\DataBaseModel\bin\Debug\DataBaseModel.dll
+C:\Users\Magdi\source\repos\RetailApp\DataBaseModel\bin\Debug\DataBaseModel.pdb
+C:\Users\Magdi\source\repos\RetailApp\DataBaseModel\bin\Debug\EntityFramework.dll
+C:\Users\Magdi\source\repos\RetailApp\DataBaseModel\bin\Debug\EntityFramework.SqlServer.dll
+C:\Users\Magdi\source\repos\RetailApp\DataBaseModel\bin\Debug\EntityFramework.xml
+C:\Users\Magdi\source\repos\RetailApp\DataBaseModel\bin\Debug\EntityFramework.SqlServer.xml
+C:\Users\Magdi\source\repos\RetailApp\DataBaseModel\obj\Debug\DataBaseModel.csprojResolveAssemblyReference.cache
+C:\Users\Magdi\source\repos\RetailApp\DataBaseModel\obj\Debug\DataBaseModel.csproj.CoreCompileInputs.cache
+C:\Users\Magdi\source\repos\RetailApp\DataBaseModel\obj\Debug\DataBaseModel.dll
+C:\Users\Magdi\source\repos\RetailApp\DataBaseModel\obj\Debug\DataBaseModel.pdb
+C:\Users\Magdi\source\repos\RetailApp\RetailApp\bin\DataBaseModel.dll.config
+C:\Users\Magdi\source\repos\RetailApp\RetailApp\bin\DataBaseModel.dll
+C:\Users\Magdi\source\repos\RetailApp\RetailApp\bin\DataBaseModel.pdb

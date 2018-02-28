@@ -1,0 +1,297 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Schema Namespace="KokiAccessorizeAppDBModel" Alias="Self" annotation:UseStrongSpatialTypes="false" xmlns:annotation="http://schemas.microsoft.com/ado/2009/02/edm/annotation" xmlns:customannotation="http://schemas.microsoft.com/ado/2013/11/edm/customannotation" xmlns="http://schemas.microsoft.com/ado/2009/11/edm">
+  <EntityType Name="Administrator">
+    <Key>
+      <PropertyRef Name="AdminID" />
+    </Key>
+    <Property Name="AdminID" Type="Int32" Nullable="false" />
+    <Property Name="LoginName" Type="String" MaxLength="50" FixedLength="false" Unicode="true" Nullable="false" />
+    <Property Name="LoginPassword" Type="String" MaxLength="50" FixedLength="false" Unicode="true" Nullable="false" />
+    <NavigationProperty Name="UserInfo" Relationship="Self.FK_Administrators_UserInfo" FromRole="Administrators" ToRole="UserInfo" />
+    <NavigationProperty Name="OrderAudits" Relationship="Self.FK_OrderAudits_Administrators" FromRole="Administrators" ToRole="OrderAudits" />
+  </EntityType>
+  <EntityType Name="Customer">
+    <Key>
+      <PropertyRef Name="CustomerID" />
+    </Key>
+    <Property Name="CustomerID" Type="Int32" Nullable="false" />
+    <Property Name="PhoneNumber" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+    <Property Name="Notes" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" />
+    <NavigationProperty Name="UserInfo" Relationship="Self.FK_Customers_UserInfo" FromRole="Customers" ToRole="UserInfo" />
+    <NavigationProperty Name="Orders" Relationship="Self.FK_Orders_Customers" FromRole="Customers" ToRole="Orders" />
+  </EntityType>
+  <EntityType Name="OrderAudit">
+    <Key>
+      <PropertyRef Name="AuditID" />
+    </Key>
+    <Property Name="AuditID" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Name="OrderID" Type="Int32" Nullable="false" />
+    <Property Name="AdminID" Type="Int32" Nullable="false" />
+    <Property Name="AuditDate" Type="DateTime" Nullable="false" Precision="0" />
+    <Property Name="NewStatusID" Type="Int32" Nullable="false" />
+    <Property Name="AdminNotes" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" />
+    <NavigationProperty Name="Administrator" Relationship="Self.FK_OrderAudits_Administrators" FromRole="OrderAudits" ToRole="Administrators" />
+    <NavigationProperty Name="Order" Relationship="Self.FK_OrderAudits_Orders" FromRole="OrderAudits" ToRole="Orders" />
+    <NavigationProperty Name="OrderStatu" Relationship="Self.FK_OrderAudits_OrderStatus" FromRole="OrderAudits" ToRole="OrderStatus" />
+  </EntityType>
+  <EntityType Name="Order">
+    <Key>
+      <PropertyRef Name="OrderID" />
+    </Key>
+    <Property Name="OrderID" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Name="CustomerID" Type="Int32" Nullable="false" />
+    <Property Name="OrderDate" Type="DateTime" Nullable="false" Precision="0" />
+    <Property Name="OrderStatusID" Type="Int32" Nullable="false" />
+    <NavigationProperty Name="Customer" Relationship="Self.FK_Orders_Customers" FromRole="Orders" ToRole="Customers" />
+    <NavigationProperty Name="OrderAudits" Relationship="Self.FK_OrderAudits_Orders" FromRole="Orders" ToRole="OrderAudits" />
+    <NavigationProperty Name="OrderStatu" Relationship="Self.FK_Orders_OrderStatus" FromRole="Orders" ToRole="OrderStatus" />
+    <NavigationProperty Name="ProductsOrders" Relationship="Self.FK_ProductsOrders_Orders" FromRole="Orders" ToRole="ProductsOrders" />
+  </EntityType>
+  <EntityType Name="OrderStatu">
+    <Key>
+      <PropertyRef Name="StatusID" />
+    </Key>
+    <Property Name="StatusID" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Name="StatusName" Type="String" MaxLength="50" FixedLength="false" Unicode="true" Nullable="false" />
+    <NavigationProperty Name="OrderAudits" Relationship="Self.FK_OrderAudits_OrderStatus" FromRole="OrderStatus" ToRole="OrderAudits" />
+    <NavigationProperty Name="Orders" Relationship="Self.FK_Orders_OrderStatus" FromRole="OrderStatus" ToRole="Orders" />
+  </EntityType>
+  <EntityType Name="ProductCategory">
+    <Key>
+      <PropertyRef Name="CategoryID" />
+    </Key>
+    <Property Name="CategoryID" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Name="CategoryName" Type="String" MaxLength="50" FixedLength="false" Unicode="true" Nullable="false" />
+    <NavigationProperty Name="Products" Relationship="Self.FK_Products_ProductCategories" FromRole="ProductCategories" ToRole="Products" />
+  </EntityType>
+  <EntityType Name="ProductPhoto">
+    <Key>
+      <PropertyRef Name="PhotoID" />
+    </Key>
+    <Property Name="PhotoID" Type="Int32" Nullable="false" />
+    <Property Name="ProductID" Type="Int32" Nullable="false" />
+    <Property Name="PhotoBase64" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" Nullable="false" />
+    <NavigationProperty Name="Product" Relationship="Self.FK_ProductPhotos_Products" FromRole="ProductPhotos" ToRole="Products" />
+  </EntityType>
+  <EntityType Name="Product">
+    <Key>
+      <PropertyRef Name="ProductID" />
+    </Key>
+    <Property Name="ProductID" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Name="ProductName" Type="String" MaxLength="200" FixedLength="false" Unicode="true" Nullable="false" />
+    <Property Name="ProductCategoryID" Type="Int32" Nullable="false" />
+    <Property Name="Price" Type="Decimal" Precision="18" Scale="2" Nullable="false" />
+    <NavigationProperty Name="ProductCategory" Relationship="Self.FK_Products_ProductCategories" FromRole="Products" ToRole="ProductCategories" />
+    <NavigationProperty Name="ProductPhotos" Relationship="Self.FK_ProductPhotos_Products" FromRole="Products" ToRole="ProductPhotos" />
+    <NavigationProperty Name="ProductsOrders" Relationship="Self.FK_ProductsOrders_Products" FromRole="Products" ToRole="ProductsOrders" />
+  </EntityType>
+  <EntityType Name="ProductsOrder">
+    <Key>
+      <PropertyRef Name="OrderID" />
+      <PropertyRef Name="ProductID" />
+    </Key>
+    <Property Name="OrderID" Type="Int32" Nullable="false" />
+    <Property Name="ProductID" Type="Int32" Nullable="false" />
+    <Property Name="Qantaty" Type="Int32" Nullable="false" />
+    <Property Name="Price" Type="Decimal" Precision="18" Scale="2" Nullable="false" />
+    <NavigationProperty Name="Order" Relationship="Self.FK_ProductsOrders_Orders" FromRole="ProductsOrders" ToRole="Orders" />
+    <NavigationProperty Name="Product" Relationship="Self.FK_ProductsOrders_Products" FromRole="ProductsOrders" ToRole="Products" />
+  </EntityType>
+  <EntityType Name="UserInfo">
+    <Key>
+      <PropertyRef Name="UserID" />
+    </Key>
+    <Property Name="UserID" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Name="FullName" Type="String" MaxLength="200" FixedLength="false" Unicode="true" Nullable="false" />
+    <NavigationProperty Name="Administrator" Relationship="Self.FK_Administrators_UserInfo" FromRole="UserInfo" ToRole="Administrators" />
+    <NavigationProperty Name="Customer" Relationship="Self.FK_Customers_UserInfo" FromRole="UserInfo" ToRole="Customers" />
+  </EntityType>
+  <Association Name="FK_Administrators_UserInfo">
+    <End Role="UserInfo" Type="Self.UserInfo" Multiplicity="1" />
+    <End Role="Administrators" Type="Self.Administrator" Multiplicity="0..1" />
+    <ReferentialConstraint>
+      <Principal Role="UserInfo">
+        <PropertyRef Name="UserID" />
+      </Principal>
+      <Dependent Role="Administrators">
+        <PropertyRef Name="AdminID" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_OrderAudits_Administrators">
+    <End Role="Administrators" Type="Self.Administrator" Multiplicity="1" />
+    <End Role="OrderAudits" Type="Self.OrderAudit" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="Administrators">
+        <PropertyRef Name="AdminID" />
+      </Principal>
+      <Dependent Role="OrderAudits">
+        <PropertyRef Name="AdminID" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_Customers_UserInfo">
+    <End Role="UserInfo" Type="Self.UserInfo" Multiplicity="1" />
+    <End Role="Customers" Type="Self.Customer" Multiplicity="0..1" />
+    <ReferentialConstraint>
+      <Principal Role="UserInfo">
+        <PropertyRef Name="UserID" />
+      </Principal>
+      <Dependent Role="Customers">
+        <PropertyRef Name="CustomerID" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_Orders_Customers">
+    <End Role="Customers" Type="Self.Customer" Multiplicity="1" />
+    <End Role="Orders" Type="Self.Order" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="Customers">
+        <PropertyRef Name="CustomerID" />
+      </Principal>
+      <Dependent Role="Orders">
+        <PropertyRef Name="CustomerID" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_OrderAudits_Orders">
+    <End Role="Orders" Type="Self.Order" Multiplicity="1" />
+    <End Role="OrderAudits" Type="Self.OrderAudit" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="Orders">
+        <PropertyRef Name="OrderID" />
+      </Principal>
+      <Dependent Role="OrderAudits">
+        <PropertyRef Name="OrderID" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_OrderAudits_OrderStatus">
+    <End Role="OrderStatus" Type="Self.OrderStatu" Multiplicity="1" />
+    <End Role="OrderAudits" Type="Self.OrderAudit" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="OrderStatus">
+        <PropertyRef Name="StatusID" />
+      </Principal>
+      <Dependent Role="OrderAudits">
+        <PropertyRef Name="NewStatusID" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_Orders_OrderStatus">
+    <End Role="OrderStatus" Type="Self.OrderStatu" Multiplicity="1" />
+    <End Role="Orders" Type="Self.Order" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="OrderStatus">
+        <PropertyRef Name="StatusID" />
+      </Principal>
+      <Dependent Role="Orders">
+        <PropertyRef Name="OrderStatusID" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_ProductsOrders_Orders">
+    <End Role="Orders" Type="Self.Order" Multiplicity="1" />
+    <End Role="ProductsOrders" Type="Self.ProductsOrder" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="Orders">
+        <PropertyRef Name="OrderID" />
+      </Principal>
+      <Dependent Role="ProductsOrders">
+        <PropertyRef Name="OrderID" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_Products_ProductCategories">
+    <End Role="ProductCategories" Type="Self.ProductCategory" Multiplicity="1" />
+    <End Role="Products" Type="Self.Product" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="ProductCategories">
+        <PropertyRef Name="CategoryID" />
+      </Principal>
+      <Dependent Role="Products">
+        <PropertyRef Name="ProductCategoryID" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_ProductPhotos_Products">
+    <End Role="Products" Type="Self.Product" Multiplicity="1" />
+    <End Role="ProductPhotos" Type="Self.ProductPhoto" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="Products">
+        <PropertyRef Name="ProductID" />
+      </Principal>
+      <Dependent Role="ProductPhotos">
+        <PropertyRef Name="ProductID" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_ProductsOrders_Products">
+    <End Role="Products" Type="Self.Product" Multiplicity="1" />
+    <End Role="ProductsOrders" Type="Self.ProductsOrder" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="Products">
+        <PropertyRef Name="ProductID" />
+      </Principal>
+      <Dependent Role="ProductsOrders">
+        <PropertyRef Name="ProductID" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <EntityContainer Name="KokiAccessorizeAppDBEntities" annotation:LazyLoadingEnabled="true">
+    <EntitySet Name="Administrators" EntityType="Self.Administrator" />
+    <EntitySet Name="Customers" EntityType="Self.Customer" />
+    <EntitySet Name="OrderAudits" EntityType="Self.OrderAudit" />
+    <EntitySet Name="Orders" EntityType="Self.Order" />
+    <EntitySet Name="OrderStatus" EntityType="Self.OrderStatu" />
+    <EntitySet Name="ProductCategories" EntityType="Self.ProductCategory" />
+    <EntitySet Name="ProductPhotos" EntityType="Self.ProductPhoto" />
+    <EntitySet Name="Products" EntityType="Self.Product" />
+    <EntitySet Name="ProductsOrders" EntityType="Self.ProductsOrder" />
+    <EntitySet Name="UserInfoes" EntityType="Self.UserInfo" />
+    <AssociationSet Name="FK_Administrators_UserInfo" Association="Self.FK_Administrators_UserInfo">
+      <End Role="UserInfo" EntitySet="UserInfoes" />
+      <End Role="Administrators" EntitySet="Administrators" />
+    </AssociationSet>
+    <AssociationSet Name="FK_OrderAudits_Administrators" Association="Self.FK_OrderAudits_Administrators">
+      <End Role="Administrators" EntitySet="Administrators" />
+      <End Role="OrderAudits" EntitySet="OrderAudits" />
+    </AssociationSet>
+    <AssociationSet Name="FK_Customers_UserInfo" Association="Self.FK_Customers_UserInfo">
+      <End Role="UserInfo" EntitySet="UserInfoes" />
+      <End Role="Customers" EntitySet="Customers" />
+    </AssociationSet>
+    <AssociationSet Name="FK_Orders_Customers" Association="Self.FK_Orders_Customers">
+      <End Role="Customers" EntitySet="Customers" />
+      <End Role="Orders" EntitySet="Orders" />
+    </AssociationSet>
+    <AssociationSet Name="FK_OrderAudits_Orders" Association="Self.FK_OrderAudits_Orders">
+      <End Role="Orders" EntitySet="Orders" />
+      <End Role="OrderAudits" EntitySet="OrderAudits" />
+    </AssociationSet>
+    <AssociationSet Name="FK_OrderAudits_OrderStatus" Association="Self.FK_OrderAudits_OrderStatus">
+      <End Role="OrderStatus" EntitySet="OrderStatus" />
+      <End Role="OrderAudits" EntitySet="OrderAudits" />
+    </AssociationSet>
+    <AssociationSet Name="FK_Orders_OrderStatus" Association="Self.FK_Orders_OrderStatus">
+      <End Role="OrderStatus" EntitySet="OrderStatus" />
+      <End Role="Orders" EntitySet="Orders" />
+    </AssociationSet>
+    <AssociationSet Name="FK_ProductsOrders_Orders" Association="Self.FK_ProductsOrders_Orders">
+      <End Role="Orders" EntitySet="Orders" />
+      <End Role="ProductsOrders" EntitySet="ProductsOrders" />
+    </AssociationSet>
+    <AssociationSet Name="FK_Products_ProductCategories" Association="Self.FK_Products_ProductCategories">
+      <End Role="ProductCategories" EntitySet="ProductCategories" />
+      <End Role="Products" EntitySet="Products" />
+    </AssociationSet>
+    <AssociationSet Name="FK_ProductPhotos_Products" Association="Self.FK_ProductPhotos_Products">
+      <End Role="Products" EntitySet="Products" />
+      <End Role="ProductPhotos" EntitySet="ProductPhotos" />
+    </AssociationSet>
+    <AssociationSet Name="FK_ProductsOrders_Products" Association="Self.FK_ProductsOrders_Products">
+      <End Role="Products" EntitySet="Products" />
+      <End Role="ProductsOrders" EntitySet="ProductsOrders" />
+    </AssociationSet>
+  </EntityContainer>
+</Schema>

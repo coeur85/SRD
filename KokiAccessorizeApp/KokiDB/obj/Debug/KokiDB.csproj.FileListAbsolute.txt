@@ -1,0 +1,13 @@
+C:\Users\Magdi\source\repos\KokiAccessorizeApp\KokiDB\bin\KokiDB.exe.config
+C:\Users\Magdi\source\repos\KokiAccessorizeApp\KokiDB\bin\KokiDB.exe
+C:\Users\Magdi\source\repos\KokiAccessorizeApp\KokiDB\bin\KokiDB.pdb
+C:\Users\Magdi\source\repos\KokiAccessorizeApp\KokiDB\bin\EntityFramework.dll
+C:\Users\Magdi\source\repos\KokiAccessorizeApp\KokiDB\bin\EntityFramework.SqlServer.dll
+C:\Users\Magdi\source\repos\KokiAccessorizeApp\KokiDB\bin\EntityFramework.xml
+C:\Users\Magdi\source\repos\KokiAccessorizeApp\KokiDB\bin\EntityFramework.SqlServer.xml
+C:\Users\Magdi\source\repos\KokiAccessorizeApp\KokiAccessorizeApp\bin\KokiDB.exe.config
+C:\Users\Magdi\source\repos\KokiAccessorizeApp\KokiAccessorizeApp\bin\KokiDB.exe
+C:\Users\Magdi\source\repos\KokiAccessorizeApp\KokiAccessorizeApp\bin\KokiDB.pdb
+C:\Users\Magdi\source\repos\KokiAccessorizeApp\KokiDB\obj\Debug\KokiDB.csproj.CoreCompileInputs.cache
+C:\Users\Magdi\source\repos\KokiAccessorizeApp\KokiDB\obj\Debug\KokiDB.exe
+C:\Users\Magdi\source\repos\KokiAccessorizeApp\KokiDB\obj\Debug\KokiDB.pdb

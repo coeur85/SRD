@@ -1,0 +1,121 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Mapping Space="C-S" xmlns="http://schemas.microsoft.com/ado/2009/11/mapping/cs">
+  <EntityContainerMapping StorageEntityContainer="CodeIssueModelStoreContainer" CdmEntityContainer="CodeIssueEntities">
+    <EntitySetMapping Name="HQ_sys_item">
+      <EntityTypeMapping TypeName="CodeIssueModel.HQ_sys_item">
+        <MappingFragment StoreEntitySet="HQ_sys_item">
+          <ScalarProperty Name="itemean" ColumnName="itemean" />
+          <ScalarProperty Name="itemclass" ColumnName="itemclass" />
+          <ScalarProperty Name="section" ColumnName="section" />
+          <ScalarProperty Name="itemgroup" ColumnName="itemgroup" />
+          <ScalarProperty Name="department" ColumnName="department" />
+          <ScalarProperty Name="a_name" ColumnName="a_name" />
+          <ScalarProperty Name="l_name" ColumnName="l_name" />
+          <ScalarProperty Name="shortname" ColumnName="shortname" />
+          <ScalarProperty Name="flavor" ColumnName="flavor" />
+          <ScalarProperty Name="brand" ColumnName="brand" />
+          <ScalarProperty Name="producerno" ColumnName="producerno" />
+          <ScalarProperty Name="category" ColumnName="category" />
+          <ScalarProperty Name="referenceno" ColumnName="referenceno" />
+          <ScalarProperty Name="color" ColumnName="color" />
+          <ScalarProperty Name="size" ColumnName="size" />
+          <ScalarProperty Name="measure" ColumnName="measure" />
+          <ScalarProperty Name="hyper_market" ColumnName="hyper_market" />
+          <ScalarProperty Name="class_a" ColumnName="class_a" />
+          <ScalarProperty Name="home_delivery" ColumnName="home_delivery" />
+          <ScalarProperty Name="storeinterval" ColumnName="storeinterval" />
+          <ScalarProperty Name="shelfinterval" ColumnName="shelfinterval" />
+          <ScalarProperty Name="goodstype" ColumnName="goodstype" />
+          <ScalarProperty Name="itemtype" ColumnName="itemtype" />
+          <ScalarProperty Name="profit" ColumnName="profit" />
+          <ScalarProperty Name="loss_rate" ColumnName="loss_rate" />
+          <ScalarProperty Name="expirycheck" ColumnName="expirycheck" />
+          <ScalarProperty Name="class_c" ColumnName="class_c" />
+          <ScalarProperty Name="range_cal" ColumnName="range_cal" />
+          <ScalarProperty Name="ordered_from" ColumnName="ordered_from" />
+          <ScalarProperty Name="zone" ColumnName="zone" />
+          <ScalarProperty Name="bin_location" ColumnName="bin_location" />
+          <ScalarProperty Name="class_b" ColumnName="class_b" />
+          <ScalarProperty Name="status" ColumnName="status" />
+          <ScalarProperty Name="statusdate" ColumnName="statusdate" />
+          <ScalarProperty Name="userid" ColumnName="userid" />
+          <ScalarProperty Name="transid" ColumnName="transid" />
+          <ScalarProperty Name="pluupd" ColumnName="pluupd" />
+          <ScalarProperty Name="transdate" ColumnName="transdate" />
+          <ScalarProperty Name="purchase_date" ColumnName="purchase_date" />
+          <ScalarProperty Name="whole_sale" ColumnName="whole_sale" />
+          <ScalarProperty Name="nationalty" ColumnName="nationalty" />
+          <ScalarProperty Name="big_supermarket" ColumnName="big_supermarket" />
+          <ScalarProperty Name="module_group" ColumnName="module_group" />
+          <ScalarProperty Name="module_no" ColumnName="module_no" />
+          <ScalarProperty Name="basic_item" ColumnName="basic_item" />
+          <ScalarProperty Name="entry_date" ColumnName="entry_date" />
+          <ScalarProperty Name="active" ColumnName="active" />
+          <ScalarProperty Name="price_class" ColumnName="price_class" />
+          <ScalarProperty Name="transtype" ColumnName="transtype" />
+          <ScalarProperty Name="item_image" ColumnName="item_image" />
+          <ScalarProperty Name="sales_tax" ColumnName="sales_tax" />
+          <ScalarProperty Name="add_tax" ColumnName="add_tax" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="WARD_sys_item">
+      <EntityTypeMapping TypeName="CodeIssueModel.WARD_sys_item">
+        <MappingFragment StoreEntitySet="WARD_sys_item">
+          <ScalarProperty Name="itemean" ColumnName="itemean" />
+          <ScalarProperty Name="itemclass" ColumnName="itemclass" />
+          <ScalarProperty Name="section" ColumnName="section" />
+          <ScalarProperty Name="itemgroup" ColumnName="itemgroup" />
+          <ScalarProperty Name="department" ColumnName="department" />
+          <ScalarProperty Name="a_name" ColumnName="a_name" />
+          <ScalarProperty Name="l_name" ColumnName="l_name" />
+          <ScalarProperty Name="shortname" ColumnName="shortname" />
+          <ScalarProperty Name="flavor" ColumnName="flavor" />
+          <ScalarProperty Name="brand" ColumnName="brand" />
+          <ScalarProperty Name="producerno" ColumnName="producerno" />
+          <ScalarProperty Name="category" ColumnName="category" />
+          <ScalarProperty Name="referenceno" ColumnName="referenceno" />
+          <ScalarProperty Name="color" ColumnName="color" />
+          <ScalarProperty Name="size" ColumnName="size" />
+          <ScalarProperty Name="measure" ColumnName="measure" />
+          <ScalarProperty Name="hyper_market" ColumnName="hyper_market" />
+          <ScalarProperty Name="class_a" ColumnName="class_a" />
+          <ScalarProperty Name="home_delivery" ColumnName="home_delivery" />
+          <ScalarProperty Name="storeinterval" ColumnName="storeinterval" />
+          <ScalarProperty Name="shelfinterval" ColumnName="shelfinterval" />
+          <ScalarProperty Name="goodstype" ColumnName="goodstype" />
+          <ScalarProperty Name="itemtype" ColumnName="itemtype" />
+          <ScalarProperty Name="profit" ColumnName="profit" />
+          <ScalarProperty Name="loss_rate" ColumnName="loss_rate" />
+          <ScalarProperty Name="expirycheck" ColumnName="expirycheck" />
+          <ScalarProperty Name="class_c" ColumnName="class_c" />
+          <ScalarProperty Name="range_cal" ColumnName="range_cal" />
+          <ScalarProperty Name="ordered_from" ColumnName="ordered_from" />
+          <ScalarProperty Name="zone" ColumnName="zone" />
+          <ScalarProperty Name="bin_location" ColumnName="bin_location" />
+          <ScalarProperty Name="class_b" ColumnName="class_b" />
+          <ScalarProperty Name="status" ColumnName="status" />
+          <ScalarProperty Name="statusdate" ColumnName="statusdate" />
+          <ScalarProperty Name="userid" ColumnName="userid" />
+          <ScalarProperty Name="transid" ColumnName="transid" />
+          <ScalarProperty Name="pluupd" ColumnName="pluupd" />
+          <ScalarProperty Name="transdate" ColumnName="transdate" />
+          <ScalarProperty Name="purchase_date" ColumnName="purchase_date" />
+          <ScalarProperty Name="whole_sale" ColumnName="whole_sale" />
+          <ScalarProperty Name="nationalty" ColumnName="nationalty" />
+          <ScalarProperty Name="big_supermarket" ColumnName="big_supermarket" />
+          <ScalarProperty Name="module_group" ColumnName="module_group" />
+          <ScalarProperty Name="module_no" ColumnName="module_no" />
+          <ScalarProperty Name="basic_item" ColumnName="basic_item" />
+          <ScalarProperty Name="entry_date" ColumnName="entry_date" />
+          <ScalarProperty Name="active" ColumnName="active" />
+          <ScalarProperty Name="price_class" ColumnName="price_class" />
+          <ScalarProperty Name="transtype" ColumnName="transtype" />
+          <ScalarProperty Name="item_image" ColumnName="item_image" />
+          <ScalarProperty Name="sales_tax" ColumnName="sales_tax" />
+          <ScalarProperty Name="add_tax" ColumnName="add_tax" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+  </EntityContainerMapping>
+</Mapping>

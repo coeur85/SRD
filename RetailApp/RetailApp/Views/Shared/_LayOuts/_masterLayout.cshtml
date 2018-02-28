@@ -1,0 +1,316 @@
+﻿
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0">
+    <meta name="description" content="">
+    <meta name="author" content="">
+    @*<link rel="shortcut icon" href="Theme/images/favicon.png" type="image/png">*@
+   
+    <title>@ViewBag.Title</title>
+    
+
+    @System.Web.Optimization.Styles.Render("~/App/Css")
+
+    
+    @System.Web.Optimization.Scripts.Render("~/App/Js")
+</head>
+
+
+<body>
+
+    <!-- Preloader -->
+    <div id="preloader">
+        <div id="status"><i class="fa fa-spinner fa-spin"></i></div>
+    </div>
+    <section>
+
+        <div class="leftpanel">
+
+            <div class="logopanel">
+                <h1><span>[</span> Ealan Najd .Co <span>]</span></h1>
+            </div><!-- logopanel -->
+            <!-- leftpanelinner -->
+            <div class="leftpanelinner">
+
+                <!-- This is only visible to small devices -->
+                <div class="visible-xs hidden-sm hidden-md hidden-lg">
+                    <div class="media userlogged">
+                        <img alt="" src="~/Theme/images/photos/loggeduser.png" class="media-object">
+                        <div class="media-body">
+                            <h4>Name</h4>
+                            <span>NAme</span>
+                        </div>
+                    </div>
+
+                    <h5 class="sidebartitle actitle">الحساب</h5>
+                    <ul class="nav nav-pills nav-stacked nav-bracket mb30">
+                        <li><a href="@Url.Action("index","Profile")"><i class="fa fa-user"></i> <span>Profile</span></a></li>
+                        <li><a href="@Url.Action("LogOut","Login")"><i class="fa fa-sign-out"></i> <span>تسجيل خروج</span></a></li>
+                    </ul>
+                </div>
+
+               
+                <ul class="nav nav-pills nav-stacked nav-bracket">
+                    <li class="nav-parent">
+                    <a href="@Url.Action("index","Home")"><i class="fa fa-home"></i> <span>الرئيسية</span></a>
+                    </li>
+
+
+                   
+
+
+                    <li class="nav-parent">
+                        <a href=""><i class="fa fa-spinner"></i> <span>البيات الاساسيه</span></a>
+                        <ul class="children">
+                            <li><a href="@Url.Action("index","Banks")"><i class="fa fa-caret-right"></i>البنوك</a></li>
+
+                            <li><a href="@Url.Action("index","Branch")"><i class="fa fa-caret-right"></i> <span>الفروع</span></a></li>
+                        </ul>
+                    </li>
+                    <li class="nav-parent">
+                        <a href=""><i class="fa fa-edit"></i> <span>العملاء</span></a>
+                        <ul class="children">
+                            <li><a href="@Url.Action("Accepted","LoanRequest")"><i class="fa fa-caret-right"></i> طلبات جديدة</a></li>
+                            <li><a href="@Url.Action("inCompelete","LoanRequest")"><i class="fa fa-caret-right"></i> مندوبين غير مكتمل</a></li>
+                            
+                        </ul>
+                    </li>
+
+                    <li class="nav-parent">
+                        <a href=""><i class="glyphicon glyphicon-remove-circle"></i> <span>طلبات مرفوضة</span></a>
+                        <ul class="children">
+                            <li><a href="@Url.Action("DeclinedByApp","LoanRequest")"><i class="fa fa-caret-right"></i> من البرنامج</a></li>
+                            <li><a href="@Url.Action("DeclinedByEmp","LoanRequest")"><i class="fa fa-caret-right"></i> من الفروع</a></li>
+
+                        </ul>
+                    </li>
+
+                    <li class="nav-parent">
+                        <a href=""><i class="fa  fa-folder-open-o"></i> <span>العقود</span></a>
+                        <ul class="children">
+                            <li><a href="@Url.Action("index","LoanRequest")"><i class="fa fa-caret-right"></i> جميع العقود</a></li>                 
+                            <li><a href="@Url.Action("Sent2Branch","LoanRequest")"><i class="fa fa-caret-right"></i>عقود لدي الفروع </a></li>
+                            <li><a href="@Url.Action("Sent2Bank","LoanRequest")"><i class="fa fa-caret-right"></i> عقود ارسلت الي البنك</a></li>
+                            <li><a href="@Url.Action("ReceivedFromBank","LoanRequest")"><i class="fa fa-caret-right"></i> عقود رد عليها البنك</a></li>
+                            <li><a href="@Url.Action("Compeleted","LoanRequest")"><i class="fa fa-caret-right"></i> عقود منتهية</a></li>
+                        </ul>
+                    </li>
+
+
+                    <li class="nav-parent">
+                        <a href=""><i class="fa fa-user"></i> <span>الموظفين</span></a>
+                        <ul class="children">
+                            <li><a href="@Url.Action("index","Employe")"><i class="fa fa-caret-right"></i>مديرين و الموظفين</a></li>
+                            <li><a href="@Url.Action("index","SalesRepresentatives")"><i class="fa fa-caret-right"></i> المندوبين</a></li>
+                            <li><a href="@Url.Action("index","BankRepresentatives")"><i class="fa fa-caret-right"></i> موظفين البنوك</a></li>
+
+
+                        </ul>
+                    </li>
+
+
+
+                    <li class="nav-parent">
+                        <a href=""><i class="fa fa-user"></i> <span>المحاسبة</span></a>
+                        <ul class="children" style="display: none;">
+                            <li><a href="@Url.Action("AccedptedAndFinished","LoanRequest")"><i class="fa fa-caret-right"></i>سند قبض</a></li>
+                            <li><a href="@Url.Action("index","Recepit")"><i class="fa fa-caret-right"></i> سند صرف</a></li>
+                            <li><a href="#"><i class="fa fa-caret-right"></i> تحليل محاسبي</a></li>
+
+
+
+                        </ul>
+                    </li>
+
+
+                </ul>
+
+                <div class="infosummary">
+
+                    <ul>
+                        <li>
+                            <div class="datainfo">
+                                <span class="text-muted">Daily Traffic</span>
+                                <h4>630, 201</h4>
+                            </div>
+                            <div id="sidebar-chart" class="chart"></div>
+                        </li>
+                        <li>
+                            <div class="datainfo">
+                                <span class="text-muted">Average Users</span>
+                                <h4>1, 332, 801</h4>
+                            </div>
+                            <div id="sidebar-chart2" class="chart"></div>
+                        </li>
+                        <li>
+                            <div class="datainfo">
+                                <span class="text-muted">Disk Usage</span>
+                                <h4>82.2%</h4>
+                            </div>
+                            <div id="sidebar-chart3" class="chart"></div>
+                        </li>
+                        <li>
+                            <div class="datainfo">
+                                <span class="text-muted">CPU Usage</span>
+                                <h4>140.05 - 32</h4>
+                            </div>
+                            <div id="sidebar-chart4" class="chart"></div>
+                        </li>
+                        <li>
+                            <div class="datainfo">
+                                <span class="text-muted">Memory Usage</span>
+                                <h4>32.2%</h4>
+                            </div>
+                            <div id="sidebar-chart5" class="chart"></div>
+                        </li>
+                    </ul>
+                </div><!-- infosummary -->
+
+            </div>
+        
+        </div>
+        <!-- leftpanel -->
+
+        <div class="mainpanel">
+
+            <div class="headerbar">
+
+                <a class="menutoggle"><i class="fa fa-bars"></i></a>
+
+                @*<form class="searchform" action="index.html" method="post">
+                    <input type="text" class="form-control" name="keyword" placeholder="Search here..." />
+                </form>*@
+
+                <div class="header-right">
+                    <ul class="headermenu">
+
+                        <li>
+                            <div class="btn-group">
+                                <button type="button" class="btn btn-default dropdown-toggle" data-toggle="dropdown">
+                                    <img src="~/Theme/images/photos/loggeduser.png" alt="" />
+                                 Name
+                                    <span class="caret"></span>
+                                </button>
+                                <ul class="dropdown-menu dropdown-menu-usermenu">
+
+                                    <li><a href="@Url.Action("index","Profile")"><i class="glyphicon glyphicon-cog"></i> تعديل بياناتي</a></li>
+
+                                    <li><a href="@Url.Action("LogOut","Login")"><i class="glyphicon glyphicon-log-out"></i> تسجيل خروج</a></li>
+                                </ul>
+                            </div>
+                        </li>
+                        
+                    </ul>
+                </div><!-- header-right -->
+                <div class="header-right">
+
+                    <ul class="headermenu">
+                        <li>
+                            <div class="btn-group">
+                                <button type="button" class="btn btn-default dropdown-toggle" data-toggle="dropdown" disabled>
+                                  فرع: 
+                                </button>
+                               
+                            </div>
+                        </li>
+
+                    </ul>
+
+
+                    
+                    </div>
+                </div><!-- headerbar -->
+
+
+            <div class="pageheader">
+                <h2><i class="fa fa-home"></i>@ViewBag.Title</h2>
+
+            </div>
+
+            <div class="contentpanel">
+
+                <div class="row">
+                    @RenderBody()
+                    </div>
+                </div>
+            </div>
+        </section>
+
+
+
+
+
+
+
+
+    <script type="text/javascript">
+
+        jQuery("form").validate({
+            highlight: function (element) {
+                jQuery(element).closest('.form-group').removeClass('has-success').addClass('has-error');
+            },
+            success: function (element) {
+                jQuery(element).closest('.form-group').removeClass('has-error');
+            },
+
+
+        });
+       
+        jQuery(".dataTable").dataTable(
+            {
+                "oLanguage":
+                {
+                    
+                "sProcessing": "جارٍ التحميل...",
+                "sLengthMenu": "أظهر _MENU_ مدخلات",
+                "sZeroRecords": "لم يعثر على أية سجلات",
+                "sInfo": "إظهار _START_ إلى _END_ من أصل _TOTAL_ مدخل",
+                "sInfoEmpty": "يعرض 0 إلى 0 من أصل 0 سجل",
+                "sInfoFiltered": "(منتقاة من مجموع _MAX_ مُدخل)",
+                "sInfoPostFix": "",
+                "sSearch": "ابحث:",
+                "sUrl": "",
+                "oPaginate": {
+                    "sFirst": "الأول",
+                    "sPrevious": "السابق",
+                    "sNext": "التالي",
+                    "sLast": "الأخير"
+                
+            }
+                }
+            });
+
+
+        $(document).ready(function () {
+
+            var msgText = "";
+
+            if (msgText != '')
+            {
+
+
+                jQuery.gritter.add({
+                    title: 'تنــبــيـــه',
+                    text: msgText,
+                    class_name: 'growl-info',
+                    // image: '../images/screen.png',
+                    sticky:false,
+                    time: ''
+                });
+            }
+                
+            });
+
+        $(document).ready(function () {
+            $('[data-toggle="tooltip"]').tooltip();
+        });
+       
+    </script>
+    </body>
+
+
+
+
+</html>

@@ -1,0 +1,118 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Schema Namespace="RetailModel" Alias="Self" annotation:UseStrongSpatialTypes="false" xmlns:annotation="http://schemas.microsoft.com/ado/2009/02/edm/annotation" xmlns:customannotation="http://schemas.microsoft.com/ado/2013/11/edm/customannotation" xmlns="http://schemas.microsoft.com/ado/2009/11/edm">
+  <EntityContainer Name="RetailEntities" annotation:LazyLoadingEnabled="true">
+    <EntitySet Name="sys_item" EntityType="RetailModel.sys_item" />
+    <EntitySet Name="sys_item_units" EntityType="RetailModel.sys_item_units" />
+    <AssociationSet Name="sys_itemsys_item_units" Association="RetailModel.sys_itemsys_item_units">
+      <End Role="sys_item" EntitySet="sys_item" />
+      <End Role="sys_item_units" EntitySet="sys_item_units" />
+    </AssociationSet>
+  </EntityContainer>
+  <EntityType Name="sys_item">
+    <Key>
+      <PropertyRef Name="itemean" />
+    </Key>
+    <Property Name="itemean" Type="String" Nullable="false" MaxLength="13" FixedLength="true" Unicode="false" />
+    <Property Name="itemclass" Type="Int16" Nullable="false" />
+    <Property Name="section" Type="Int16" Nullable="false" />
+    <Property Name="itemgroup" Type="Int16" Nullable="false" />
+    <Property Name="department" Type="Int16" Nullable="false" />
+    <Property Name="a_name" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+    <Property Name="l_name" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+    <Property Name="shortname" Type="String" MaxLength="16" FixedLength="false" Unicode="false" />
+    <Property Name="flavor" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+    <Property Name="brand" Type="Int16" />
+    <Property Name="producerno" Type="Int32" />
+    <Property Name="category" Type="Int16" />
+    <Property Name="referenceno" Type="String" MaxLength="30" FixedLength="true" Unicode="false" />
+    <Property Name="color" Type="Int16" />
+    <Property Name="size" Type="Decimal" Precision="7" Scale="2" />
+    <Property Name="measure" Type="Int16" />
+    <Property Name="hyper_market" Type="Int16" />
+    <Property Name="class_a" Type="Int16" />
+    <Property Name="home_delivery" Type="Int16" />
+    <Property Name="storeinterval" Type="Int16" />
+    <Property Name="shelfinterval" Type="Int16" />
+    <Property Name="goodstype" Type="Int16" />
+    <Property Name="itemtype" Type="Int16" />
+    <Property Name="profit" Type="Decimal" Precision="6" Scale="2" />
+    <Property Name="loss_rate" Type="Decimal" Precision="7" Scale="2" />
+    <Property Name="expirycheck" Type="Int16" />
+    <Property Name="class_c" Type="Int16" />
+    <Property Name="range_cal" Type="Int16" />
+    <Property Name="ordered_from" Type="Int16" />
+    <Property Name="zone" Type="Int16" />
+    <Property Name="bin_location" Type="String" MaxLength="20" FixedLength="false" Unicode="false" />
+    <Property Name="class_b" Type="Int16" />
+    <Property Name="status" Type="Int16" />
+    <Property Name="statusdate" Type="DateTime" Precision="0" />
+    <Property Name="userid" Type="Int32" />
+    <Property Name="transid" Type="Int16" />
+    <Property Name="pluupd" Type="Int16" />
+    <Property Name="transdate" Type="DateTime" Precision="0" />
+    <Property Name="purchase_date" Type="DateTime" Precision="0" />
+    <Property Name="whole_sale" Type="Int16" />
+    <Property Name="nationalty" Type="Int16" />
+    <Property Name="big_supermarket" Type="Int16" />
+    <Property Name="module_group" Type="Int16" />
+    <Property Name="module_no" Type="Int16" />
+    <Property Name="basic_item" Type="Int16" />
+    <Property Name="entry_date" Type="DateTime" Precision="0" />
+    <Property Name="active" Type="Int16" />
+    <Property Name="price_class" Type="Int16" />
+    <Property Name="transtype" Type="Int16" />
+    <Property Name="item_image" Type="String" MaxLength="100" FixedLength="false" Unicode="false" />
+    <Property Name="sales_tax" Type="Int16" />
+    <Property Name="add_tax" Type="Int16" />
+    <NavigationProperty Name="sys_item_units" Relationship="RetailModel.sys_itemsys_item_units" FromRole="sys_item" ToRole="sys_item_units" />
+  </EntityType>
+  <EntityType Name="sys_item_units">
+    <Key>
+      <PropertyRef Name="barcode" />
+    </Key>
+    <Property Name="itemean" Type="String" Nullable="false" MaxLength="13" FixedLength="true" Unicode="false" />
+    <Property Name="unit" Type="Int16" Nullable="false" />
+    <Property Name="codingmethod" Type="Int16" Nullable="false" />
+    <Property Name="originalcode" Type="String" Nullable="false" MaxLength="20" FixedLength="true" Unicode="false" />
+    <Property Name="barcode" Type="String" Nullable="false" MaxLength="20" FixedLength="true" Unicode="false" />
+    <Property Name="weight" Type="Decimal" Precision="12" Scale="3" />
+    <Property Name="length" Type="Decimal" Precision="12" Scale="3" />
+    <Property Name="width" Type="Decimal" Precision="12" Scale="3" />
+    <Property Name="height" Type="Decimal" Precision="12" Scale="3" />
+    <Property Name="buyunit" Type="Int16" Nullable="false" />
+    <Property Name="usage" Type="Int16" Nullable="false" />
+    <Property Name="sellunit" Type="Int16" Nullable="false" />
+    <Property Name="userid" Type="Int32" />
+    <Property Name="transid" Type="Int16" />
+    <Property Name="transdate" Type="DateTime" Precision="0" />
+    <Property Name="barcode_print" Type="Int16" />
+    <Property Name="country" Type="Int16" />
+    <Property Name="flavour" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+    <Property Name="peices" Type="Int16" />
+    <Property Name="costprice" Type="Decimal" Precision="10" Scale="3" />
+    <Property Name="retailprice" Type="Decimal" Precision="10" Scale="3" />
+    <Property Name="old_costprice" Type="Decimal" Precision="10" Scale="3" />
+    <Property Name="old_retailprice" Type="Decimal" Precision="10" Scale="3" />
+    <Property Name="entry_date" Type="DateTime" Precision="3" />
+    <Property Name="velocity_code" Type="Int16" />
+    <Property Name="peicesno" Type="Decimal" Precision="10" Scale="3" />
+    <Property Name="discountvalue" Type="Decimal" Precision="10" Scale="3" />
+    <Property Name="suggested_price" Type="Decimal" Precision="10" Scale="3" />
+    <Property Name="policyid" Type="Int16" />
+    <Property Name="wholeprice" Type="Decimal" Precision="10" Scale="3" />
+    <Property Name="last_modified_time" Type="DateTime" Precision="3" />
+    <NavigationProperty Name="sys_item" Relationship="RetailModel.sys_itemsys_item_units" FromRole="sys_item_units" ToRole="sys_item" />
+  </EntityType>
+  <Association Name="sys_itemsys_item_units">
+    <End Type="RetailModel.sys_item" Role="sys_item" Multiplicity="1" />
+    <End Type="RetailModel.sys_item_units" Role="sys_item_units" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="sys_item">
+        <PropertyRef Name="itemean" />
+      </Principal>
+      <Dependent Role="sys_item_units">
+        <PropertyRef Name="itemean" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+</Schema>

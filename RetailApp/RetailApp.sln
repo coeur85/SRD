@@ -1,0 +1,31 @@
+﻿
+Microsoft Visual Studio Solution File, Format Version 12.00
+# Visual Studio 15
+VisualStudioVersion = 15.0.27004.2002
+MinimumVisualStudioVersion = 10.0.40219.1
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "RetailApp", "RetailApp\RetailApp.csproj", "{F9707332-23A5-40DB-9302-1178B7DAFA76}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "DataBaseModel", "DataBaseModel\DataBaseModel.csproj", "{083D5EFE-9243-4EA9-A8FF-B07F96833480}"
+EndProject
+Global
+	GlobalSection(SolutionConfigurationPlatforms) = preSolution
+		Debug|Any CPU = Debug|Any CPU
+		Release|Any CPU = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(ProjectConfigurationPlatforms) = postSolution
+		{F9707332-23A5-40DB-9302-1178B7DAFA76}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{F9707332-23A5-40DB-9302-1178B7DAFA76}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{F9707332-23A5-40DB-9302-1178B7DAFA76}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{F9707332-23A5-40DB-9302-1178B7DAFA76}.Release|Any CPU.Build.0 = Release|Any CPU
+		{083D5EFE-9243-4EA9-A8FF-B07F96833480}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{083D5EFE-9243-4EA9-A8FF-B07F96833480}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{083D5EFE-9243-4EA9-A8FF-B07F96833480}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{083D5EFE-9243-4EA9-A8FF-B07F96833480}.Release|Any CPU.Build.0 = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(SolutionProperties) = preSolution
+		HideSolutionNode = FALSE
+	EndGlobalSection
+	GlobalSection(ExtensibilityGlobals) = postSolution
+		SolutionGuid = {EFAD80F0-2F53-4381-BECB-5171C8EBF0DA}
+	EndGlobalSection
+EndGlobal

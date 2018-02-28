@@ -1,0 +1,35 @@
+﻿
+@model IEnumerable<DataBaseModel.Entity.sys_item_units>
+
+@{
+    ViewBag.Title = "الاصناف";
+    Layout = "~/Views/Shared/_LayOuts/_masterLayout.cshtml";
+}
+
+
+<table class="table dataTable" >
+    <thead>
+        <tr>
+            <th>الكود</th>
+            <th>الاسم عربي</th>
+            <th>الباركود</th>
+            <th>سعر التكلفه</th>
+            <th>سعر البيع</th>
+        </tr>
+    </thead>
+    <tbody>
+
+        @foreach (var item in Model)
+        {
+            <tr>
+                <td>@item.itemean</td>
+                <td>@item.sys_item.a_name</td>
+                <td>@item.barcode</td>
+                <td>@item.costprice</td>
+                <td>@item.retailprice</td>
+              
+            </tr>
+        }
+
+    </tbody>
+</table>

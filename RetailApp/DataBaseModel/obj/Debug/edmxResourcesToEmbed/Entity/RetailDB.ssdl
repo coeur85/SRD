@@ -1,0 +1,100 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Schema Namespace="RetailModel.Store" Provider="System.Data.SqlClient" ProviderManifestToken="2012" Alias="Self" xmlns:store="http://schemas.microsoft.com/ado/2007/12/edm/EntityStoreSchemaGenerator" xmlns:customannotation="http://schemas.microsoft.com/ado/2013/11/edm/customannotation" xmlns="http://schemas.microsoft.com/ado/2009/11/edm/ssdl">
+  <EntityType Name="sys_item">
+    <Key>
+      <PropertyRef Name="itemean" />
+    </Key>
+    <Property Name="itemean" Type="char" MaxLength="13" Nullable="false" />
+    <Property Name="itemclass" Type="smallint" Nullable="false" />
+    <Property Name="section" Type="smallint" Nullable="false" />
+    <Property Name="itemgroup" Type="smallint" Nullable="false" />
+    <Property Name="department" Type="smallint" Nullable="false" />
+    <Property Name="a_name" Type="varchar" MaxLength="50" />
+    <Property Name="l_name" Type="varchar" MaxLength="50" />
+    <Property Name="shortname" Type="varchar" MaxLength="16" />
+    <Property Name="flavor" Type="varchar" MaxLength="50" />
+    <Property Name="brand" Type="smallint" />
+    <Property Name="producerno" Type="int" />
+    <Property Name="category" Type="smallint" />
+    <Property Name="referenceno" Type="char" MaxLength="30" />
+    <Property Name="color" Type="smallint" />
+    <Property Name="size" Type="decimal" Precision="7" Scale="2" />
+    <Property Name="measure" Type="smallint" />
+    <Property Name="hyper_market" Type="smallint" />
+    <Property Name="class_a" Type="smallint" />
+    <Property Name="home_delivery" Type="smallint" />
+    <Property Name="storeinterval" Type="smallint" />
+    <Property Name="shelfinterval" Type="smallint" />
+    <Property Name="goodstype" Type="smallint" />
+    <Property Name="itemtype" Type="smallint" />
+    <Property Name="profit" Type="decimal" Precision="6" Scale="2" />
+    <Property Name="loss_rate" Type="decimal" Precision="7" Scale="2" />
+    <Property Name="expirycheck" Type="smallint" />
+    <Property Name="class_c" Type="smallint" />
+    <Property Name="range_cal" Type="smallint" />
+    <Property Name="ordered_from" Type="smallint" />
+    <Property Name="zone" Type="smallint" />
+    <Property Name="bin_location" Type="varchar" MaxLength="20" />
+    <Property Name="class_b" Type="smallint" />
+    <Property Name="status" Type="smallint" />
+    <Property Name="statusdate" Type="smalldatetime" />
+    <Property Name="userid" Type="int" />
+    <Property Name="transid" Type="smallint" />
+    <Property Name="pluupd" Type="smallint" />
+    <Property Name="transdate" Type="smalldatetime" />
+    <Property Name="purchase_date" Type="smalldatetime" />
+    <Property Name="whole_sale" Type="smallint" />
+    <Property Name="nationalty" Type="smallint" />
+    <Property Name="big_supermarket" Type="smallint" />
+    <Property Name="module_group" Type="smallint" />
+    <Property Name="module_no" Type="smallint" />
+    <Property Name="basic_item" Type="smallint" />
+    <Property Name="entry_date" Type="smalldatetime" />
+    <Property Name="active" Type="smallint" />
+    <Property Name="price_class" Type="smallint" />
+    <Property Name="transtype" Type="smallint" />
+    <Property Name="item_image" Type="varchar" MaxLength="100" />
+    <Property Name="sales_tax" Type="smallint" />
+    <Property Name="add_tax" Type="smallint" />
+  </EntityType>
+  <EntityType Name="sys_item_units">
+    <Key>
+      <PropertyRef Name="barcode" />
+    </Key>
+    <Property Name="itemean" Type="char" MaxLength="13" Nullable="false" />
+    <Property Name="unit" Type="smallint" Nullable="false" />
+    <Property Name="codingmethod" Type="smallint" Nullable="false" />
+    <Property Name="originalcode" Type="char" MaxLength="20" Nullable="false" />
+    <Property Name="barcode" Type="char" MaxLength="20" Nullable="false" />
+    <Property Name="weight" Type="decimal" Precision="12" Scale="3" />
+    <Property Name="length" Type="decimal" Precision="12" Scale="3" />
+    <Property Name="width" Type="decimal" Precision="12" Scale="3" />
+    <Property Name="height" Type="decimal" Precision="12" Scale="3" />
+    <Property Name="buyunit" Type="smallint" Nullable="false" />
+    <Property Name="usage" Type="smallint" Nullable="false" />
+    <Property Name="sellunit" Type="smallint" Nullable="false" />
+    <Property Name="userid" Type="int" />
+    <Property Name="transid" Type="smallint" />
+    <Property Name="transdate" Type="smalldatetime" />
+    <Property Name="barcode_print" Type="smallint" />
+    <Property Name="country" Type="smallint" />
+    <Property Name="flavour" Type="varchar" MaxLength="50" />
+    <Property Name="peices" Type="smallint" />
+    <Property Name="costprice" Type="decimal" Precision="10" Scale="3" />
+    <Property Name="retailprice" Type="decimal" Precision="10" Scale="3" />
+    <Property Name="old_costprice" Type="decimal" Precision="10" Scale="3" />
+    <Property Name="old_retailprice" Type="decimal" Precision="10" Scale="3" />
+    <Property Name="entry_date" Type="datetime" />
+    <Property Name="velocity_code" Type="smallint" />
+    <Property Name="peicesno" Type="decimal" Precision="10" Scale="3" />
+    <Property Name="discountvalue" Type="decimal" Precision="10" Scale="3" />
+    <Property Name="suggested_price" Type="decimal" Precision="10" Scale="3" />
+    <Property Name="policyid" Type="smallint" />
+    <Property Name="wholeprice" Type="decimal" Precision="10" Scale="3" />
+    <Property Name="last_modified_time" Type="datetime" />
+  </EntityType>
+  <EntityContainer Name="RetailModelStoreContainer">
+    <EntitySet Name="sys_item" EntityType="Self.sys_item" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="sys_item_units" EntityType="Self.sys_item_units" Schema="dbo" store:Type="Tables" />
+  </EntityContainer>
+</Schema>

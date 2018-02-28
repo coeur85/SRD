@@ -1,0 +1,24 @@
+﻿
+
+
+.userinfoTbaleImg
+{
+    vertical-align: middle;
+    margin-right: 5px;
+    width: 26px;
+    -moz-border-radius: 50px;
+    -webkit-border-radius: 50px;
+    border-radius: 50px;
+}
+
+.aRed {
+    color: #E91E63;
+}
+.thumbnail {
+    width: 175px;
+    margin: 0 auto;
+}
+
+.table-primary tfoot tr th {
+    background-color: #5b929a;
+}
