@@ -5,7 +5,7 @@ VisualStudioVersion = 15.0.27004.2002
 MinimumVisualStudioVersion = 10.0.40219.1
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "KokiAccessorizeApp", "KokiAccessorizeApp\KokiAccessorizeApp.csproj", "{47E4B461-2D8A-4FE9-8E96-BE2316893367}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "KokiDB", "KokiDB\KokiDB.csproj", "{AF8F8532-19F6-4381-BDA8-B6079CA7DF7E}"
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "KokiDB", "KokiDB\KokiDB.csproj", "{6E853971-FA57-4738-853D-0A5633B95F0F}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
@@ -17,10 +17,10 @@ Global
 		{47E4B461-2D8A-4FE9-8E96-BE2316893367}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{47E4B461-2D8A-4FE9-8E96-BE2316893367}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{47E4B461-2D8A-4FE9-8E96-BE2316893367}.Release|Any CPU.Build.0 = Release|Any CPU
-		{AF8F8532-19F6-4381-BDA8-B6079CA7DF7E}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
-		{AF8F8532-19F6-4381-BDA8-B6079CA7DF7E}.Debug|Any CPU.Build.0 = Debug|Any CPU
-		{AF8F8532-19F6-4381-BDA8-B6079CA7DF7E}.Release|Any CPU.ActiveCfg = Release|Any CPU
-		{AF8F8532-19F6-4381-BDA8-B6079CA7DF7E}.Release|Any CPU.Build.0 = Release|Any CPU
+		{6E853971-FA57-4738-853D-0A5633B95F0F}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{6E853971-FA57-4738-853D-0A5633B95F0F}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{6E853971-FA57-4738-853D-0A5633B95F0F}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{6E853971-FA57-4738-853D-0A5633B95F0F}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE

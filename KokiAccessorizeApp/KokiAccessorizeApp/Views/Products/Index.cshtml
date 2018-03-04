@@ -1,0 +1,64 @@
+﻿
+@model IEnumerable<KokiDB.Product>
+
+@{
+    ViewBag.Title = "Products";
+    ViewBag.PageName = "All Products";
+    Layout = "~/Views/Shared/_MasterLayout/_WebPages.cshtml";
+}
+
+
+<div class="card">
+    <div class="card-header">
+        <strong class="card-title">Showing All Your Products</strong>
+    </div>
+    <div class="card-body">
+        <table  class="table table-striped table-bordered dataTable">
+            <thead>
+                <tr>
+                    <th>#</th>
+                    <th>Name</th>
+                    <th>Category</th>
+                    <th>Price</th>
+                    <th>Options</th>
+                </tr>
+            </thead>
+            <tbody>
+                @foreach (var item in Model)
+                {
+                    <tr>
+                        <td>#@item.ProductID</td>
+                        <td>
+                            <a href="@Url.Action("Details","Products", new { id = item.ProductID })" class="btn-link">
+                                @item.ProductName
+                            </a>
+                        </td>
+                        <td>@item.ProductCategory.CategoryName</td>
+                        <td>@item.Price L.E</td>
+                        <td class="text-center">
+                            <div class="col-md-4">
+                            <a href="@Url.Action("index","ProductPhoto", new {  id = item.ProductID})" class="btn-outline-warning">
+                                <i class="fa fa-picture-o"></i>
+                            </a>
+                                </div>
+                            <div class="col-md-4">
+                                <a href="@Url.Action("Details","Products", new {  id = item.ProductID})" class="btn-outline-info">
+                                    <i class="fa fa-info-circle"></i>
+
+                                </a>
+                                </div>
+                            <div class="col-md-4   ">
+                                <a href="@Url.Action("Delete","Products", new {  id = item.ProductID}) " class="btn-outline-danger">
+                                    <i class="fa fa-trash-o"></i>
+
+                                </a>
+                            </div>
+</td>
+                    </tr>
+                }
+            </tbody>
+        </table>
+    </div>
+</div>
+
+

@@ -48,6 +48,16 @@
     <Reference Include="Antlr3.Runtime, Version=3.4.1.9004, Culture=neutral, PublicKeyToken=eb42632606e9261f, processorArchitecture=MSIL">
       <HintPath>..\packages\Antlr.3.4.1.9004\lib\Antlr3.Runtime.dll</HintPath>
     </Reference>
+    <Reference Include="EntityFramework, Version=6.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089, processorArchitecture=MSIL">
+      <HintPath>..\packages\EntityFramework.6.1.3\lib\net45\EntityFramework.dll</HintPath>
+    </Reference>
+    <Reference Include="EntityFramework.SqlServer, Version=6.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089, processorArchitecture=MSIL">
+      <HintPath>..\packages\EntityFramework.6.1.3\lib\net45\EntityFramework.SqlServer.dll</HintPath>
+    </Reference>
+    <Reference Include="KokiDB, Version=1.0.0.0, Culture=neutral, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>bin\KokiDB.dll</HintPath>
+    </Reference>
     <Reference Include="Microsoft.CodeDom.Providers.DotNetCompilerPlatform, Version=1.0.7.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL">
       <HintPath>..\packages\Microsoft.CodeDom.Providers.DotNetCompilerPlatform.1.0.7\lib\net45\Microsoft.CodeDom.Providers.DotNetCompilerPlatform.dll</HintPath>
     </Reference>
@@ -145,7 +155,10 @@
     <Content Include="Theme\assets\fonts\themify.svg" />
     <Content Include="Theme\assets\js\chartjs.min.js" />
     <Content Include="Theme\assets\js\dashboard.js" />
+    <Content Include="Theme\assets\js\Globalint.js" />
     <Content Include="Theme\assets\js\index.html" />
+    <Content Include="Theme\assets\js\jquery.validate.js" />
+    <Content Include="Theme\assets\js\jquery.validate.min.js" />
     <Content Include="Theme\assets\js\less.min.js" />
     <Content Include="Theme\assets\js\lib\chart-js\Chart.bundle.js" />
     <Content Include="Theme\assets\js\lib\chart-js\chartjs-init.js" />
@@ -209,8 +222,10 @@
     <Content Include="Theme\assets\js\popper.min.js" />
     <Content Include="Theme\assets\js\selectFx.js" />
     <Content Include="Theme\assets\js\vendor\index.html" />
+    <Content Include="Theme\assets\js\vendor\jquery-1.11.1.min.js" />
     <Content Include="Theme\assets\js\vendor\jquery-1.11.3.min.js" />
     <Content Include="Theme\assets\js\vendor\jquery-2.1.4.min.js" />
+    <Content Include="Theme\assets\js\vendor\jquery-ui-1.10.3.min.js" />
     <Content Include="Theme\assets\js\vendor\modernizr-2.8.3.min.js" />
     <Content Include="Theme\assets\js\widgets.js" />
     <Content Include="Theme\assets\scss\bootstrap\bootstrap-grid.css" />
@@ -998,16 +1013,55 @@
     <Content Include="Theme\images\placeholder.png" />
     <Content Include="Theme\images\twitter_corner_black.png" />
     <Content Include="Theme\images\twitter_corner_blue.png" />
+    <Content Include="Theme\jQueryPlugins\unitegallery\images\button-close.png" />
+    <Content Include="Theme\jQueryPlugins\unitegallery\images\cover-grid.png" />
+    <Content Include="Theme\jQueryPlugins\unitegallery\images\icon-link32.png" />
+    <Content Include="Theme\jQueryPlugins\unitegallery\images\icon-play32.png" />
+    <Content Include="Theme\jQueryPlugins\unitegallery\images\icon-zoom32.png" />
+    <Content Include="Theme\jQueryPlugins\unitegallery\images\lightbox-arrow-left.png" />
+    <Content Include="Theme\jQueryPlugins\unitegallery\images\lightbox-arrow-right.png" />
+    <Content Include="Theme\jQueryPlugins\unitegallery\images\lightbox-icon-close-compact.png" />
+    <Content Include="Theme\jQueryPlugins\unitegallery\images\lightbox-icon-close-compact2.png" />
+    <Content Include="Theme\jQueryPlugins\unitegallery\images\lightbox-icon-close.png" />
+    <Content Include="Theme\jQueryPlugins\unitegallery\images\loader-black1.gif" />
+    <Content Include="Theme\jQueryPlugins\unitegallery\images\loader-black2.gif" />
+    <Content Include="Theme\jQueryPlugins\unitegallery\images\loader-black3.gif" />
+    <Content Include="Theme\jQueryPlugins\unitegallery\images\loader-black4.gif" />
+    <Content Include="Theme\jQueryPlugins\unitegallery\images\loader-black5.gif" />
+    <Content Include="Theme\jQueryPlugins\unitegallery\images\loader-black6.gif" />
+    <Content Include="Theme\jQueryPlugins\unitegallery\images\loader-black7.gif" />
+    <Content Include="Theme\jQueryPlugins\unitegallery\images\loader-white1.gif" />
+    <Content Include="Theme\jQueryPlugins\unitegallery\images\loader-white2.gif" />
+    <Content Include="Theme\jQueryPlugins\unitegallery\images\loader-white3.gif" />
+    <Content Include="Theme\jQueryPlugins\unitegallery\images\loader-white4.gif" />
+    <Content Include="Theme\jQueryPlugins\unitegallery\images\loader-white5.gif" />
+    <Content Include="Theme\jQueryPlugins\unitegallery\images\loader-white6.gif" />
+    <Content Include="Theme\jQueryPlugins\unitegallery\images\loader-white7.gif" />
+    <Content Include="Theme\jQueryPlugins\unitegallery\images\loader.gif" />
+    <Content Include="Theme\jQueryPlugins\unitegallery\images\loader_bright.gif" />
+    <Content Include="Theme\jQueryPlugins\unitegallery\images\loader_skype_trans.gif" />
+    <Content Include="Theme\jQueryPlugins\unitegallery\images\not_loaded.png" />
+    <Content Include="Theme\jQueryPlugins\unitegallery\images\play-button-round.png" />
+    <Content Include="Theme\jQueryPlugins\unitegallery\images\play-button-square.png" />
+    <Content Include="Theme\jQueryPlugins\unitegallery\images\transparent.png" />
+    <Content Include="Theme\jQueryPlugins\unitegallery\ug-theme-tiles.js" />
+    <Content Include="Theme\jQueryPlugins\unitegallery\unite-gallery.css" />
+    <Content Include="Theme\jQueryPlugins\unitegallery\unitegallery.min.js" />
     <Content Include="Web.config" />
   </ItemGroup>
   <ItemGroup>
     <Compile Include="App_Start\BundelConfig.cs" />
     <Compile Include="App_Start\RouteConfig.cs" />
     <Compile Include="App_Start\WebApiConfig.cs" />
+    <Compile Include="Controllers\Api\PhotosController.cs" />
     <Compile Include="Controllers\Web\HomeController.cs" />
+    <Compile Include="Controllers\Web\ProductPhotoController.cs" />
+    <Compile Include="Controllers\Web\ProductsController.cs" />
     <Compile Include="Global.asax.cs">
       <DependentUpon>Global.asax</DependentUpon>
     </Compile>
+    <Compile Include="Models\DB\WepApp.cs" />
+    <Compile Include="Models\_App\_app.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
   </ItemGroup>
   <ItemGroup>
@@ -1303,6 +1357,14 @@
     <Content Include="Views\Shared\_MasterLayout\_MasterPage.cshtml" />
     <Content Include="Views\Shared\_MasterLayout\_WebPages.cshtml" />
     <Content Include="Views\Home\Index.cshtml" />
+    <Content Include="Views\Shared\_Infomsg.cshtml" />
+    <Content Include="Views\Products\Index.cshtml" />
+    <Content Include="Views\Products\Details.cshtml" />
+    <Content Include="Views\Products\Create.cshtml" />
+    <Content Include="Views\Products\Edit.cshtml" />
+    <Content Include="Views\Shared\EditorTemplates\Product.cshtml" />
+    <Content Include="Views\ProductPhoto\Index.cshtml" />
+    <Content Include="Views\Products\Delete.cshtml" />
     <None Include="Web.Debug.config">
       <DependentUpon>Web.config</DependentUpon>
     </None>
@@ -1312,13 +1374,6 @@
   </ItemGroup>
   <ItemGroup>
     <Folder Include="App_Data\" />
-    <Folder Include="Models\" />
-  </ItemGroup>
-  <ItemGroup>
-    <ProjectReference Include="..\KokiDB\KokiDB.csproj">
-      <Project>{af8f8532-19f6-4381-bda8-b6079ca7df7e}</Project>
-      <Name>KokiDB</Name>
-    </ProjectReference>
   </ItemGroup>
   <PropertyGroup>
     <VisualStudioVersion Condition="'$(VisualStudioVersion)' == ''">10.0</VisualStudioVersion>

@@ -1,0 +1,57 @@
+﻿@model  WepApp.WebPagesModels.DeleteProduct
+
+@{
+    ViewBag.Title = "Delete " + Model.Product.ProductName;
+    Layout = "~/Views/Shared/_MasterLayout/_WebPages.cshtml";
+    ViewBag.PageName = "Are you sure?";
+    ViewBag.formMode = "details";
+}
+
+
+
+@using (Html.BeginForm((string)ViewBag.Contoler, "Products", FormMethod.Post, new { enctype = "multipart/form-data" }))
+{
+    @Html.AntiForgeryToken()
+    <div class="card">
+        <div class="card-header">
+            <strong>@Model.Product.ProductName</strong>
+        </div>
+
+        @Html.EditorFor(x=> x.Product)
+
+
+        <div class="card-footer">
+           
+                @if (Model.CanBeDleted == false)
+                {
+                    <button type="submit" class="btn btn-danger btn-sm" disabled>
+                        <i class="fa fa-trash-o"></i> Delete
+                    </button>
+
+                }
+                else
+                {
+
+                    <button type="submit" class="btn btn-danger btn-sm" >
+                        <i class="fa fa-trash-o"></i> Delete
+                    </button>
+
+                }
+
+
+
+                <a class="btn btn-dark btn-sm" href="@Url.Action("index", "Products")">
+                    <i class="fa fa-reply-all"></i> All Products
+                </a>
+           
+            @if (!Model.CanBeDleted)
+            {
+                
+                    <strong class="ti-help btn-outline-danger">Can not be deleted!</strong>
+               
+
+            }
+
+        </div>
+    </div>
+}

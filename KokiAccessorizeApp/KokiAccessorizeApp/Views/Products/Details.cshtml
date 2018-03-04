@@ -1,0 +1,86 @@
+﻿@model WepApp.WebPagesModels.ProductDetails
+
+    @{
+        ViewBag.Title = Model.Product.ProductName + " Details";
+        ViewBag.PageName = "Products information";
+        Layout = "~/Views/Shared/_MasterLayout/_WebPages.cshtml";
+        ViewBag.formMode = "details";
+    }
+
+
+    <div class="card">
+    <div class="card-header">
+        <strong>@Model.Product.ProductName</strong>
+    </div>
+    @Html.EditorFor(x=> x.Product)
+    <div class="card-footer">
+            <a class="btn btn-dark btn-sm" href="@Url.Action("index","Products")">
+                <i class="fa fa-reply-all"></i> All Products
+            </a>
+           
+            <a class="btn btn-primary btn-sm" href="@Url.Action("Edit","Products", new { id= Model.Product.ProductID })">
+                <i class="fa fa-pencil"></i> Edit
+            </a>
+           
+        <a class="btn btn-warning btn-sm" href="@Url.Action("index","ProductPhoto", new { id= Model.Product.ProductID })">
+            <i class="fa fa-picture-o"></i> Photos
+        </a>
+
+
+        </div>
+</div>
+
+    <div class="card">
+    <div class="card-header">
+        <strong>Sales</strong>
+    </div>
+    <div class="card-body card-block">
+        <div class="col-md-4">
+            <div class="card">
+                <div class="card-body">
+                    <div class="stat-widget-one">
+                        <div class="stat-icon dib"><i class="fa fa-money text-success border-success"></i></div>
+                        <div class="stat-content dib">
+                            <div class="stat-text">Total Sales</div>
+                            <div class="stat-digit">@Model.TotalsSales</div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+       
+        <div class="col-md-4">
+            <div class="card">
+                <div class="card-body">
+                    <div class="stat-widget-one">
+                        <div class="stat-icon dib"><i class="fa fa-shopping-cart text-primary border-primary"></i></div>
+                        <div class="stat-content dib">
+                            <div class="stat-text">Total Orders</div>
+                            <div class="stat-digit">@Model.TotalOrders</div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+       
+        <div class="col-md-4">
+            <div class="card">
+                <div class="card-body">
+                    <div class="stat-widget-one">
+                        <div class="stat-icon dib"><i class="fa fa-group text-warning border-warning">
+                                                       
+                              </i></div>
+                        <div class="stat-content dib">
+                            <div class="stat-text">Total Customers</div>
+                            <div class="stat-digit">@Model.TotalCustomers</div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    
+</div>
+
+

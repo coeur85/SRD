@@ -11,6 +11,9 @@ namespace KokiAccessorizeApp.Controllers.Web
         // GET: Home
         public ActionResult Index()
         {
+
+            _App.ui.Message.addSuccess("test ok");
+            _App.ui.Message.addError("add error");
             return View();
         }
     }

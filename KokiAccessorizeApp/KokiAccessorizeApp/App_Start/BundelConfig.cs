@@ -7,13 +7,13 @@ namespace KokiAccessorizeApp
     public static class BundelConfig
     {
 
-       // private static readonly string BaseUrl = System.Configuration.ConfigurationManager.AppSettings["CdnBaseUrl"];
-        public static void RegesterBundels(BundleCollection bundels) 
+        // private static readonly string BaseUrl = System.Configuration.ConfigurationManager.AppSettings["CdnBaseUrl"];
+        public static void RegesterBundels(BundleCollection bundels)
         {
 
 
 
-           // bundels.Add( new )
+            // bundels.Add( new )
 
             bundels.Add(new StyleBundle("~/App/Css").Include(
               "~/Theme/assets/css/normalize.css",
@@ -25,7 +25,7 @@ namespace KokiAccessorizeApp
                 //css/animate.css
                 "~/Theme/assets/css/animate.css",
               "~/Theme/assets/scss/style.css",
-             // "~/Theme/assets/css/lib/vector-map/jqvmap.min.css",
+               "~/Theme/assets/css/lib/datatable/dataTables.bootstrap.min.css",
                "~/Theme/assets/css/fonts.google.apis.css"
                ));
 
@@ -33,27 +33,32 @@ namespace KokiAccessorizeApp
 
             bundels.Add(new ScriptBundle("~/App/Js").Include(
 
-                 "~/Theme/assets/js/vendor/jquery-2.1.4.min.js",
-                 "~/Theme/assets/js/popper.min.js",
-                 "~/Theme/assets/js/plugins.js",
-                 "~/Theme/assets/js/main.js",
-                "~/Theme/assets/js/lib/chart-js/Chart.bundle.js"
-                // "~/Theme/assets/js/dashboard.js",
-             //  "~/Theme/assets/js/widgets.js"
-                 //"~/Theme/assets/js/lib/vector-map/jquery.vmap.js",
-                 //"~/Theme/js/jquery.cookies.js",
-                 //"~/Theme/js/flot/jquery.flot.min.js",
-                 //"~/Theme/js/flot/jquery.flot.resize.min.js",
-                 //"~/Theme/js/flot/jquery.flot.spline.min.js",
-                 //"~/Theme/js/morris.min.js",
-                 //"~/Theme/js/raphael-2.1.0.min.js",
-                 //"~/Theme/js/custom.js",
-                 //"~/Theme/js/jquery.validate.min.js",
-                 //"~/Theme/js/jquery.datatables.min.js",
-                 //"~/Theme/js/jquery.gritter.min.js",
-                 //"~/Theme/js/bootstrap-toggle.min.js"
-          //    "~/Theme/js/toggles.min.js",
-          //   "~/Theme/js/gmaps.js"
+                 "~/Theme/assets/js/vendor/jquery-1.11.1.min.js",
+                    "~/Theme/assets/js/vendor/jquery-ui-1.10.3.min.js",
+                "~/Theme/assets/js/popper.min.js",
+                "~/Theme/assets/js/plugins.js",
+             //    "~/Theme/assets/js/main.js",
+            //    "~/Theme/assets/js/lib/chart-js/Chart.bundle.js",
+                 "~/Theme/assets/js/lib/data-table/datatables.min.js",
+                 "~/Theme/assets/js/lib/data-table/dataTables.bootstrap.min.js",
+              //     "~/Theme/assets/js/lib/data-table/dataTables.buttons.min.js",
+              //      "~/Theme/assets/js/lib/data-table/buttons.bootstrap.min.js",
+                //     "~/Theme/assets/js/lib/data-table/jszip.min.js",
+               //       "~/Theme/assets/js/lib/data-table/pdfmake.min.js",
+               //        "~/Theme/assets/js/lib/data-table/vfs_fonts.js",
+               //         "~/Theme/assets/js/lib/data-table/buttons.html5.min.js",
+                //        "~/Theme/assets/js/lib/data-table/buttons.print.min.js",
+                //        "~/Theme/assets/js/lib/data-table/buttons.colVis.min.js",
+                 //       "~/Theme/assets/js/lib/data-table/datatables-init.js",
+                      "~/Theme/assets/js/jquery.validate.min.js",
+                         "~/Theme/assets/js/Globalint.js"
+
+
+
+
+
+
+
 
 
 
@@ -62,7 +67,7 @@ namespace KokiAccessorizeApp
 
          ));
 
-           BundleTable.EnableOptimizations = false ;
+            BundleTable.EnableOptimizations = false;
 
         }
 

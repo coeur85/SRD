@@ -4,16 +4,15 @@
   <PropertyGroup>
     <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
     <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
-    <ProjectGuid>{AF8F8532-19F6-4381-BDA8-B6079CA7DF7E}</ProjectGuid>
-    <OutputType>Exe</OutputType>
+    <ProjectGuid>{6E853971-FA57-4738-853D-0A5633B95F0F}</ProjectGuid>
+    <OutputType>Library</OutputType>
+    <AppDesignerFolder>Properties</AppDesignerFolder>
     <RootNamespace>KokiDB</RootNamespace>
     <AssemblyName>KokiDB</AssemblyName>
     <TargetFrameworkVersion>v4.6.1</TargetFrameworkVersion>
     <FileAlignment>512</FileAlignment>
-    <AutoGenerateBindingRedirects>true</AutoGenerateBindingRedirects>
   </PropertyGroup>
   <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
-    <PlatformTarget>AnyCPU</PlatformTarget>
     <DebugSymbols>true</DebugSymbols>
     <DebugType>full</DebugType>
     <Optimize>false</Optimize>
@@ -23,7 +22,6 @@
     <WarningLevel>4</WarningLevel>
   </PropertyGroup>
   <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|AnyCPU' ">
-    <PlatformTarget>AnyCPU</PlatformTarget>
     <DebugType>pdbonly</DebugType>
     <Optimize>true</Optimize>
     <OutputPath>bin\Release\</OutputPath>
@@ -31,65 +29,6 @@
     <ErrorReport>prompt</ErrorReport>
     <WarningLevel>4</WarningLevel>
   </PropertyGroup>
-  <ItemGroup>
-    <None Include="App.config" />
-    <EntityDeploy Include="KokiAccessorizeDB.edmx">
-      <Generator>EntityModelCodeGenerator</Generator>
-      <LastGenOutput>KokiAccessorizeDB.Designer.cs</LastGenOutput>
-    </EntityDeploy>
-    <None Include="KokiAccessorizeDB.edmx.diagram">
-      <DependentUpon>KokiAccessorizeDB.edmx</DependentUpon>
-    </None>
-    <None Include="packages.config" />
-  </ItemGroup>
-  <ItemGroup>
-    <Compile Include="Administrator.cs">
-      <DependentUpon>KokiAccessorizeDB.tt</DependentUpon>
-    </Compile>
-    <Compile Include="Class1.cs" />
-    <Compile Include="Customer.cs">
-      <DependentUpon>KokiAccessorizeDB.tt</DependentUpon>
-    </Compile>
-    <Compile Include="KokiAccessorizeDB.Context.cs">
-      <AutoGen>True</AutoGen>
-      <DesignTime>True</DesignTime>
-      <DependentUpon>KokiAccessorizeDB.Context.tt</DependentUpon>
-    </Compile>
-    <Compile Include="KokiAccessorizeDB.cs">
-      <AutoGen>True</AutoGen>
-      <DesignTime>True</DesignTime>
-      <DependentUpon>KokiAccessorizeDB.tt</DependentUpon>
-    </Compile>
-    <Compile Include="KokiAccessorizeDB.Designer.cs">
-      <AutoGen>True</AutoGen>
-      <DesignTime>True</DesignTime>
-      <DependentUpon>KokiAccessorizeDB.edmx</DependentUpon>
-    </Compile>
-    <Compile Include="Order.cs">
-      <DependentUpon>KokiAccessorizeDB.tt</DependentUpon>
-    </Compile>
-    <Compile Include="OrderAudit.cs">
-      <DependentUpon>KokiAccessorizeDB.tt</DependentUpon>
-    </Compile>
-    <Compile Include="OrderStatu.cs">
-      <DependentUpon>KokiAccessorizeDB.tt</DependentUpon>
-    </Compile>
-    <Compile Include="Product.cs">
-      <DependentUpon>KokiAccessorizeDB.tt</DependentUpon>
-    </Compile>
-    <Compile Include="ProductCategory.cs">
-      <DependentUpon>KokiAccessorizeDB.tt</DependentUpon>
-    </Compile>
-    <Compile Include="ProductPhoto.cs">
-      <DependentUpon>KokiAccessorizeDB.tt</DependentUpon>
-    </Compile>
-    <Compile Include="ProductsOrder.cs">
-      <DependentUpon>KokiAccessorizeDB.tt</DependentUpon>
-    </Compile>
-    <Compile Include="UserInfo.cs">
-      <DependentUpon>KokiAccessorizeDB.tt</DependentUpon>
-    </Compile>
-  </ItemGroup>
   <ItemGroup>
     <Reference Include="EntityFramework, Version=6.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089, processorArchitecture=MSIL">
       <HintPath>..\packages\EntityFramework.6.1.3\lib\net45\EntityFramework.dll</HintPath>
@@ -99,21 +38,87 @@
     </Reference>
     <Reference Include="System" />
     <Reference Include="System.ComponentModel.DataAnnotations" />
-    <Reference Include="System.Data" />
+    <Reference Include="System.Core" />
     <Reference Include="System.Runtime.Serialization" />
     <Reference Include="System.Security" />
+    <Reference Include="System.Xml.Linq" />
+    <Reference Include="System.Data.DataSetExtensions" />
+    <Reference Include="Microsoft.CSharp" />
+    <Reference Include="System.Data" />
+    <Reference Include="System.Net.Http" />
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
-    <Content Include="KokiAccessorizeDB.Context.tt">
+    <Compile Include="Administrator.cs">
+      <DependentUpon>KokiDB.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Customer.cs">
+      <DependentUpon>KokiDB.tt</DependentUpon>
+    </Compile>
+    <Compile Include="KokiDB.Context.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>KokiDB.Context.tt</DependentUpon>
+    </Compile>
+    <Compile Include="KokiDB.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>KokiDB.tt</DependentUpon>
+    </Compile>
+    <Compile Include="KokiDB.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>KokiDB.edmx</DependentUpon>
+    </Compile>
+    <Compile Include="Order.cs">
+      <DependentUpon>KokiDB.tt</DependentUpon>
+    </Compile>
+    <Compile Include="OrderAudit.cs">
+      <DependentUpon>KokiDB.tt</DependentUpon>
+    </Compile>
+    <Compile Include="OrderStatu.cs">
+      <DependentUpon>KokiDB.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Product.cs">
+      <DependentUpon>KokiDB.tt</DependentUpon>
+    </Compile>
+    <Compile Include="ProductCategory.cs">
+      <DependentUpon>KokiDB.tt</DependentUpon>
+    </Compile>
+    <Compile Include="ProductPhoto.cs">
+      <DependentUpon>KokiDB.tt</DependentUpon>
+    </Compile>
+    <Compile Include="ProductsOrder.cs">
+      <DependentUpon>KokiDB.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Properties\AssemblyInfo.cs" />
+    <Compile Include="UserInfo.cs">
+      <DependentUpon>KokiDB.tt</DependentUpon>
+    </Compile>
+  </ItemGroup>
+  <ItemGroup>
+    <EntityDeploy Include="KokiDB.edmx">
+      <Generator>EntityModelCodeGenerator</Generator>
+      <LastGenOutput>KokiDB.Designer.cs</LastGenOutput>
+    </EntityDeploy>
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="App.Config" />
+    <None Include="KokiDB.edmx.diagram">
+      <DependentUpon>KokiDB.edmx</DependentUpon>
+    </None>
+    <None Include="packages.config" />
+  </ItemGroup>
+  <ItemGroup>
+    <Content Include="KokiDB.Context.tt">
       <Generator>TextTemplatingFileGenerator</Generator>
-      <LastGenOutput>KokiAccessorizeDB.Context.cs</LastGenOutput>
-      <DependentUpon>KokiAccessorizeDB.edmx</DependentUpon>
+      <LastGenOutput>KokiDB.Context.cs</LastGenOutput>
+      <DependentUpon>KokiDB.edmx</DependentUpon>
     </Content>
-    <Content Include="KokiAccessorizeDB.tt">
+    <Content Include="KokiDB.tt">
       <Generator>TextTemplatingFileGenerator</Generator>
-      <DependentUpon>KokiAccessorizeDB.edmx</DependentUpon>
-      <LastGenOutput>KokiAccessorizeDB.cs</LastGenOutput>
+      <DependentUpon>KokiDB.edmx</DependentUpon>
+      <LastGenOutput>KokiDB.cs</LastGenOutput>
     </Content>
   </ItemGroup>
   <ItemGroup>
