@@ -14,6 +14,7 @@ namespace KokiDB
     
     public partial class ProductsOrder
     {
+        public int POID { get; set; }
         public int OrderID { get; set; }
         public int ProductID { get; set; }
         public int Qantaty { get; set; }

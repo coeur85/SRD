@@ -52,6 +52,7 @@
     <Compile Include="Administrator.cs">
       <DependentUpon>KokiDB.tt</DependentUpon>
     </Compile>
+    <Compile Include="Class1.cs" />
     <Compile Include="Customer.cs">
       <DependentUpon>KokiDB.tt</DependentUpon>
     </Compile>

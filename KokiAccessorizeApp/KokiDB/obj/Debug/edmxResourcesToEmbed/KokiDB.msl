@@ -76,21 +76,22 @@
         </MappingFragment>
       </EntityTypeMapping>
     </EntitySetMapping>
-    <EntitySetMapping Name="ProductsOrders">
-      <EntityTypeMapping TypeName="KokiAccessorizeAppDBModel.ProductsOrder">
-        <MappingFragment StoreEntitySet="ProductsOrders">
-          <ScalarProperty Name="OrderID" ColumnName="OrderID" />
-          <ScalarProperty Name="ProductID" ColumnName="ProductID" />
-          <ScalarProperty Name="Qantaty" ColumnName="Qantaty" />
-          <ScalarProperty Name="Price" ColumnName="Price" />
-        </MappingFragment>
-      </EntityTypeMapping>
-    </EntitySetMapping>
     <EntitySetMapping Name="UserInfoes">
       <EntityTypeMapping TypeName="KokiAccessorizeAppDBModel.UserInfo">
         <MappingFragment StoreEntitySet="UserInfo">
           <ScalarProperty Name="UserID" ColumnName="UserID" />
           <ScalarProperty Name="FullName" ColumnName="FullName" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="ProductsOrders">
+      <EntityTypeMapping TypeName="KokiAccessorizeAppDBModel.ProductsOrder">
+        <MappingFragment StoreEntitySet="ProductsOrders">
+          <ScalarProperty Name="Price" ColumnName="Price" />
+          <ScalarProperty Name="Qantaty" ColumnName="Qantaty" />
+          <ScalarProperty Name="ProductID" ColumnName="ProductID" />
+          <ScalarProperty Name="OrderID" ColumnName="OrderID" />
+          <ScalarProperty Name="POID" ColumnName="POID" />
         </MappingFragment>
       </EntityTypeMapping>
     </EntitySetMapping>

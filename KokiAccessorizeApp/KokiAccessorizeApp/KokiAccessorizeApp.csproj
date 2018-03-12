@@ -1013,6 +1013,9 @@
     <Content Include="Theme\images\placeholder.png" />
     <Content Include="Theme\images\twitter_corner_black.png" />
     <Content Include="Theme\images\twitter_corner_blue.png" />
+    <Content Include="Theme\jQueryPlugins\Select\chosen-sprite.png" />
+    <Content Include="Theme\jQueryPlugins\Select\chosen.jquery.min.js" />
+    <Content Include="Theme\jQueryPlugins\Select\chosen.min.css" />
     <Content Include="Theme\jQueryPlugins\unitegallery\images\button-close.png" />
     <Content Include="Theme\jQueryPlugins\unitegallery\images\cover-grid.png" />
     <Content Include="Theme\jQueryPlugins\unitegallery\images\icon-link32.png" />
@@ -1055,8 +1058,10 @@
     <Compile Include="App_Start\WebApiConfig.cs" />
     <Compile Include="Controllers\Api\PhotosController.cs" />
     <Compile Include="Controllers\Web\HomeController.cs" />
+    <Compile Include="Controllers\Web\OrdersController.cs" />
     <Compile Include="Controllers\Web\ProductPhotoController.cs" />
     <Compile Include="Controllers\Web\ProductsController.cs" />
+    <Compile Include="Controllers\Web\ProductsOrdersController.cs" />
     <Compile Include="Global.asax.cs">
       <DependentUpon>Global.asax</DependentUpon>
     </Compile>
@@ -1365,6 +1370,11 @@
     <Content Include="Views\Shared\EditorTemplates\Product.cshtml" />
     <Content Include="Views\ProductPhoto\Index.cshtml" />
     <Content Include="Views\Products\Delete.cshtml" />
+    <Content Include="Views\Orders\Create.cshtml" />
+    <Content Include="Views\Orders\Edit.cshtml" />
+    <Content Include="Views\ProductsOrders\Index.cshtml" />
+    <Content Include="Views\Shared\EditorTemplates\ProductsOrder.cshtml" />
+    <Content Include="Views\ProductsOrders\Create.cshtml" />
     <None Include="Web.Debug.config">
       <DependentUpon>Web.config</DependentUpon>
     </None>

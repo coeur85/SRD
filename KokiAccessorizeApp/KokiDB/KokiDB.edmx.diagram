@@ -13,7 +13,6 @@
         <EntityTypeShape EntityType="KokiAccessorizeAppDBModel.ProductCategory" Width="1.5" PointX="3" PointY="10.75" IsExpanded="true" />
         <EntityTypeShape EntityType="KokiAccessorizeAppDBModel.ProductPhoto" Width="1.5" PointX="7.5" PointY="10.625" IsExpanded="true" />
         <EntityTypeShape EntityType="KokiAccessorizeAppDBModel.Product" Width="1.5" PointX="5.25" PointY="10.375" IsExpanded="true" />
-        <EntityTypeShape EntityType="KokiAccessorizeAppDBModel.ProductsOrder" Width="1.5" PointX="7.5" PointY="5.375" IsExpanded="true" />
         <EntityTypeShape EntityType="KokiAccessorizeAppDBModel.UserInfo" Width="1.5" PointX="0.75" PointY="3.25" IsExpanded="true" />
         <AssociationConnector Association="KokiAccessorizeAppDBModel.FK_Administrators_UserInfo" ManuallyRouted="false" />
         <AssociationConnector Association="KokiAccessorizeAppDBModel.FK_OrderAudits_Administrators" ManuallyRouted="false" />
@@ -22,10 +21,11 @@
         <AssociationConnector Association="KokiAccessorizeAppDBModel.FK_OrderAudits_Orders" ManuallyRouted="false" />
         <AssociationConnector Association="KokiAccessorizeAppDBModel.FK_OrderAudits_OrderStatus" ManuallyRouted="false" />
         <AssociationConnector Association="KokiAccessorizeAppDBModel.FK_Orders_OrderStatus" ManuallyRouted="false" />
-        <AssociationConnector Association="KokiAccessorizeAppDBModel.FK_ProductsOrders_Orders" ManuallyRouted="false" />
         <AssociationConnector Association="KokiAccessorizeAppDBModel.FK_Products_ProductCategories" ManuallyRouted="false" />
         <AssociationConnector Association="KokiAccessorizeAppDBModel.FK_ProductPhotos_Products" ManuallyRouted="false" />
-        <AssociationConnector Association="KokiAccessorizeAppDBModel.FK_ProductsOrders_Products" ManuallyRouted="false" />
+        <EntityTypeShape EntityType="KokiAccessorizeAppDBModel.ProductsOrder" Width="1.5" PointX="7.5" PointY="6.875" />
+        <AssociationConnector Association="KokiAccessorizeAppDBModel.FK_ProductsOrders_Orders" />
+        <AssociationConnector Association="KokiAccessorizeAppDBModel.FK_ProductsOrders_Products" />
       </Diagram>
     </edmx:Diagrams>
   </edmx:Designer>

@@ -26,7 +26,8 @@ namespace KokiAccessorizeApp
                 "~/Theme/assets/css/animate.css",
               "~/Theme/assets/scss/style.css",
                "~/Theme/assets/css/lib/datatable/dataTables.bootstrap.min.css",
-               "~/Theme/assets/css/fonts.google.apis.css"
+               "~/Theme/assets/css/fonts.google.apis.css",
+               "~/Theme/jQueryPlugins/Select/chosen.min.css"
                ));
 
 
@@ -41,15 +42,16 @@ namespace KokiAccessorizeApp
             //    "~/Theme/assets/js/lib/chart-js/Chart.bundle.js",
                  "~/Theme/assets/js/lib/data-table/datatables.min.js",
                  "~/Theme/assets/js/lib/data-table/dataTables.bootstrap.min.js",
-              //     "~/Theme/assets/js/lib/data-table/dataTables.buttons.min.js",
-              //      "~/Theme/assets/js/lib/data-table/buttons.bootstrap.min.js",
-                //     "~/Theme/assets/js/lib/data-table/jszip.min.js",
-               //       "~/Theme/assets/js/lib/data-table/pdfmake.min.js",
-               //        "~/Theme/assets/js/lib/data-table/vfs_fonts.js",
-               //         "~/Theme/assets/js/lib/data-table/buttons.html5.min.js",
-                //        "~/Theme/assets/js/lib/data-table/buttons.print.min.js",
-                //        "~/Theme/assets/js/lib/data-table/buttons.colVis.min.js",
-                 //       "~/Theme/assets/js/lib/data-table/datatables-init.js",
+                 "~/Theme/jQueryPlugins/Select/chosen.jquery.min.js",
+                      //     "~/Theme/assets/js/lib/data-table/dataTables.buttons.min.js",
+                      //      "~/Theme/assets/js/lib/data-table/buttons.bootstrap.min.js",
+                      //     "~/Theme/assets/js/lib/data-table/jszip.min.js",
+                      //       "~/Theme/assets/js/lib/data-table/pdfmake.min.js",
+                      //        "~/Theme/assets/js/lib/data-table/vfs_fonts.js",
+                      //         "~/Theme/assets/js/lib/data-table/buttons.html5.min.js",
+                      //        "~/Theme/assets/js/lib/data-table/buttons.print.min.js",
+                      //        "~/Theme/assets/js/lib/data-table/buttons.colVis.min.js",
+                      //       "~/Theme/assets/js/lib/data-table/datatables-init.js",
                       "~/Theme/assets/js/jquery.validate.min.js",
                          "~/Theme/assets/js/Globalint.js"
 

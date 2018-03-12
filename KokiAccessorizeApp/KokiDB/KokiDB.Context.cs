@@ -33,7 +33,7 @@ namespace KokiDB
         public virtual DbSet<ProductCategory> ProductCategories { get; set; }
         public virtual DbSet<ProductPhoto> ProductPhotos { get; set; }
         public virtual DbSet<Product> Products { get; set; }
-        public virtual DbSet<ProductsOrder> ProductsOrders { get; set; }
         public virtual DbSet<UserInfo> UserInfoes { get; set; }
+        public virtual DbSet<ProductsOrder> ProductsOrders { get; set; }
     }
 }

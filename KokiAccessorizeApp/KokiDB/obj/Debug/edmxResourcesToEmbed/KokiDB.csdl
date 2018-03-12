@@ -45,7 +45,7 @@
     <NavigationProperty Name="Customer" Relationship="Self.FK_Orders_Customers" FromRole="Orders" ToRole="Customers" />
     <NavigationProperty Name="OrderAudits" Relationship="Self.FK_OrderAudits_Orders" FromRole="Orders" ToRole="OrderAudits" />
     <NavigationProperty Name="OrderStatu" Relationship="Self.FK_Orders_OrderStatus" FromRole="Orders" ToRole="OrderStatus" />
-    <NavigationProperty Name="ProductsOrders" Relationship="Self.FK_ProductsOrders_Orders" FromRole="Orders" ToRole="ProductsOrders" />
+    <NavigationProperty Name="ProductsOrders" Relationship="KokiAccessorizeAppDBModel.FK_ProductsOrders_Orders" FromRole="Order" ToRole="ProductsOrder" />
   </EntityType>
   <EntityType Name="OrderStatu">
     <Key>
@@ -83,19 +83,7 @@
     <Property Name="Price" Type="Decimal" Precision="18" Scale="2" Nullable="false" />
     <NavigationProperty Name="ProductCategory" Relationship="Self.FK_Products_ProductCategories" FromRole="Products" ToRole="ProductCategories" />
     <NavigationProperty Name="ProductPhotos" Relationship="Self.FK_ProductPhotos_Products" FromRole="Products" ToRole="ProductPhotos" />
-    <NavigationProperty Name="ProductsOrders" Relationship="Self.FK_ProductsOrders_Products" FromRole="Products" ToRole="ProductsOrders" />
-  </EntityType>
-  <EntityType Name="ProductsOrder">
-    <Key>
-      <PropertyRef Name="OrderID" />
-      <PropertyRef Name="ProductID" />
-    </Key>
-    <Property Name="OrderID" Type="Int32" Nullable="false" />
-    <Property Name="ProductID" Type="Int32" Nullable="false" />
-    <Property Name="Qantaty" Type="Int32" Nullable="false" />
-    <Property Name="Price" Type="Decimal" Precision="18" Scale="2" Nullable="false" />
-    <NavigationProperty Name="Order" Relationship="Self.FK_ProductsOrders_Orders" FromRole="ProductsOrders" ToRole="Orders" />
-    <NavigationProperty Name="Product" Relationship="Self.FK_ProductsOrders_Products" FromRole="ProductsOrders" ToRole="Products" />
+    <NavigationProperty Name="ProductsOrders" Relationship="KokiAccessorizeAppDBModel.FK_ProductsOrders_Products" FromRole="Product" ToRole="ProductsOrder" />
   </EntityType>
   <EntityType Name="UserInfo">
     <Key>
@@ -190,18 +178,6 @@
       </Dependent>
     </ReferentialConstraint>
   </Association>
-  <Association Name="FK_ProductsOrders_Orders">
-    <End Role="Orders" Type="Self.Order" Multiplicity="1" />
-    <End Role="ProductsOrders" Type="Self.ProductsOrder" Multiplicity="*" />
-    <ReferentialConstraint>
-      <Principal Role="Orders">
-        <PropertyRef Name="OrderID" />
-      </Principal>
-      <Dependent Role="ProductsOrders">
-        <PropertyRef Name="OrderID" />
-      </Dependent>
-    </ReferentialConstraint>
-  </Association>
   <Association Name="FK_Products_ProductCategories">
     <End Role="ProductCategories" Type="Self.ProductCategory" Multiplicity="1" />
     <End Role="Products" Type="Self.Product" Multiplicity="*" />
@@ -226,18 +202,6 @@
       </Dependent>
     </ReferentialConstraint>
   </Association>
-  <Association Name="FK_ProductsOrders_Products">
-    <End Role="Products" Type="Self.Product" Multiplicity="1" />
-    <End Role="ProductsOrders" Type="Self.ProductsOrder" Multiplicity="*" />
-    <ReferentialConstraint>
-      <Principal Role="Products">
-        <PropertyRef Name="ProductID" />
-      </Principal>
-      <Dependent Role="ProductsOrders">
-        <PropertyRef Name="ProductID" />
-      </Dependent>
-    </ReferentialConstraint>
-  </Association>
   <EntityContainer Name="KokiAccessorizeAppDBEntities" annotation:LazyLoadingEnabled="true">
     <EntitySet Name="Administrators" EntityType="Self.Administrator" />
     <EntitySet Name="Customers" EntityType="Self.Customer" />
@@ -247,7 +211,6 @@
     <EntitySet Name="ProductCategories" EntityType="Self.ProductCategory" />
     <EntitySet Name="ProductPhotos" EntityType="Self.ProductPhoto" />
     <EntitySet Name="Products" EntityType="Self.Product" />
-    <EntitySet Name="ProductsOrders" EntityType="Self.ProductsOrder" />
     <EntitySet Name="UserInfoes" EntityType="Self.UserInfo" />
     <AssociationSet Name="FK_Administrators_UserInfo" Association="Self.FK_Administrators_UserInfo">
       <End Role="UserInfo" EntitySet="UserInfoes" />
@@ -277,10 +240,6 @@
       <End Role="OrderStatus" EntitySet="OrderStatus" />
       <End Role="Orders" EntitySet="Orders" />
     </AssociationSet>
-    <AssociationSet Name="FK_ProductsOrders_Orders" Association="Self.FK_ProductsOrders_Orders">
-      <End Role="Orders" EntitySet="Orders" />
-      <End Role="ProductsOrders" EntitySet="ProductsOrders" />
-    </AssociationSet>
     <AssociationSet Name="FK_Products_ProductCategories" Association="Self.FK_Products_ProductCategories">
       <End Role="ProductCategories" EntitySet="ProductCategories" />
       <End Role="Products" EntitySet="Products" />
@@ -289,9 +248,50 @@
       <End Role="Products" EntitySet="Products" />
       <End Role="ProductPhotos" EntitySet="ProductPhotos" />
     </AssociationSet>
-    <AssociationSet Name="FK_ProductsOrders_Products" Association="Self.FK_ProductsOrders_Products">
-      <End Role="Products" EntitySet="Products" />
-      <End Role="ProductsOrders" EntitySet="ProductsOrders" />
+    <EntitySet Name="ProductsOrders" EntityType="KokiAccessorizeAppDBModel.ProductsOrder" />
+    <AssociationSet Name="FK_ProductsOrders_Orders" Association="KokiAccessorizeAppDBModel.FK_ProductsOrders_Orders">
+      <End Role="Order" EntitySet="Orders" />
+      <End Role="ProductsOrder" EntitySet="ProductsOrders" />
+    </AssociationSet>
+    <AssociationSet Name="FK_ProductsOrders_Products" Association="KokiAccessorizeAppDBModel.FK_ProductsOrders_Products">
+      <End Role="Product" EntitySet="Products" />
+      <End Role="ProductsOrder" EntitySet="ProductsOrders" />
     </AssociationSet>
   </EntityContainer>
+  <EntityType Name="ProductsOrder">
+    <Key>
+      <PropertyRef Name="POID" />
+    </Key>
+    <Property Name="POID" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Name="OrderID" Type="Int32" Nullable="false" />
+    <Property Name="ProductID" Type="Int32" Nullable="false" />
+    <Property Name="Qantaty" Type="Int32" Nullable="false" />
+    <Property Name="Price" Type="Decimal" Nullable="false" Precision="18" Scale="2" />
+    <NavigationProperty Name="Order" Relationship="KokiAccessorizeAppDBModel.FK_ProductsOrders_Orders" FromRole="ProductsOrder" ToRole="Order" />
+    <NavigationProperty Name="Product" Relationship="KokiAccessorizeAppDBModel.FK_ProductsOrders_Products" FromRole="ProductsOrder" ToRole="Product" />
+  </EntityType>
+  <Association Name="FK_ProductsOrders_Orders">
+    <End Type="KokiAccessorizeAppDBModel.Order" Role="Order" Multiplicity="1" />
+    <End Type="KokiAccessorizeAppDBModel.ProductsOrder" Role="ProductsOrder" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="Order">
+        <PropertyRef Name="OrderID" />
+      </Principal>
+      <Dependent Role="ProductsOrder">
+        <PropertyRef Name="OrderID" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_ProductsOrders_Products">
+    <End Type="KokiAccessorizeAppDBModel.Product" Role="Product" Multiplicity="1" />
+    <End Type="KokiAccessorizeAppDBModel.ProductsOrder" Role="ProductsOrder" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="Product">
+        <PropertyRef Name="ProductID" />
+      </Principal>
+      <Dependent Role="ProductsOrder">
+        <PropertyRef Name="ProductID" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
 </Schema>

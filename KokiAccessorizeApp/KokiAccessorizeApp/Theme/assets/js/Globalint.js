@@ -37,13 +37,17 @@
 
       
 
-        $(this).fadeOut(5000 * (index + 1), function () { $(this).remove() });
+        $(this).fadeOut(5000), function () { $(this).remove() });
 
     });
 
 
 
-       
+    jQuery(".standardSelect").chosen({
+        disable_search_threshold: 4,
+        no_results_text: "Oops, nothing found!",
+        width: "100%"
+    });
        
 
 

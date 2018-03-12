@@ -69,9 +69,9 @@
   </EntityType>
   <EntityType Name="ProductsOrders">
     <Key>
-      <PropertyRef Name="OrderID" />
-      <PropertyRef Name="ProductID" />
+      <PropertyRef Name="POID" />
     </Key>
+    <Property Name="POID" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
     <Property Name="OrderID" Type="int" Nullable="false" />
     <Property Name="ProductID" Type="int" Nullable="false" />
     <Property Name="Qantaty" Type="int" Nullable="false" />
