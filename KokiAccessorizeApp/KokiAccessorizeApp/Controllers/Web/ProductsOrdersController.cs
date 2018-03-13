@@ -20,17 +20,32 @@ namespace KokiAccessorizeApp.Controllers.Web
             return View(order);
         }
 
+
+        public ActionResult CheckOut(int id)
+        {
+
+            var order = db.Orders.Find(id);
+
+            if (order.ProductsOrders.Count == 0) { _App.ui.Message.addError("Must add at least one item !"); return RedirectToAction("index", new { id = id }); }
+
+            return View(order);
+        }
+
+
+
         // GET: ProductsOrders/Details/5
-        
+
 
         // GET: ProductsOrders/Create
         public ActionResult Create(int id)
         {
             var order = db.Orders.Find(id);
-            ViewBag.ProductID = new SelectList(db.Products.Where(x => order.ProductsOrders.Any(y => x.ProductID != y.ProductID)).ToList(), "FullName", "ProductID"); ;
-            ProductsOrder pro = new ProductsOrder();
-            pro.Order = order;
-            pro.OrderID = order.OrderID;
+            ViewBag.ProductID = new SelectList(db.Products.Where(x => !order.ProductsOrders.Any(y => x.ProductID == y.ProductID)).ToList(), "ProductID", "FullName"); ;
+            ProductsOrder pro = new ProductsOrder
+            {
+                Order = order,
+                OrderID = order.OrderID
+            };
             return View(pro);
         }
 
@@ -44,9 +59,10 @@ namespace KokiAccessorizeApp.Controllers.Web
                 db.SaveChanges();
                 return RedirectToAction("Index" , new { id = product.OrderID });
             }
-            catch
+            catch (Exception e)
             {
-                return View();
+                throw e;
+              //  return View();
             }
         }
 
@@ -55,9 +71,9 @@ namespace KokiAccessorizeApp.Controllers.Web
         {
 
             var pro = db.ProductsOrders.Find(id);
-            var list = db.Products.Where(x => pro.Order.ProductsOrders.Any(y => x.ProductID != y.ProductID)).ToList();
+            var list = db.Products.Where(x => !pro.Order.ProductsOrders.Any(y => x.ProductID == y.ProductID)).ToList();
             list.Add(pro.Product);
-            ViewBag.ProductID = new SelectList(list, "FullName", "ProductID", pro.ProductID); ;
+            ViewBag.ProductID = new SelectList(list, "ProductID", "FullName", pro.ProductID); ;
             return View(pro);
         }
 

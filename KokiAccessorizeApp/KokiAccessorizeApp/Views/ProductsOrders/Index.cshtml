@@ -7,96 +7,97 @@
     int index = 0;
 }
 
-<div class="row">
-    <div class="card">
-        <div class="card-header">
-            <strong>
-                Order #@Model.OrderID.ToString()
-            </strong>
-        </div>
+
+        <div class="card">
+            <div class="card-header">
+                <strong>
+                    Order #@Model.OrderID.ToString()
+                </strong>
+            </div>
 
 
-        <div class="card-body">
+            <div class="card-body">
 
 
 
-            @if (Model.ProductsOrders.Count > 0)
+                @if (Model.ProductsOrders.Count > 0)
             {
 
-                <table class="table-striped dataTable">
-                    <thead>
-                        <tr>
-                            <th>#</th>
-                            <th>Name</th>
-                            <th>Category</th>
-                            <th>Qantaty</th>
-                            <th>Price</th>
-                            <th>Options</th>
-                        </tr>
-                    </thead>
-                    <tbody>
-                        @foreach (var item in Model.ProductsOrders)
+                    <table class="table table-striped table-bordered dataTable">
+                        <thead>
+                            <tr>
+                                <th>#</th>
+                                <th>Name</th>
+                                <th>Category</th>
+                                <th>Qantaty</th>
+                                <th>Price</th>
+                                <th>Options</th>
+                            </tr>
+                        </thead>
+                        <tbody>
+                            @foreach (var item in Model.ProductsOrders)
                         {
                             {index += 1;}
-                            <tr>
-                                <td>@index.ToString()</td>
-                                <td>@item.Product.ProductName</td>
-                                <td>@item.Qantaty</td>
-                                <td>@item.Price LE</td>
-                                <td class="text-center">
-                                    <div class="col-md-4">
-                                        <a href="@Url.Action("Edit","ProductsOrders", new {  id = item.POID})" class="btn-outline-warning">
-                                            <i class="fa fa-pencil"></i>
-                                        </a>
-                                    </div>
-                                   
-                                    <div class="col-md-4   ">
-                                        <a href="@Url.Action("Delete","ProductsOrdersC", new {  id = item.POID}) " class="btn-outline-danger">
-                                            <i class="fa fa-trash-o"></i>
+                                <tr>
+                                    <td>@index.ToString()</td>
+                                    <td>@item.Product.ProductName</td>
+                                    <td>@item.Qantaty</td>
+                                    <td>@item.Price LE</td>
+                                    <td class="text-center">
+                                        <div class="col-md-4">
+                                            <a href="@Url.Action("Edit","ProductsOrders", new {  id = item.POID})" class="btn-outline-warning">
+                                                <i class="fa fa-pencil"></i>
+                                            </a>
+                                        </div>
 
-                                        </a>
-                                    </div>
-                                </td>
+                                        <div class="col-md-4   ">
+                                            <a href="@Url.Action("Delete","ProductsOrdersC", new {  id = item.POID}) " class="btn-outline-danger">
+                                                <i class="fa fa-trash-o"></i>
 
-                            </tr>
+                                            </a>
+                                        </div>
+                                    </td>
+
+                                </tr>
 
 
                         }
 
 
-                    </tbody>
-                </table> 
+                        </tbody>
+                    </table>
 
 
             }
             else
             {
 
-                <h3>No itmes where found in this order</h3>
+                    <h3>No itmes where found in this order</h3>
             }
-        </div>
-        <div class="card-footer">
-            <div class="col-md-1">
-                <a href="@Url.Action("Edit","Orders", new {  id = Model.OrderID})" class="btn-outline-warning">
-                    <i class="fa fa-pencil"></i> Edit Order
-                </a>
             </div>
-            <div class="col-md-19">
+            <div class="card-footer">
+              
+                    <div class="col-md-1">
+                        <a href="@Url.Action("Edit","Orders", new {  id = Model.OrderID})" class=" btn btn-warning">
+                            <i class="fa fa-pencil"></i> Edit Order
+                        </a>
+                    </div>
+                    <div class="col-md-7">
 
-            </div>
-            <div class="col-md-1">
-                <a href="@Url.Action("Create","ProductsOrders", new { id = Model.OrderID })"  class="btn btn-primary">
-                    <i class="fa fa-plus"></i> Add item
-                </a>
-            </div>
-            <div class="col-md-1">
-                <button type="submit" class="btn btn-success btn-sm">
-                    <i class="fa fa-shopping-cart"></i> Check out
-                </button>
-            </div>
-        </div>
-
-    </div>
-
-
+                    </div>
+                    <div class="col-md-2">
+                        <a href="@Url.Action("Create","ProductsOrders", new { id = Model.OrderID })" class="btn btn-primary">
+                            <i class="fa fa-plus"></i> Add item
+                        </a>
+                    </div>
+                    <div class="col-md-2">
+                        <a href="@Url.Action("CheckOut","ProductsOrders", new { id = Model.OrderID })"  class="btn btn-success ">
+                            <i class="fa fa-shopping-cart"></i> Check out
+                            </a>
+                           
 </div>
+                </div>
+           
+
+        </div>
+   

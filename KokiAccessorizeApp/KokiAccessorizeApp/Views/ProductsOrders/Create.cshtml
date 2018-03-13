@@ -3,8 +3,54 @@
 @{
     ViewBag.Title = "Add new item";
     Layout = "~/Views/Shared/_MasterLayout/_WebPages.cshtml";
-    
-    
+    ViewBag.PgaeName = "For order #" + Model.OrderID.ToString();
+    ViewBag.formMode = "create";
+
+
 }
+
+
+
+
+@using (Html.BeginForm((string)ViewBag.Contoler, "ProductsOrders", FormMethod.Post, new { enctype = "multipart/form-data" }))
+{
+
+    @Html.AntiForgeryToken()
+    <div class="card">
+        <div class="card-header">
+            <strong>
+              <b>Customer Name: </b>  @Model.Order.Customer.UserInfo.FullName
+            </strong>
+        </div>
+        
+        @Html.EditorForModel();
+       
+
+        <div class="card-footer">
+            <button type="submit" class="btn btn-success btn-sm">
+                <i class="fa fa-save"></i> Save
+            </button>
+
+            <a class="btn btn-dark btn-sm" href="@Url.Action("index", "ProductsOrders")">
+                <i class="fa fa-reply-all"></i> Back to all itmes
+            </a>
+
+
+        </div>
+
+    </div>
+
+}
+
+<script type="text/javascript">
+
+    $('.standardSelect').on('change', function (evt, params) {
+        var selectedValue = params.selected;
+        console.log(selectedValue);
+        $('#ProductID').val(selectedValue);
+    });
+
+
+</script>
 
 

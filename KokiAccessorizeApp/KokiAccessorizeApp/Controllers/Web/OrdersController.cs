@@ -54,10 +54,12 @@ namespace KokiAccessorizeApp.Controllers.Web
 
             if (ModelState.IsValid)
             {
+                order.OrderDate = DateTime.Now;
+                order.OrderStatusID = 1;
                 db.Orders.Add(order);
                 db.SaveChanges();
-
-
+                _App.ui.Message.SuccessAddNew();
+              return  RedirectToAction("index", "ProductsOrders", new { id = order.OrderID });
             }
 
 
@@ -84,7 +86,7 @@ namespace KokiAccessorizeApp.Controllers.Web
                 oldorder.CustomerID = order.CustomerID;
                 db.Entry(oldorder).State = System.Data.Entity.EntityState.Modified;
                 db.SaveChanges();
-
+                RedirectToAction("index", "ProductsOrders", new { id = order.OrderID });
             }
 
 

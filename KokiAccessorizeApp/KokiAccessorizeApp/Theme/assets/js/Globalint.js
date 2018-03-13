@@ -37,7 +37,10 @@
 
       
 
-        $(this).fadeOut(5000), function () { $(this).remove() });
+           $(this).fadeOut(5000);
+
+
+
 
     });
 
