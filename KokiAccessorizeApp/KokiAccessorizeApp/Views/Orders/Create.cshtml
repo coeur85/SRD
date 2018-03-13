@@ -21,7 +21,7 @@
                 @Html.LabelFor(model => model.OrderID, "Order Number", new { @class = " form-control-label" })
             </div>
             <div class="col-12 col-md-9">
-                @Html.TextBoxFor(model => model.OrderID, new { @class = "form-control", @disabled = "" })
+                @Html.TextBoxFor(model => model.OrderID, new { @class = "form-control", @readonly = "readonly" })
             </div>
         </div>
             <div class="row form-group">
@@ -29,7 +29,7 @@
                     @Html.LabelFor(model => model.OrderID, "Order Date", new { @class = " form-control-label" })
                 </div>
                 <div class="col-12 col-md-9">
-                    @Html.TextBoxFor(model => model.OrderDate, new { @class = "form-control", @disabled = "" })
+                    @Html.TextBoxFor(model => model.OrderDate, new { @class = "form-control", @readonly = "readonly" })
                 </div>
             </div>
             <div class="row form-group">

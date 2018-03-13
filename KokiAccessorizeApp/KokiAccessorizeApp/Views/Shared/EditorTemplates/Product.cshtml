@@ -25,6 +25,18 @@
     </div>
     <div class="row form-group">
         <div class="col col-md-3">
+            @Html.LabelFor(model => model.CostPrice, "Cost Price", new { @class = " form-control-label" })
+        </div>
+        <div class="col-12 col-md-9">
+            <div class="input-group">
+                @Html.TextBoxFor(model => model.CostPrice, new { @class = "form-control", @required = "", @number = "number" })
+                <div class="input-group-addon">L.E</div>
+            </div>
+
+        </div>
+    </div>
+    <div class="row form-group">
+        <div class="col col-md-3">
             @Html.LabelFor(model => model.Price, "Price", new { @class = " form-control-label" })
         </div>
         <div class="col-12 col-md-9">
@@ -59,6 +71,18 @@ else if (ViewBag.formMode == "details")
             </div>
             <div class="col-12 col-md-9">
                 @Html.TextBoxFor(model => model.ProductCategory.CategoryName, new { @class = "form-control", @disabled = "" })
+            </div>
+        </div>
+        <div class="row form-group">
+            <div class="col col-md-3">
+                @Html.LabelFor(model => model.CostPrice, "Cost Price", new { @class = " form-control-label" })
+            </div>
+            <div class="col-12 col-md-9">
+                <div class="input-group">
+                    @Html.TextBoxFor(model => model.CostPrice, new { @class = "form-control", @disabled = "" })
+                    <div class="input-group-addon">L.E</div>
+                </div>
+
             </div>
         </div>
         <div class="row form-group">

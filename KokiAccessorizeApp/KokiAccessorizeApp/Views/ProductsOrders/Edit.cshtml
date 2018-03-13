@@ -1,10 +1,10 @@
 ﻿@model KokiDB.ProductsOrder
 
 @{
-    ViewBag.Title = "Add new item";
+    ViewBag.Title = "Edit item for order #" + Model.ProductID;
     Layout = "~/Views/Shared/_MasterLayout/_WebPages.cshtml";
-    ViewBag.PgaeName = "For order #" + Model.OrderID.ToString();
-    ViewBag.formMode = "create";
+    ViewBag.PgaeName = "Edit item " + Model.Product.FullName;
+    ViewBag.formMode = "edit";
 
 
 }
@@ -19,12 +19,12 @@
     <div class="card">
         <div class="card-header">
             <strong>
-              <b>Customer Name: </b>  @Model.Order.Customer.UserInfo.FullName
+                <b>Customer Name: </b>  @Model.Order.Customer.UserInfo.FullName
             </strong>
         </div>
-        
+
         @Html.EditorForModel()
-       
+
 
         <div class="card-footer">
             <button type="submit" class="btn btn-success btn-sm">
@@ -41,10 +41,5 @@
     </div>
 
 }
-
-<script type="text/javascript">
-
-    $('.standardSelect').val('').trigger('chosen:updated');
-</script>
 
 

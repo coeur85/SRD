@@ -1,7 +1,12 @@
-﻿
+﻿@model KokiDB.Order
+
 @{
     ViewBag.Title = "Index";
     Layout = "~/Views/Shared/_MasterLayout/_WebPages.cshtml";
 }
 
 <h2>Index</h2>
+
+
+
+@Html.Partial("~/Views/Shared/_OrderInfobubble.cshtml", Model )

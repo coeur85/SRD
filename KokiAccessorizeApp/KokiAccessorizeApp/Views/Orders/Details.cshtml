@@ -1,0 +1,11 @@
+﻿@model KokiDB.Order
+    @{
+    ViewBag.Title = "Details for order#" + Model.OrderID ;
+    Layout = "~/Views/Shared/_MasterLayout/_WebPages.cshtml";
+        ViewBag.PageName = Model.Customer.UserInfo.FullName ;
+}
+
+
+<div class="col-md-12">
+    @Html.Partial("~/Views/Shared/_OrderInfobubble.cshtml", Model)
+</div>

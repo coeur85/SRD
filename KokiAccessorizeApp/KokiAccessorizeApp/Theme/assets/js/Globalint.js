@@ -54,7 +54,33 @@
        
 
 
+    $('.standardSelect').on('change', function (evt, params) {
+        var selectedValue = params.selected;
+        console.log(selectedValue);
+        $('#ProductID').val(selectedValue);
+
+
+
+        var prm = { 'ProductID': selectedValue };
+        get('ProductsOrders', 'ProductInfo', prm, function (data) {
+            $('#Price').val(data['Price']);
+            $('#CosePrice').val(data['CostPrice']);
+            $('#Qantaty').val(1);
+         //   alert(JSON.stringify(data));
+
+        }
+            , function () { alert('smothing went wrong !'); })
+
+
+
+    });
+
+
+  
+
 });
+
+
 
 
 

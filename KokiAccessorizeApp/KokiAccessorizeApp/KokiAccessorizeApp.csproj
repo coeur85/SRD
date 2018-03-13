@@ -1057,7 +1057,9 @@
     <Compile Include="App_Start\RouteConfig.cs" />
     <Compile Include="App_Start\WebApiConfig.cs" />
     <Compile Include="Controllers\Api\PhotosController.cs" />
+    <Compile Include="Controllers\Api\ProductsOrdersController.cs" />
     <Compile Include="Controllers\Web\HomeController.cs" />
+    <Compile Include="Controllers\Web\LoginController.cs" />
     <Compile Include="Controllers\Web\OrdersController.cs" />
     <Compile Include="Controllers\Web\ProductPhotoController.cs" />
     <Compile Include="Controllers\Web\ProductsController.cs" />
@@ -1066,6 +1068,7 @@
       <DependentUpon>Global.asax</DependentUpon>
     </Compile>
     <Compile Include="Models\DB\WepApp.cs" />
+    <Compile Include="Models\_App\CustomeAuthoristion.cs" />
     <Compile Include="Models\_App\_app.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
   </ItemGroup>
@@ -1375,6 +1378,13 @@
     <Content Include="Views\ProductsOrders\Index.cshtml" />
     <Content Include="Views\Shared\EditorTemplates\ProductsOrder.cshtml" />
     <Content Include="Views\ProductsOrders\Create.cshtml" />
+    <Content Include="Views\ProductsOrders\Edit.cshtml" />
+    <Content Include="Views\ProductsOrders\Delete.cshtml" />
+    <Content Include="Views\Shared\_OrderInfobubble.cshtml" />
+    <Content Include="Views\Login\Index.cshtml" />
+    <Content Include="Views\Orders\Index.cshtml" />
+    <Content Include="Views\Shared\_OrderThumbnail.cshtml" />
+    <Content Include="Views\Orders\Details.cshtml" />
     <None Include="Web.Debug.config">
       <DependentUpon>Web.config</DependentUpon>
     </None>

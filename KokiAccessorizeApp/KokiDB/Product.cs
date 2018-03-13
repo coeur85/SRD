@@ -25,6 +25,7 @@ namespace KokiDB
         public string ProductName { get; set; }
         public int ProductCategoryID { get; set; }
         public decimal Price { get; set; }
+        public decimal CostPrice { get; set; }
     
         public virtual ProductCategory ProductCategory { get; set; }
         [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2227:CollectionPropertiesShouldBeReadOnly")]

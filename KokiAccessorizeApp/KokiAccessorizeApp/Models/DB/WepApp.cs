@@ -1,5 +1,7 @@
 ﻿
-  namespace WepApp
+using Newtonsoft.Json;
+
+namespace WepApp
 {
 
     public class InfoMessages
@@ -45,6 +47,35 @@
             public bool CanBeDleted { get; set; }
 
         }
+
+        public class loginModel
+        {
+            public string username { get; set; }
+            public string password { get; set; }
+            public string message { get; set; }
+
+        }
+
+    }
+
+
+    namespace WebApi
+    {
+
+        public class Product
+        {
+            [JsonProperty(NullValueHandling = NullValueHandling.Ignore)]
+            public int ProductID { get; set; }
+            [JsonProperty(NullValueHandling = NullValueHandling.Ignore)]
+            public string ProductName { get; set; }
+            [JsonProperty(NullValueHandling = NullValueHandling.Ignore)]
+            public decimal Price { get; set; }
+            [JsonProperty(NullValueHandling = NullValueHandling.Ignore)]
+            public decimal CostPrice { get; set; }
+
+        }
+
+
 
     }
 

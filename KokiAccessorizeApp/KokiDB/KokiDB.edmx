@@ -71,6 +71,7 @@
           <Property Name="ProductName" Type="nvarchar" MaxLength="200" Nullable="false" />
           <Property Name="ProductCategoryID" Type="int" Nullable="false" />
           <Property Name="Price" Type="decimal" Precision="18" Scale="2" Nullable="false" />
+          <Property Name="CostPrice" Type="decimal" Precision="18" Scale="2" Nullable="false" />
         </EntityType>
         <EntityType Name="ProductsOrders">
           <Key>
@@ -81,6 +82,7 @@
           <Property Name="ProductID" Type="int" Nullable="false" />
           <Property Name="Qantaty" Type="int" Nullable="false" />
           <Property Name="Price" Type="decimal" Precision="18" Scale="2" Nullable="false" />
+          <Property Name="CosePrice" Type="decimal" Precision="18" Scale="2" Nullable="false" />
         </EntityType>
         <EntityType Name="UserInfo">
           <Key>
@@ -364,6 +366,7 @@
           <Property Name="Price" Type="Decimal" Precision="18" Scale="2" Nullable="false" />
           <NavigationProperty Name="ProductCategory" Relationship="Self.FK_Products_ProductCategories" FromRole="Products" ToRole="ProductCategories" />
           <NavigationProperty Name="ProductPhotos" Relationship="Self.FK_ProductPhotos_Products" FromRole="Products" ToRole="ProductPhotos" />
+          <Property Name="CostPrice" Type="Decimal" Nullable="false" Precision="18" Scale="2" />
           <NavigationProperty Name="ProductsOrders" Relationship="KokiAccessorizeAppDBModel.FK_ProductsOrders_Products" FromRole="Product" ToRole="ProductsOrder" />
         </EntityType>
         <EntityType Name="UserInfo">
@@ -538,7 +541,7 @@
             <End Role="Product" EntitySet="Products" />
             <End Role="ProductsOrder" EntitySet="ProductsOrders" />
           </AssociationSet>
-        </EntityContainer>
+          </EntityContainer>
         <EntityType Name="ProductsOrder">
           <Key>
             <PropertyRef Name="POID" />
@@ -548,6 +551,7 @@
           <Property Name="ProductID" Type="Int32" Nullable="false" />
           <Property Name="Qantaty" Type="Int32" Nullable="false" />
           <Property Name="Price" Type="Decimal" Nullable="false" Precision="18" Scale="2" />
+          <Property Name="CosePrice" Type="Decimal" Nullable="false" Precision="18" Scale="2" />
           <NavigationProperty Name="Order" Relationship="KokiAccessorizeAppDBModel.FK_ProductsOrders_Orders" FromRole="ProductsOrder" ToRole="Order" />
           <NavigationProperty Name="Product" Relationship="KokiAccessorizeAppDBModel.FK_ProductsOrders_Products" FromRole="ProductsOrder" ToRole="Product" />
         </EntityType>
@@ -575,7 +579,7 @@
             </Dependent>
           </ReferentialConstraint>
         </Association>
-      </Schema>
+        </Schema>
     </edmx:ConceptualModels>
     <!-- C-S mapping content -->
     <edmx:Mappings>
@@ -649,6 +653,7 @@
           <EntitySetMapping Name="Products">
             <EntityTypeMapping TypeName="KokiAccessorizeAppDBModel.Product">
               <MappingFragment StoreEntitySet="Products">
+                <ScalarProperty Name="CostPrice" ColumnName="CostPrice" />
                 <ScalarProperty Name="ProductID" ColumnName="ProductID" />
                 <ScalarProperty Name="ProductName" ColumnName="ProductName" />
                 <ScalarProperty Name="ProductCategoryID" ColumnName="ProductCategoryID" />
@@ -667,6 +672,7 @@
           <EntitySetMapping Name="ProductsOrders">
             <EntityTypeMapping TypeName="KokiAccessorizeAppDBModel.ProductsOrder">
               <MappingFragment StoreEntitySet="ProductsOrders">
+                <ScalarProperty Name="CosePrice" ColumnName="CosePrice" />
                 <ScalarProperty Name="Price" ColumnName="Price" />
                 <ScalarProperty Name="Qantaty" ColumnName="Qantaty" />
                 <ScalarProperty Name="ProductID" ColumnName="ProductID" />

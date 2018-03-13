@@ -26,7 +26,7 @@
         <EntityTypeShape EntityType="KokiAccessorizeAppDBModel.ProductsOrder" Width="1.5" PointX="7.5" PointY="6.875" />
         <AssociationConnector Association="KokiAccessorizeAppDBModel.FK_ProductsOrders_Orders" />
         <AssociationConnector Association="KokiAccessorizeAppDBModel.FK_ProductsOrders_Products" />
-      </Diagram>
+        </Diagram>
     </edmx:Diagrams>
   </edmx:Designer>
 </edmx:Edmx>

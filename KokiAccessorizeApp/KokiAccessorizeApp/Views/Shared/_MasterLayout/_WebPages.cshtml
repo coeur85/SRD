@@ -53,8 +53,8 @@
                 <li class="menu-item-has-children dropdown">
                     <a href="#" class="dropdown-toggle" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false"> <i class="menu-icon fa fa-tasks"></i>Orders</a>
                     <ul class="sub-menu children dropdown-menu">
-                        <li><i class="menu-icon fa fa-fort-awesome"></i><a href="font-fontawesome.html">Exisitng Orders</a></li>
-                        <li><i class="fa fa-table"></i><a href="font-themify.html">New Order</a></li>
+                        <li><i class="fa fa-table"></i><a href="@Url.Action("create", "orders")">New Order</a></li>
+                        <li><i class="menu-icon fa fa-fort-awesome"></i><a href="@Url.Action("index", "orders")">All Orders</a></li>
                     </ul>
                 </li>
                 @*<li>

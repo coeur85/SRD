@@ -2,6 +2,7 @@
 using System.Collections.Generic;
 using System.Linq;
 using System.Web;
+using KokiDB;
 
 namespace _App
 {
@@ -56,6 +57,33 @@ namespace _App
 
         }
 
+    }
+
+    class Current
+    {
+        public static UserInfo User
+        {
+            get
+            {
+                // LoanAppDBEntities db = new LoanAppDBEntities();
+                // return db.Employees.Find(9).UsersInfo;
+                UserInfo u = (UserInfo)HttpContext.Current.Session["UserID"];
+                if (u == null)
+                {
+                    u = new UserInfo();// HttpContext.Current.Response.Redirect("Login/index");
+                }
+                return u;
+            }
+
+            set
+            {
+
+                HttpContext.Current.Session["UserID"] = value;
+
+            }
+
+
+        }
     }
 
 }

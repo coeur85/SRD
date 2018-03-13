@@ -40,7 +40,7 @@ namespace KokiAccessorizeApp.Controllers.Web
         public ActionResult Create(int id)
         {
             var order = db.Orders.Find(id);
-            ViewBag.ProductID = new SelectList(db.Products.Where(x => !order.ProductsOrders.Any(y => x.ProductID == y.ProductID)).ToList(), "ProductID", "FullName"); ;
+            ViewBag.ProductID = new SelectList(db.Products.ToList().Where(x => !order.ProductsOrders.ToList().Any(y => x.ProductID == y.ProductID)).ToList(), "ProductID", "FullName", 0); ;
             ProductsOrder pro = new ProductsOrder
             {
                 Order = order,
@@ -57,6 +57,7 @@ namespace KokiAccessorizeApp.Controllers.Web
             {
                 db.ProductsOrders.Add(product);
                 db.SaveChanges();
+                _App.ui.Message.SuccessAddNew();
                 return RedirectToAction("Index" , new { id = product.OrderID });
             }
             catch (Exception e)
@@ -71,7 +72,7 @@ namespace KokiAccessorizeApp.Controllers.Web
         {
 
             var pro = db.ProductsOrders.Find(id);
-            var list = db.Products.Where(x => !pro.Order.ProductsOrders.Any(y => x.ProductID == y.ProductID)).ToList();
+            var list = db.Products.ToList().Where(x => !pro.Order.ProductsOrders.ToList().Any(y => x.ProductID == y.ProductID)).ToList();
             list.Add(pro.Product);
             ViewBag.ProductID = new SelectList(list, "ProductID", "FullName", pro.ProductID); ;
             return View(pro);
@@ -88,10 +89,11 @@ namespace KokiAccessorizeApp.Controllers.Web
                 old.ProductID = product.ProductID;
                 old.Price = product.Price;
                 old.Qantaty = product.Qantaty;
+                old.CosePrice = product.CosePrice;
                 db.Entry(old).State = System.Data.Entity.EntityState.Modified;
                 db.SaveChanges();
 
-
+                _App.ui.Message.SuccessUpdate();
                 return RedirectToAction("Index", new { id = product.OrderID });
             }
             catch
@@ -104,7 +106,7 @@ namespace KokiAccessorizeApp.Controllers.Web
         public ActionResult Delete(int id)
         {
             var pro = db.ProductsOrders.Find(id);
-            return View();
+            return View(pro);
         }
 
         // POST: ProductsOrders/Delete/5
@@ -118,7 +120,8 @@ namespace KokiAccessorizeApp.Controllers.Web
                 var old = db.ProductsOrders.Find(pro.POID);
 
                 db.ProductsOrders.Remove(old);
-
+                db.SaveChanges();
+                _App.ui.Message.SuccessDelete();
                 return RedirectToAction("Index", new { id= or });
             }
             catch

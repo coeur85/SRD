@@ -23,6 +23,9 @@ namespace KokiAccessorizeApp
             // added web optimaizations classes
             BundelConfig.RegesterBundels(BundleTable.Bundles);
 
+            // add authization
+            GlobalFilters.Filters.Add(new MagdiWebPagesAuthorize());
+
         }
     }
 }

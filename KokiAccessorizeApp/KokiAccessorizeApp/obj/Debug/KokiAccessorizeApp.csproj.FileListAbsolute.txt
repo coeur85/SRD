@@ -1,3 +1,4 @@
+C:\Users\Magdi\source\repos\KokiAccessorizeApp\KokiAccessorizeApp\obj\Debug\KokiAccessorizeApp.csprojResolveAssemblyReference.cache
 C:\Users\Magdi\source\repos\KokiAccessorizeApp\KokiAccessorizeApp\obj\Debug\KokiAccessorizeApp.csproj.CoreCompileInputs.cache
 C:\Users\Magdi\source\repos\KokiAccessorizeApp\KokiAccessorizeApp\bin\KokiAccessorizeApp.dll.config
 C:\Users\Magdi\source\repos\KokiAccessorizeApp\KokiAccessorizeApp\bin\KokiAccessorizeApp.dll
@@ -34,8 +35,5 @@ C:\Users\Magdi\source\repos\KokiAccessorizeApp\KokiAccessorizeApp\bin\Newtonsoft
 C:\Users\Magdi\source\repos\KokiAccessorizeApp\KokiAccessorizeApp\bin\System.Net.Http.Formatting.xml
 C:\Users\Magdi\source\repos\KokiAccessorizeApp\KokiAccessorizeApp\bin\System.Web.Http.xml
 C:\Users\Magdi\source\repos\KokiAccessorizeApp\KokiAccessorizeApp\bin\System.Web.Http.WebHost.xml
-C:\Users\Magdi\source\repos\KokiAccessorizeApp\KokiAccessorizeApp\obj\Debug\KokiAccessorizeApp.csprojResolveAssemblyReference.cache
 C:\Users\Magdi\source\repos\KokiAccessorizeApp\KokiAccessorizeApp\obj\Debug\KokiAccessorizeApp.dll
 C:\Users\Magdi\source\repos\KokiAccessorizeApp\KokiAccessorizeApp\obj\Debug\KokiAccessorizeApp.pdb
-C:\Users\Magdi\source\repos\KokiAccessorizeApp\KokiAccessorizeApp\bin\KokiDB.pdb
-C:\Users\Magdi\source\repos\KokiAccessorizeApp\KokiAccessorizeApp\bin\KokiDB.dll.config

@@ -83,6 +83,7 @@
     <Property Name="Price" Type="Decimal" Precision="18" Scale="2" Nullable="false" />
     <NavigationProperty Name="ProductCategory" Relationship="Self.FK_Products_ProductCategories" FromRole="Products" ToRole="ProductCategories" />
     <NavigationProperty Name="ProductPhotos" Relationship="Self.FK_ProductPhotos_Products" FromRole="Products" ToRole="ProductPhotos" />
+    <Property Name="CostPrice" Type="Decimal" Nullable="false" Precision="18" Scale="2" />
     <NavigationProperty Name="ProductsOrders" Relationship="KokiAccessorizeAppDBModel.FK_ProductsOrders_Products" FromRole="Product" ToRole="ProductsOrder" />
   </EntityType>
   <EntityType Name="UserInfo">
@@ -267,6 +268,7 @@
     <Property Name="ProductID" Type="Int32" Nullable="false" />
     <Property Name="Qantaty" Type="Int32" Nullable="false" />
     <Property Name="Price" Type="Decimal" Nullable="false" Precision="18" Scale="2" />
+    <Property Name="CosePrice" Type="Decimal" Nullable="false" Precision="18" Scale="2" />
     <NavigationProperty Name="Order" Relationship="KokiAccessorizeAppDBModel.FK_ProductsOrders_Orders" FromRole="ProductsOrder" ToRole="Order" />
     <NavigationProperty Name="Product" Relationship="KokiAccessorizeAppDBModel.FK_ProductsOrders_Products" FromRole="ProductsOrder" ToRole="Product" />
   </EntityType>

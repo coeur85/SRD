@@ -19,6 +19,7 @@ namespace KokiDB
         public int ProductID { get; set; }
         public int Qantaty { get; set; }
         public decimal Price { get; set; }
+        public decimal CosePrice { get; set; }
     
         public virtual Order Order { get; set; }
         public virtual Product Product { get; set; }
