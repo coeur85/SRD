@@ -2,16 +2,17 @@
 
 @{
     int index = 0; decimal total = 0; decimal itemtotal = 0;
+    string CardCss = _App.ui.oerder.StatusCss(Model.OrderStatusID);
  }
 
 
 
-<div class="card">
+<div class="card  @CardCss">
     <div class="card-header">
         
             <strong>Details for order #@Model.OrderID </strong>
             <div class=" pull-right">
-                <a href="@Url.Action("Details","Order", new {  id = Model.OrderID})" class="btn-outline-info">
+                <a href="@Url.Action("Details","Orders", new {  id = Model.OrderID})" class="btn-outline-info">
                     <i class="fa fa-info-circle"></i>
 
                 </a>
@@ -99,3 +100,4 @@
 </div>
 
     </div>
+

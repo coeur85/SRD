@@ -35,7 +35,7 @@ namespace KokiAccessorizeApp.Controllers.Web
                 PD.TotalsSales += item.Price;
                 c = item.Order.Customer;
                 if (!cl.Any(x => x.CustomerID == c.CustomerID)) { cl.Add(c); }
-
+                PD.Orders.Add(item.Order);
 
             }
             PD.TotalCustomers = cl.Count;

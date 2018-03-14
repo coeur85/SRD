@@ -57,6 +57,7 @@ namespace KokiAccessorizeApp.Controllers.Web
                 order.OrderDate = DateTime.Now;
                 order.OrderStatusID = 1;
                 db.Orders.Add(order);
+                _App.Audits.NewForStatus1(order);
                 db.SaveChanges();
                 _App.ui.Message.SuccessAddNew();
               return  RedirectToAction("index", "ProductsOrders", new { id = order.OrderID });
@@ -101,10 +102,79 @@ namespace KokiAccessorizeApp.Controllers.Web
             return View(ord);
         }
 
-       
 
 
 
+        // order actions 
+
+        [HttpPost]
+        [ValidateAntiForgeryToken]
+        [MultipleButton(Name = "action", Argument = "WaitingMaterials")]
+        public ActionResult WaitingMaterials(int id)
+        {
+            var order = GetCurrentOrder(id);
+            _App.Audits.NewForStatus2(order);
+           
+
+            db.SaveChanges();
+            return RedirectToAction("Details", "orders", new { id = id });
+        }
+
+
+        [HttpPost]
+        [ValidateAntiForgeryToken]
+        [MultipleButton(Name = "action", Argument = "UnderProgress")]
+        public ActionResult UnderProgress(int id)
+        {
+            var order = GetCurrentOrder(id);
+            _App.Audits.NewForStatus3(order);
+
+            db.SaveChanges();
+            return RedirectToAction("Details", "orders", new { id = id });
+        }
+
+
+        [HttpPost]
+        [ValidateAntiForgeryToken]
+        [MultipleButton(Name = "action", Argument = "WiatingDelevery")]
+        public ActionResult WiatingDelevery(int id)
+        {
+            var order = GetCurrentOrder(id);
+            _App.Audits.NewForStatus4(order);
+
+            db.SaveChanges();
+            return RedirectToAction("Details", "orders", new { id = id });
+        }
+
+        [HttpPost]
+        [ValidateAntiForgeryToken]
+        [MultipleButton(Name = "action", Argument = "Compelted")]
+        public ActionResult Compelted(int id)
+        {
+            var order = GetCurrentOrder(id);
+            _App.Audits.NewForStatus5(order);
+
+            db.SaveChanges();
+            return RedirectToAction("Details", "orders", new { id = id });
+        }
+
+        [HttpPost]
+        [ValidateAntiForgeryToken]
+        [MultipleButton(Name = "action", Argument = "Cancelled")]
+        public ActionResult Cancelled(int id)
+        {
+            var order = GetCurrentOrder(id);
+            _App.Audits.NewForStatus6(order);
+
+            db.SaveChanges();
+            return RedirectToAction("Details", "orders", new { id = id });
+        }
+
+
+
+
+
+        private Order GetCurrentOrder(int id) { return db.Orders.FirstOrDefault(x => x.OrderID == id); }
 
     }
 }

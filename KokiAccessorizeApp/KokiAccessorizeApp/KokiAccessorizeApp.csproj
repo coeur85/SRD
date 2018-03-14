@@ -1058,6 +1058,7 @@
     <Compile Include="App_Start\WebApiConfig.cs" />
     <Compile Include="Controllers\Api\PhotosController.cs" />
     <Compile Include="Controllers\Api\ProductsOrdersController.cs" />
+    <Compile Include="Controllers\Web\CustomersController.cs" />
     <Compile Include="Controllers\Web\HomeController.cs" />
     <Compile Include="Controllers\Web\LoginController.cs" />
     <Compile Include="Controllers\Web\OrdersController.cs" />
@@ -1385,6 +1386,10 @@
     <Content Include="Views\Orders\Index.cshtml" />
     <Content Include="Views\Shared\_OrderThumbnail.cshtml" />
     <Content Include="Views\Orders\Details.cshtml" />
+    <Content Include="Views\Shared\_OrdersList.cshtml" />
+    <Content Include="Views\Customers\Index.cshtml" />
+    <Content Include="Views\Shared\EditorTemplates\Customer.cshtml" />
+    <Content Include="Views\Customers\Details.cshtml" />
     <None Include="Web.Debug.config">
       <DependentUpon>Web.config</DependentUpon>
     </None>

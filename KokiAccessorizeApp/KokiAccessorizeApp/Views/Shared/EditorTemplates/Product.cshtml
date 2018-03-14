@@ -11,7 +11,7 @@
         <div class="col col-md-3">
             @Html.LabelFor(model => model.ProductName, "Product Name", new { @class = " form-control-label" })
         </div>
-        <div class="col-12 col-md-9">
+        <div class="col-3 col-md-9">
             @Html.TextBoxFor(model => model.ProductName, new { @class = "form-control", required = "" })
         </div>
     </div>
@@ -19,7 +19,7 @@
         <div class="col col-md-3">
             @Html.LabelFor(model => model.ProductCategoryID, "Product Category", new { @class = " form-control-label" })
         </div>
-        <div class="col-12 col-md-9">
+        <div class="col-3 col-md-9">
             @Html.DropDownList("ProductCategoryID", null, new { @class = "form-control" })
         </div>
     </div>
@@ -27,7 +27,7 @@
         <div class="col col-md-3">
             @Html.LabelFor(model => model.CostPrice, "Cost Price", new { @class = " form-control-label" })
         </div>
-        <div class="col-12 col-md-9">
+        <div class="col-3 col-md-9">
             <div class="input-group">
                 @Html.TextBoxFor(model => model.CostPrice, new { @class = "form-control", @required = "", @number = "number" })
                 <div class="input-group-addon">L.E</div>
@@ -39,7 +39,7 @@
         <div class="col col-md-3">
             @Html.LabelFor(model => model.Price, "Price", new { @class = " form-control-label" })
         </div>
-        <div class="col-12 col-md-9">
+        <div class="col-3 col-md-9">
             <div class="input-group">
                 @Html.TextBoxFor(model => model.Price, new { @class = "form-control", @required = "", @number = "number" })
                 <div class="input-group-addon">L.E</div>

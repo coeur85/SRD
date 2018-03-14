@@ -1,5 +1,6 @@
 ﻿
 using Newtonsoft.Json;
+using System.Collections.Generic;
 
 namespace WepApp
 {
@@ -31,6 +32,7 @@ namespace WepApp
             public decimal TotalsSales { get; set; }
             public int TotalOrders { get; set; }
             public int TotalCustomers { get; set; }
+            public List<KokiDB.Order> Orders { get; set; }
 
         }
 
