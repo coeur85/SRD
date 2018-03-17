@@ -117,7 +117,12 @@ namespace KokiAccessorizeApp.Controllers.Web
             if (p == null) { return HttpNotFound(); }
             WepApp.WebPagesModels.DeleteProduct dp = new WepApp.WebPagesModels.DeleteProduct();
             dp.Product = p;
-            dp.CanBeDleted = false;
+            if (p.ProductsOrders.Count > 0) { dp.CanBeDleted = false; }
+            else
+            {
+                dp.CanBeDleted = true;
+            }
+           
 
             return View(dp);
         }
