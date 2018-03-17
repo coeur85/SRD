@@ -1,0 +1,123 @@
+﻿@model KokiDB.ProductsOrder
+
+
+
+
+
+@Html.HiddenFor(x=> x.OrderID)
+@Html.HiddenFor(x=> x.POID)
+
+
+
+@if (ViewBag.formMode == "create" || ViewBag.formMode == "edit")
+{
+
+    <div class="card-body card-block">
+        @Html.HiddenFor(model => model.ProductID)
+        <div class="row form-group">
+            <div class="col col-md-3">
+                @Html.LabelFor(model => model.ProductID, "Product Name", new { @class = " form-control-label" })
+            </div>
+            <div class="col-12 col-md-9">
+                @Html.DropDownList("ProductID", null, htmlAttributes: new { @class = "form-control standardSelect", @data_placeholder = "Choose a Product..." })
+            </div>
+        </div>
+        <div class="row form-group">
+            <div class="col col-md-3">
+                @Html.LabelFor(model => model.Qantaty, "Qantaty", new { @class = " form-control-label" })
+            </div>
+            <div class="col-12 col-md-9">
+               @Html.TextBoxFor(model => model.Qantaty, new { @class = "form-control", @required = "", @number = "number" })
+            </div>
+        </div>
+        <div class="row form-group">
+            <div class="col col-md-3">
+                @Html.LabelFor(model => model.CosePrice, "Cost Price", new { @class = " form-control-label" })
+            </div>
+
+
+            <div class="col-12 col-md-9">
+                <div class="input-group">
+                    @Html.TextBoxFor(model => model.CosePrice, new { @class = "form-control", @required = "", @number = "number", @readonly = "readonly" })
+                    <div class="input-group-addon">L.E</div>
+                </div>
+
+            </div>
+        </div>
+
+        <div class="row form-group">
+            <div class="col col-md-3">
+                @Html.LabelFor(model => model.Price, "Price", new { @class = " form-control-label" })
+            </div>
+
+
+            <div class="col-12 col-md-9">
+                <div class="input-group">
+                    @Html.TextBoxFor(model => model.Price, new { @class = "form-control", @required = "", @number = "number" })
+                    <div class="input-group-addon">L.E</div>
+                </div>
+
+            </div>
+        </div>
+
+    </div>
+
+
+}
+else if (ViewBag.formMode == "details")
+{
+
+    <div class="card-body">
+        @Html.HiddenFor(model => model.ProductID)
+        <div class="row form-group">
+            <div class="col col-md-3">
+                @Html.LabelFor(model => model.Product.ProductName, "Product Name", new { @class = " form-control-label" })
+            </div>
+            <div class="col-12 col-md-9">
+                @Html.TextBoxFor(model => model.Product.ProductName, new { @class = "form-control", @disabled = "" })
+            </div>
+        </div>
+        <div class="row form-group">
+            <div class="col col-md-3">
+                @Html.LabelFor(model => model.Product.ProductCategoryID, "Product Category", new { @class = " form-control-label" })
+            </div>
+            <div class="col-12 col-md-9">
+                @Html.TextBoxFor(model => model.Product.ProductCategory.CategoryName, new { @class = "form-control", @disabled = "" })
+            </div>
+        </div>
+
+        <div class="row form-group">
+            <div class="col col-md-3">
+                @Html.LabelFor(model => model.CosePrice, "Cost Price", new { @class = " form-control-label" })
+            </div>
+
+
+            <div class="col-12 col-md-9">
+                <div class="input-group">
+                    @Html.TextBoxFor(model => model.CosePrice, new { @class = "form-control", @required = "", @number = "number", @readonly= "readonly" })
+                    <div class="input-group-addon">L.E</div>
+                </div>
+
+            </div>
+        </div>
+
+        <div class="row form-group">
+            <div class="col col-md-3">
+                @Html.LabelFor(model => model.Price, "Price", new { @class = " form-control-label" })
+            </div>
+            <div class="col-12 col-md-9">
+                <div class="input-group">
+                    @Html.TextBoxFor(model => model.Price, new { @class = "form-control", @disabled = "" })
+                    <div class="input-group-addon">L.E</div>
+                </div>
+
+            </div>
+        </div>
+
+
+
+
+
+    </div>
+
+}
