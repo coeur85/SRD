@@ -1,0 +1,126 @@
+﻿@model KokiDB.Order
+@{
+    ViewBag.Title = "Details for order #" + Model.OrderID;
+    Layout = "~/Views/Shared/_MasterLayout/_WebPages.cshtml";
+    ViewBag.PageName = Model.Customer.UserInfo.FullName;
+}
+
+
+<div class="col-md-12">
+    @Html.Partial("~/Views/Shared/_OrderInfobubble.cshtml", Model)
+</div>
+<div class="col-md-12">
+    <div class="card">
+        @if (Model.OrderStatusID == 5 || Model.OrderStatusID == 6)
+        {
+            <hr />
+            if (Model.OrderStatusID == 5)
+            { <h3 class="text-success text-center">@Model.OrderStatu.StatusName</h3> }
+
+            if (Model.OrderStatusID == 6)
+            { <h3 class="text-danger text-center">@Model.OrderStatu.StatusName</h3> }
+            <hr />
+        }
+        else
+        {
+
+            <div class="card-header">
+                <strong>Order Actions</strong>
+            </div>
+            <div class="card-body">
+                <form method="post" action="">
+
+                    @Html.AntiForgeryToken()
+                    @if (Model.OrderStatusID == 1)
+                    {
+                        <button type="submit" class="btn btn-warning" name="action:WaitingMaterials">
+                            <i class="fa fa-spinner"></i> Wiating to buy materials
+                        </button>
+                    }
+
+                    @if (Model.OrderStatusID <= 2)
+                    {
+                        <button type="submit" class="btn btn-dark" name="action:UnderProgress">
+                            <i class="fa fa-gavel"></i>  Under progress
+                        </button>
+
+                    }
+
+                    @if (Model.OrderStatusID <= 3)
+                    {
+                        <button type="submit" class="btn btn-primary" name="action:WiatingDelevery">
+                            <i class="fa fa-truck"></i> Wiating to be deleverd
+                        </button>
+
+                    }
+
+
+                    <div class="pull-right">
+                       
+                        <button type="submit" class="btn btn-success"  name="action:Compelted">
+                            <i class="fa fa-check"></i>  Compeleted
+                        </button>
+                        
+                        
+
+                        <button type="submit" class="btn btn-danger" name="action:Cancelled">
+                            <i class="fa fa-times"></i>  Cancel oder
+                        </button>
+
+                       
+
+                    </div>
+
+               </form>
+                   
+
+
+
+
+
+
+
+</div>
+
+        }
+       
+    </div>
+</div>
+
+<div class=" col-md-12">
+    <div class="card">
+        <div class="card-header">
+            <strong>Audits</strong>
+        </div>
+        <div class="card-body">
+            <table class="table table-striped table-bordered ">
+                <thead>
+                    <tr>
+                        <th>User</th>
+                        <th>Time</th>
+                        <th>Date</th>
+                        @*<th>Audit</th>*@
+                        <th>Order Status</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    @foreach (var item in Model.OrderAudits)
+                    {
+                        <tr>
+                            <td>@item.Administrator.UserInfo.FullName</td>
+                            <td>@item.AuditDate.ToShortTimeString()</td>
+                            <td>@item.AuditDate.ToShortDateString()</td>
+                            @*<td>@item.AdminNotes</td>*@
+                            <td>@item.OrderStatu.StatusName</td>
+
+                        </tr>
+
+                    }
+
+
+
+                </tbody>
+            </table>
+        </div>
+    </div>
+</div>

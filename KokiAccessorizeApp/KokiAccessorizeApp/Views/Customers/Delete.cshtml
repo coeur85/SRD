@@ -1,0 +1,62 @@
+﻿@model WepApp.WebPagesModels.DeleteCustomer
+
+@{
+    ViewBag.Title = "Delete customer";
+    Layout = "~/Views/Shared/_MasterLayout/_WebPages.cshtml";
+    ViewBag.PageName = Model.Customer.UserInfo.FullName ;
+    ViewBag.formMode = "details";
+
+}
+
+@using (Html.BeginForm((string)ViewBag.Contoler, "Customers", FormMethod.Post, new { enctype = "multipart/form-data" }))
+{
+    @Html.AntiForgeryToken()
+
+
+    <div class="card">
+        <div class="card-header">
+            <strong>@Model.Customer.UserInfo.FullName</strong>
+        </div>
+        <div class="card-body">
+            @Html.EditorFor(x=> x.Customer)
+
+        </div>
+        <div class="card-footer">
+
+
+            @if (Model.CanBeDleted == false)
+                {
+                <button type="submit" class="btn btn-danger btn-sm" disabled>
+                    <i class="fa fa-trash-o"></i> Delete
+                </button>
+
+            }
+            else
+            {
+
+                <button type="submit" class="btn btn-danger btn-sm">
+                    <i class="fa fa-trash-o"></i> Delete
+                </button>
+
+            }
+
+
+            <a class="btn btn-dark btn-sm" href="@Url.Action("index", "Customers")">
+                <i class="fa fa-reply-all"></i> All Customers
+            </a>
+
+            @if (!Model.CanBeDleted)
+            {
+
+                <strong class="ti-help btn-outline-danger">Can not be deleted!</strong>
+
+
+            }
+
+        </div>
+    </div>
+
+}
+
+
+

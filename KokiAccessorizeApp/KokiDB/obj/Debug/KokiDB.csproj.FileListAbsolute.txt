@@ -4,3 +4,4 @@ C:\Users\Magdi\source\repos\KokiAccessorizeApp\KokiAccessorizeApp\bin\KokiDB.pdb
 C:\Users\Magdi\source\repos\KokiAccessorizeApp\KokiDB\obj\Debug\KokiDB.csproj.CoreCompileInputs.cache
 C:\Users\Magdi\source\repos\KokiAccessorizeApp\KokiDB\obj\Debug\KokiDB.dll
 C:\Users\Magdi\source\repos\KokiAccessorizeApp\KokiDB\obj\Debug\KokiDB.pdb
+C:\Users\Magdi\source\repos\KokiAccessorizeApp\KokiDB\obj\Debug\KokiDB.csprojResolveAssemblyReference.cache

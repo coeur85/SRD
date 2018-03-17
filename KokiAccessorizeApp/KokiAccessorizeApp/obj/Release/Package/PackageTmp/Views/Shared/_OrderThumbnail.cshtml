@@ -1,0 +1,105 @@
+﻿@model   KokiDB.Order
+
+@{
+    int index = 0; decimal total = 0; decimal itemtotal = 0;
+    string CardCss = _App.ui.oerder.StatusCss(Model.OrderStatusID);
+}
+
+
+
+<div class="card @CardCss">
+    <div class="card-header">
+
+        <strong>Details for order #@Model.OrderID </strong>
+        <div class=" pull-right">
+            <a href="@Url.Action("Details","Orders", new {  id = Model.OrderID})" class="btn-outline-info">
+                <i class="fa fa-info-circle"></i>
+
+            </a>
+        </div>
+
+    </div>
+    <div class=" card-body">
+        
+        <div class="row">
+            <div class="form-group">
+                <div class="col-md-6">
+                    @Html.LabelFor(model => model.OrderDate, "Customer", new { @class = " form-control-label  mb-1" })
+                    @Html.TextBoxFor(model => model.Customer.UserInfo.FullName, new { @class = "form-control", @readonly = "readonly" })
+                </div>
+                <div class="col-md-6">
+                    @Html.LabelFor(model => model.OrderDate, "Order Date", new { @class = " form-control-label  mb-1" })
+                    @Html.TextBoxFor(model => model.OrderDate, new { @class = "form-control", @readonly = "readonly" })
+
+                </div>
+            </div>
+          
+        </div>
+        <div class="row">
+            <div class="form-group">
+                <div class="col-md-6">
+                    @Html.LabelFor(model => model.OrderStatusID, "Order Status", new { @class = " form-control-label  mb-1" })
+                    @Html.TextBoxFor(model => model.OrderStatu.StatusName, new { @class = "form-control", @readonly = "readonly" })
+                </div>
+                <div class="col-md-6">
+                    </div>
+                </div>
+        </div>
+       
+        <div class="row">
+            <hr />
+        </div>
+        <div class="">
+
+            @if (Model.ProductsOrders.Count > 0)
+            {
+
+            <table class="table table-striped table-bordered ">
+                <thead>
+                    <tr>
+                        <th>Code</th>
+                        <th>Name</th>
+                        <th>Price</th>
+
+                    </tr>
+                </thead>
+                <tbody>
+                    @foreach (var item in Model.ProductsOrders)
+                    {
+                        { index += 1; itemtotal = item.Price * item.Qantaty; total += itemtotal; }
+                        <tr>
+
+                            <td>#@item.ProductID</td>
+                            <td>@item.Product.ProductName</td>
+                            <td>@itemtotal LE</td>
+
+
+                        </tr>
+
+
+                    }
+
+
+                </tbody>
+                <tfoot>
+                    <tr>
+
+
+                        <td colspan="2">Order Total</td>
+
+                        <td>@total LE</td>
+
+                    </tr>
+                </tfoot>
+            </table>
+            }
+            else
+            {
+
+                <h4>No items were found!</h4>
+            }
+        </div> 
+    </div>
+    
+
+</div>

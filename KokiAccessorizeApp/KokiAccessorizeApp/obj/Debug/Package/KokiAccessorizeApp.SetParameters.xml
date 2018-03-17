@@ -1,0 +1,5 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<parameters>
+  <setParameter name="IIS Web Application Name" value="Default Web Site/" />
+  <setParameter name="KokiAccessorizeAppDBEntities-Web.config Connection String" value="metadata=res://*/KokiDB.csdl|res://*/KokiDB.ssdl|res://*/KokiDB.msl;provider=System.Data.SqlClient;provider connection string=&quot;data source=aajk77r7s1s92o.c0gjeejtqcmn.eu-west-2.rds.amazonaws.com,1433;initial catalog=KokiAccessorizeAppDB;user id=magdi;password=0103061384;MultipleActiveResultSets=True;App=EntityFramework&quot;" />
+</parameters>

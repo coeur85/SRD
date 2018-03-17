@@ -36,12 +36,14 @@ namespace KokiAccessorizeApp.Controllers.Web
 
         // POST: Customers/Create
         [HttpPost]
-        public ActionResult Create(FormCollection collection)
+        public ActionResult Create(Customer customer)
         {
             try
             {
                 // TODO: Add insert logic here
-
+                db.Customers.Add(customer);
+                db.SaveChanges();
+                _App.ui.Message.SuccessAddNew();
                 return RedirectToAction("Index");
             }
             catch
@@ -52,17 +54,27 @@ namespace KokiAccessorizeApp.Controllers.Web
 
         // GET: Customers/Edit/5
         public ActionResult Edit(int id)
+
         {
-            return View();
+            var cu = db.Customers.Find(id);
+            return View(cu);
         }
 
         // POST: Customers/Edit/5
         [HttpPost]
-        public ActionResult Edit(int id, FormCollection collection)
+        public ActionResult Edit(Customer customer)
         {
             try
             {
                 // TODO: Add update logic here
+                var oldcustomer = db.Customers.Find(customer.CustomerID);
+                oldcustomer.UserInfo.FullName = customer.UserInfo.FullName;
+                oldcustomer.Notes = customer.Notes;
+                oldcustomer.PhoneNumber = customer.PhoneNumber;
+
+                db.Entry(oldcustomer).State = System.Data.Entity.EntityState.Modified;
+                db.SaveChanges();
+                _App.ui.Message.SuccessUpdate();
 
                 return RedirectToAction("Index");
             }
@@ -75,22 +87,32 @@ namespace KokiAccessorizeApp.Controllers.Web
         // GET: Customers/Delete/5
         public ActionResult Delete(int id)
         {
-            return View();
+            var cu = db.Customers.Find(id);
+            WepApp.WebPagesModels.DeleteCustomer customer = new WepApp.WebPagesModels.DeleteCustomer();
+            customer.Customer = cu;
+            if (cu.Orders.Count == 0) { customer.CanBeDleted = true; }
+            else { customer.CanBeDleted = false; }
+
+            return View(customer);
         }
 
         // POST: Customers/Delete/5
         [HttpPost]
-        public ActionResult Delete(int id, FormCollection collection)
+        public ActionResult Delete( int id , FormCollection form)
         {
+             var c = db.Customers.Find(id);
             try
             {
                 // TODO: Add delete logic here
-
+               
+                db.Customers.Remove(c);
+                _App.ui.Message.SuccessDelete();
+                db.SaveChanges();
                 return RedirectToAction("Index");
             }
             catch
             {
-                return View();
+                return View( c);
             }
         }
     }

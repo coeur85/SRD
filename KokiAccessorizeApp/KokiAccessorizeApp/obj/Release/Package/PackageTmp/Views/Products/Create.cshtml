@@ -1,0 +1,36 @@
+﻿@model KokiDB.Product
+
+@{
+    ViewBag.Title = "Create";
+    ViewBag.PageName = "New Product";
+    Layout = "~/Views/Shared/_MasterLayout/_WebPages.cshtml";
+    ViewBag.formMode = "create";
+   
+}
+
+
+
+@using (Html.BeginForm((string)ViewBag.Contoler, "Products", FormMethod.Post, new { enctype = "multipart/form-data" }))
+{
+    @Html.AntiForgeryToken()
+<div class="card">
+    <div class="card-header">
+        <strong>Please fill all fields</strong>
+    </div>
+
+    @Html.EditorForModel()
+
+
+    <div class="card-footer">
+        <button type="submit" class="btn btn-success btn-sm">
+            <i class="fa fa-save"></i> Save
+        </button>
+
+        <a class="btn btn-dark btn-sm" href="@Url.Action("index", "Products")">
+            <i class="fa fa-reply-all"></i> All Products
+        </a>
+
+
+    </div>
+</div>
+}

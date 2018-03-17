@@ -35,5 +35,19 @@ namespace KokiAccessorizeApp.Controllers.Web
          
             return View(model);
         }
+
+        public ActionResult LogOut()
+        
+    {
+
+        _App.Current.User = null;
+
+        return RedirectToAction("index");
     }
+
+    }
+
+
+   
+
 }

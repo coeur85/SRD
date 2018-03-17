@@ -1,0 +1,81 @@
+﻿@model KokiDB.Customer
+
+
+
+@if (ViewBag.formMode == "create" || ViewBag.formMode == "edit")
+{
+
+    <div class="card-body card-block">
+        @Html.HiddenFor(model => model.CustomerID)
+        <div class="row form-group">
+            <div class="col col-md-3">
+                @Html.LabelFor(model => model.UserInfo.FullName, "Name", new { @class = " form-control-label" })
+            </div>
+            <div class="col-12 col-md-9">
+                @Html.TextBoxFor(model => model.UserInfo.FullName, new { @class = "form-control", required = "" })
+            </div>
+        </div>
+        <div class="row form-group">
+            <div class="col col-md-3">
+                @Html.LabelFor(model => model.PhoneNumber, "Phone Number", new { @class = " form-control-label" })
+            </div>
+            <div class="col-12 col-md-9">
+                @Html.TextBoxFor(model => model.PhoneNumber, new { @class = "form-control", required = "" })
+            </div>
+        </div>
+        <div class="row form-group">
+            <div class="col col-md-3">
+                @Html.LabelFor(model => model.Notes, "Notes", new { @class = " form-control-label" })
+            </div>
+            <div class="col-12 col-md-9">
+                <div class="input-group">
+                    @Html.TextAreaFor(model => model.Notes, new { @class = "form-control" })
+                    
+                </div>
+
+            </div>
+        </div>
+        
+
+    </div>
+
+
+}
+else if (ViewBag.formMode == "details")
+{
+    @Html.HiddenFor(model => model.CustomerID)
+
+    <div class="card-body card-block">
+        <div class="row form-group">
+            <div class="col col-md-3">
+                @Html.LabelFor(model => model.UserInfo.FullName, "Name", new { @class = " form-control-label" })
+            </div>
+            <div class="col-3 col-md-9">
+                @Html.TextBoxFor(model => model.UserInfo.FullName, new { @class = "form-control", @readonly = "readonly" })
+            </div>
+        </div>
+        <div class="row form-group">
+            <div class="col col-md-3">
+                @Html.LabelFor(model => model.PhoneNumber, "Phone Number", new { @class = " form-control-label" })
+            </div>
+            <div class="col-3 col-md-9">
+                @Html.TextBoxFor(model => model.PhoneNumber, new { @class = "form-control", @readonly = "readonly" })
+            </div>
+        </div>
+        <div class="row form-group">
+            <div class="col col-md-3">
+                @Html.LabelFor(model => model.Notes, "Notes", new { @class = " form-control-label" })
+            </div>
+            <div class="col-3 col-md-9">
+                <div class="input-group">
+                    @Html.TextAreaFor(model => model.Notes, new { @class = "form-control" , @readonly = "readonly" })
+
+                </div>
+
+            </div>
+        </div>
+
+
+    </div>
+
+}

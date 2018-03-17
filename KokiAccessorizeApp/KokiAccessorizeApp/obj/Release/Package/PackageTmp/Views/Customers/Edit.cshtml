@@ -1,0 +1,41 @@
+﻿@model KokiDB.Customer
+
+@{
+    ViewBag.Title = "Edit customer details";
+    Layout = "~/Views/Shared/_MasterLayout/_WebPages.cshtml";
+    ViewBag.PageName = Model.UserInfo.FullName;
+    ViewBag.formMode = "edit";
+}
+
+
+@using (Html.BeginForm((string)ViewBag.Contoler, "Customers", FormMethod.Post, new { enctype = "multipart/form-data" }))
+{
+    @Html.AntiForgeryToken()
+
+
+    <div class="card">
+        <div class="card-header">
+            <strong>@Model.UserInfo.FullName</strong>
+        </div>
+        <div class="card-body">
+            @Html.EditorForModel()
+
+        </div>
+        <div class="card-footer">
+
+
+            <button type="submit" class="btn btn-success btn-sm">
+                <i class="fa fa-save"></i> Save
+            </button>
+
+
+            <a class="btn btn-dark btn-sm" href="@Url.Action("index", "Customers")">
+                <i class="fa fa-reply-all"></i> All Customers
+            </a>
+
+
+
+        </div>
+    </div>
+
+}

@@ -104,6 +104,16 @@ namespace KokiAccessorizeApp.Controllers.Web
 
 
 
+        public ActionResult Ordersfilter( int id)
+        {
+
+            var st = db.OrderStatus.FirstOrDefault(x => x.StatusID == id);
+            ViewBag.Title = st.StatusName;
+
+            return View( orders().Where(x=> x.OrderStatusID == id).ToList());
+        }
+
+
 
         // order actions 
 

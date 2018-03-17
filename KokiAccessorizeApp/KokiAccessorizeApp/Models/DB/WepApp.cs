@@ -57,6 +57,12 @@ namespace WepApp
             public string message { get; set; }
 
         }
+        public class DeleteCustomer
+        {
+            public KokiDB.Customer Customer { get; set; }
+            public bool CanBeDleted { get; set; }
+
+        }
 
     }
 
