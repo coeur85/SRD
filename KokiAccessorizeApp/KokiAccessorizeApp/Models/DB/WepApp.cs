@@ -34,6 +34,8 @@ namespace WepApp
             public int TotalCustomers { get; set; }
             public List<KokiDB.Order> Orders { get; set; }
 
+            public ProductDetails() { Orders = new List<KokiDB.Order>(); }
+
         }
 
         public class PhotoUpload
