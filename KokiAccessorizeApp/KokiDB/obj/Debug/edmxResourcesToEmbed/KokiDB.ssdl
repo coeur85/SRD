@@ -78,6 +78,7 @@
     <Property Name="Qantaty" Type="int" Nullable="false" />
     <Property Name="Price" Type="decimal" Precision="18" Scale="2" Nullable="false" />
     <Property Name="CosePrice" Type="decimal" Precision="18" Scale="2" Nullable="false" />
+    <Property Name="Notes" Type="nvarchar(max)" />
   </EntityType>
   <EntityType Name="UserInfo">
     <Key>

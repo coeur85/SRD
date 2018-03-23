@@ -84,7 +84,7 @@ namespace _App
 
     }
 
-    class Current
+   public class Current
     {
         public static UserInfo User
         {

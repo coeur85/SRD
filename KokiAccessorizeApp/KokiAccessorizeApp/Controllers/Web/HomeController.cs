@@ -14,12 +14,28 @@ namespace KokiAccessorizeApp.Controllers.Web
         public ActionResult Index()
         {
 
-            //_App.ui.Message.addSuccess("test ok");
-            //_App.ui.Message.addError("add error");
+            WepApp.WebPagesModels.HomePage Home = new WepApp.WebPagesModels.HomePage();
 
-            var oord = db.Orders.FirstOrDefault(x=> x.OrderID  == 5);
 
-            return View(oord);
+
+            foreach (var item in db.OrderStatus)
+            {
+
+                if (item.Orders.Count > 0)
+                {
+                Home.Orders.Add(new WepApp.OrderStatus { OrderSatuesNAme = item.StatusName, OrdersCount = item.Orders.Count, StatusID = item.StatusID });
+
+                }
+            }
+
+            foreach (var item in db.ProductCategories)
+            {
+                Home.Categories.Add(new WepApp.categories { CategoryName = item.CategoryName, ProductCount = item.Products.Count });
+            }
+
+
+
+            return View(Home);
         }
     }
 }

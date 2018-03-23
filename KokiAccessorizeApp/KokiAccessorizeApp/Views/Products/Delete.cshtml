@@ -19,7 +19,7 @@
 
         @Html.EditorFor(x=> x.Product)
 
-
+        @Html.HiddenFor(x=> x.CanBeDleted)
         <div class="card-footer">
            
                 @if (Model.CanBeDleted == false)

@@ -129,7 +129,7 @@ namespace KokiAccessorizeApp.Controllers.Web
 
         // POST: Products/Delete/5
         [HttpPost]
-        public ActionResult Delete(int id, FormCollection collection)
+        public ActionResult Delete(int id , WepApp.WebPagesModels.DeleteProduct model )
         {
             var p = db.Products.Find(id);
             try
@@ -138,7 +138,17 @@ namespace KokiAccessorizeApp.Controllers.Web
                
                 if (p.ProductsOrders.Count == 0)
                 {
-                    p.ProductPhotos.Clear();
+
+                    var photos = db.ProductPhotos.Where(x => x.ProductID == id).ToList();
+
+                    foreach (var item in photos)
+                    {
+
+                        db.ProductPhotos.Remove(item);
+                    }
+
+
+                 //   p.ProductPhotos.Clear();
                     db.Products.Remove(p);
                     db.SaveChanges();
                     _App.ui.Message.SuccessDelete();
@@ -146,12 +156,13 @@ namespace KokiAccessorizeApp.Controllers.Web
                 }
 
                 _App.ui.Message.addError("Can not be deleted due to related orders !");
-                return View(p);
+                return View(model);
                
             }
-            catch
+            catch ( Exception e)
             {
-                return View(p);
+                // return View(e);
+                throw e;
             }
         }
     }

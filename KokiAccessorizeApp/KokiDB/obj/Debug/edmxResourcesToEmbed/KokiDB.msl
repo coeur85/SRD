@@ -88,6 +88,7 @@
     <EntitySetMapping Name="ProductsOrders">
       <EntityTypeMapping TypeName="KokiAccessorizeAppDBModel.ProductsOrder">
         <MappingFragment StoreEntitySet="ProductsOrders">
+          <ScalarProperty Name="Notes" ColumnName="Notes" />
           <ScalarProperty Name="CosePrice" ColumnName="CosePrice" />
           <ScalarProperty Name="Price" ColumnName="Price" />
           <ScalarProperty Name="Qantaty" ColumnName="Qantaty" />

@@ -13,18 +13,30 @@
 
 @Html.HiddenFor(x => x.ProductID)
 <div class="row">
-    <div id="photo_galary" class="col-md-12">
+    <div  class="col-md-12 ">
 
         @if (Model.ProductPhotos.Count > 0)
         {
             foreach (var item in Model.ProductPhotos)
             {
 
-                <img alt=""
-                     src="@item.PhotoBase64"
-                     data-image="@item.PhotoBase64"
-                     data-description="This is a woman"
-                     style="display:none"/>
+               
+                <div class="photo_galary col-md-4">
+                    <img alt="test "
+                         src="@item.PhotoBase64"
+                         data-image="@item.PhotoBase64"
+                         data-description="This is a woman"
+                         style="display:none" />
+                </div>
+                    
+
+                    @*<div class="card-footer">
+                        <a class="btn btn-danger btn-sm" href="@Url.Action("Delete","ProductPhoto", new { id= item.PhotoID })">
+                            <i class="fa fa-trash-o"></i> Delete
+                        </a>
+                    </div>*@
+              
+               
 
 
             }
@@ -52,7 +64,7 @@
 
     jQuery(document).ready(function () {
 
-        jQuery("#photo_galary").unitegallery();
+        jQuery(".photo_galary").unitegallery();
 
     });
 

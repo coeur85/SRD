@@ -34,7 +34,7 @@
                     @if (Model.OrderStatusID == 1)
                     {
                         <button type="submit" class="btn btn-warning" name="action:WaitingMaterials">
-                            <i class="fa fa-spinner"></i> Wiating to buy materials
+                            <i class="fa fa-spinner"></i> Wiating 4 materials
                         </button>
                     }
 
@@ -49,13 +49,19 @@
                     @if (Model.OrderStatusID <= 3)
                     {
                         <button type="submit" class="btn btn-primary" name="action:WiatingDelevery">
-                            <i class="fa fa-truck"></i> Wiating to be deleverd
+                            <i class="fa fa-truck"></i> Wiating 4 delevery
                         </button>
 
                     }
 
 
                     <div class="pull-right">
+
+                        
+                        <a href="@Url.Action("Edit","Orders", new {  id = Model.OrderID})" class=" btn btn-warning">
+                            <i class="fa fa-pencil"></i> Edit Order
+                        </a>
+                        
                        
                         <button type="submit" class="btn btn-success"  name="action:Compelted">
                             <i class="fa fa-check"></i>  Compeleted

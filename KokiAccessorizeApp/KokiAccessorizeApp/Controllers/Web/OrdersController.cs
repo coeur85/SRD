@@ -87,7 +87,7 @@ namespace KokiAccessorizeApp.Controllers.Web
                 oldorder.CustomerID = order.CustomerID;
                 db.Entry(oldorder).State = System.Data.Entity.EntityState.Modified;
                 db.SaveChanges();
-              return  RedirectToAction("details", "Orders");
+              return  RedirectToAction("index", "ProductsOrders", new { id = order.OrderID });
             }
 
 

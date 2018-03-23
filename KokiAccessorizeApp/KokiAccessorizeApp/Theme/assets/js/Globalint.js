@@ -57,7 +57,11 @@
 
 
     $('.standardSelect').on('change', function (evt, params) {
-        var selectedValue = params.selected;
+        var selectedValue = 0;
+
+        if (params != null) { selectedValue = params.selected; }
+        else { selectedValue = $(this).val(); }
+        
         console.log(selectedValue);
         $('#ProductID').val(selectedValue);
 

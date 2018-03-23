@@ -10,7 +10,11 @@
 <div class="card @CardCss">
     <div class="card-header">
 
-        <strong>Details for order #@Model.OrderID </strong>
+        <strong>
+            <a href="@Url.Action("Details","Orders", new {  id = Model.OrderID})">
+                Details for order #@Model.OrderID
+            </a>
+        </strong>
         <div class=" pull-right">
             <a href="@Url.Action("Details","Orders", new {  id = Model.OrderID})" class="btn-outline-info">
                 <i class="fa fa-info-circle"></i>
@@ -60,7 +64,7 @@
                         <th>Code</th>
                         <th>Name</th>
                         <th>Price</th>
-
+                        <th>Notes</th>
                     </tr>
                 </thead>
                 <tbody>
@@ -72,7 +76,7 @@
                             <td>#@item.ProductID</td>
                             <td>@item.Product.ProductName</td>
                             <td>@itemtotal LE</td>
-
+                            <td>@item.Notes</td>
 
                         </tr>
 
@@ -88,7 +92,7 @@
                         <td colspan="2">Order Total</td>
 
                         <td>@total LE</td>
-
+                        <td></td>
                     </tr>
                 </tfoot>
             </table>

@@ -27,8 +27,8 @@ namespace KokiAccessorizeApp.Controllers.Web
             var order = db.Orders.Find(id);
 
             if (order.ProductsOrders.Count == 0) { _App.ui.Message.addError("Must add at least one item !"); return RedirectToAction("index", new { id = id }); }
-
-            return View(order);
+            else { return RedirectToAction("Details", "orders", new { id = order.OrderID });  }
+          // return View(order);
         }
 
 
@@ -90,6 +90,7 @@ namespace KokiAccessorizeApp.Controllers.Web
                 old.Price = product.Price;
                 old.Qantaty = product.Qantaty;
                 old.CosePrice = product.CosePrice;
+                old.Notes = product.Notes;
                 db.Entry(old).State = System.Data.Entity.EntityState.Modified;
                 db.SaveChanges();
 

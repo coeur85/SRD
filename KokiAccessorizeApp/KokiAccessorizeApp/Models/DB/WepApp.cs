@@ -19,7 +19,19 @@ namespace WepApp
 
     }
 
-    
+    public class categories
+        {
+            public string CategoryName { get; set; }
+            public int ProductCount { get; set; }
+
+        }
+    public class OrderStatus
+    {
+        public string OrderSatuesNAme { get; set; }
+        public int StatusID { get; set; }
+        public int OrdersCount { get; set; }
+
+    }
 
 
     namespace WebPagesModels
@@ -37,21 +49,18 @@ namespace WepApp
             public ProductDetails() { Orders = new List<KokiDB.Order>(); }
 
         }
-
         public class PhotoUpload
         {
             public int ProductID { get; set; }
             public string PhotoBase64 { get; set; }
 
         }
-
         public class DeleteProduct
         {
             public KokiDB.Product Product { get; set; }
             public bool CanBeDleted { get; set; }
 
         }
-
         public class loginModel
         {
             public string username { get; set; }
@@ -65,6 +74,17 @@ namespace WepApp
             public bool CanBeDleted { get; set; }
 
         }
+        public class HomePage
+        {
+            public List<categories> Categories { get; set; }
+            public List<OrderStatus> Orders { get; set; }
+
+
+            public HomePage() { Categories = new List<categories>(); Orders = new List<OrderStatus>(); }
+        }
+
+
+       
 
     }
 

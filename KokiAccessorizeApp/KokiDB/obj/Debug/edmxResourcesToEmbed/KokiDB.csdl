@@ -271,6 +271,7 @@
     <Property Name="CosePrice" Type="Decimal" Nullable="false" Precision="18" Scale="2" />
     <NavigationProperty Name="Order" Relationship="KokiAccessorizeAppDBModel.FK_ProductsOrders_Orders" FromRole="ProductsOrder" ToRole="Order" />
     <NavigationProperty Name="Product" Relationship="KokiAccessorizeAppDBModel.FK_ProductsOrders_Products" FromRole="ProductsOrder" ToRole="Product" />
+    <Property Name="Notes" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" />
   </EntityType>
   <Association Name="FK_ProductsOrders_Orders">
     <End Type="KokiAccessorizeAppDBModel.Order" Role="Order" Multiplicity="1" />
