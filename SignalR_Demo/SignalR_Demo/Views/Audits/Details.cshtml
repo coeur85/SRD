@@ -1,0 +1,58 @@
+﻿@model SignalR_Demo.Audit
+
+@{
+    ViewBag.Title = "Details";
+}
+
+<h2>Details</h2>
+
+<div>
+    <h4>Audit</h4>
+    <hr />
+    <dl class="dl-horizontal">
+        <dt>
+            @Html.DisplayNameFor(model => model.LoanID)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.LoanID)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.UserID)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.UserID)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.AuditName)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.AuditName)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.AuditDate)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.AuditDate)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.NewStatusID)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.NewStatusID)
+        </dd>
+
+    </dl>
+</div>
+<p>
+    @Html.ActionLink("Edit", "Edit", new { id = Model.AuditID }) |
+    @Html.ActionLink("Back to List", "Index")
+</p>

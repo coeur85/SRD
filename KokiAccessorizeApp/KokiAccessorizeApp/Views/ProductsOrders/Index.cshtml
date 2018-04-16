@@ -32,6 +32,7 @@
                                 <th>Category</th>
                                 <th>Qantaty</th>
                                 <th>Price</th>
+                                <th>Notes</th>
                                 <th>Options</th>
                             </tr>
                         </thead>
@@ -46,6 +47,7 @@
                                     <td>@item.Product.ProductCategory.CategoryName</td>
                                     <td>@item.Qantaty</td>
                                     <td>@itemtotal LE</td>
+                                    <td>@item.Notes</td>
                                     <td class="text-center">
                                         <div class="col-md-6">
                                             <a href="@Url.Action("Edit","ProductsOrders", new {  id = item.POID})" class="btn-outline-warning">
@@ -72,10 +74,11 @@
                             <tr>
                                 <td></td>
                                
-                                <td colspan="2">Order Total</td>
+                                <td colspan="3">Order Total</td>
                                 <td></td>
-                                <td></td>
+                               
                                 <td>@total LE</td>
+                                <td></td>
                                 <td></td>
                             </tr>
                         </tfoot>

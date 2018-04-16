@@ -20,14 +20,17 @@
             <ul>
                 <li>
                     <sctrong>
-                        <span>@item.CategoryName</span>
-                       
+                        <a href="@Url.Action("index","Products", new { CategoryID = item.CategoryID })">
+                            <span>@item.CategoryName</span>
+                        </a>
                     </sctrong>
                 </li>
                 <li>
                     <sctrong>
-                        <span class="count">@item.ProductCount</span> 
-                        <span>Product</span>
+                        <a href="@Url.Action("index","Products", new { CategoryID = item.CategoryID })">
+                            <span class="count">@item.ProductCount</span>
+                            <span>Product</span>
+                            </a>
                     </sctrong>
                 </li>
             </ul>

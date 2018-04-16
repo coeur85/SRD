@@ -30,7 +30,7 @@ namespace KokiAccessorizeApp.Controllers.Web
 
             foreach (var item in db.ProductCategories)
             {
-                Home.Categories.Add(new WepApp.categories { CategoryName = item.CategoryName, ProductCount = item.Products.Count });
+                Home.Categories.Add(new WepApp.categories { CategoryName = item.CategoryName, ProductCount = item.Products.Count, CategoryID = item.CategoryID });
             }
 
 

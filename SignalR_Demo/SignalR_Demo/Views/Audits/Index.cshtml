@@ -1,0 +1,57 @@
+﻿@model IEnumerable<SignalR_Demo.Audit>
+
+@{
+    ViewBag.Title = "Index";
+}
+
+<h2>Index</h2>
+
+<p>
+    @Html.ActionLink("Create New", "Create")
+</p>
+<table class="table">
+    <tr>
+        <th>
+            @Html.DisplayNameFor(model => model.LoanID)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.UserID)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.AuditName)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.AuditDate)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.NewStatusID)
+        </th>
+        <th></th>
+    </tr>
+
+@foreach (var item in Model) {
+    <tr>
+        <td>
+            @Html.DisplayFor(modelItem => item.LoanID)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.UserID)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.AuditName)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.AuditDate)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.NewStatusID)
+        </td>
+        <td>
+            @Html.ActionLink("Edit", "Edit", new { id=item.AuditID }) |
+            @Html.ActionLink("Details", "Details", new { id=item.AuditID }) |
+            @Html.ActionLink("Delete", "Delete", new { id=item.AuditID })
+        </td>
+    </tr>
+}
+
+</table>

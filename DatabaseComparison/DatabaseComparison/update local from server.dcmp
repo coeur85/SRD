@@ -1,0 +1,13 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<DataComparison>
+  <Version>10</Version>
+  <ConnectionProperties1>
+    <ConnectionString>Data Source=mi3-wsq2.a2hosting.com;Initial Catalog=ealannaj_LoanApp;Persist Security Info=True;User ID=ealannaj_saa;Pooling=False;MultipleActiveResultSets=False;Connect Timeout=60;Encrypt=False;TrustServerCertificate=True</ConnectionString>
+    <FullDisplayName>mi3-wsq2.a2hosting.com.ealannaj_LoanApp (ealannaj_saa)</FullDisplayName>
+  </ConnectionProperties1>
+  <ConnectionProperties2>
+    <ConnectionString>Data Source=MAGDI-PC;Initial Catalog=LoanAppDB;Integrated Security=True;Persist Security Info=False;Pooling=False;MultipleActiveResultSets=False;Connect Timeout=60;Encrypt=False;TrustServerCertificate=True</ConnectionString>
+    <FullDisplayName>MAGDI-PC.LoanAppDB (MAGDI-PC\Magdi)</FullDisplayName>
+  </ConnectionProperties2>
+  <SessionSettings>IncludeDifferentRecords, IncludeRecordsInOne, IncludeRecordsInTwo</SessionSettings>
+</DataComparison>

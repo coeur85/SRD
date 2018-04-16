@@ -13,7 +13,19 @@ namespace KokiAccessorizeApp.Controllers.Web
         KokiAccessorizeAppDBEntities db = new KokiAccessorizeAppDBEntities();
         public ActionResult Index()
         {
-            var p = db.Products.OrderByDescending(x=> x.ProductID);
+            var p = db.Products.OrderByDescending(x=> x.ProductID).ToList();
+            string str = Request.QueryString["CategoryID"];
+            if (!string.IsNullOrWhiteSpace(str))
+            {
+                int i = Convert.ToInt32(str);
+                var c = db.ProductCategories.FirstOrDefault(x => x.CategoryID == i);
+                ViewBag.PageName = c.CategoryName;
+                p = p.Where(x => x.ProductCategoryID == i).ToList();
+            }
+
+            else { ViewBag.PageName = "All Products"; }
+            
+
             return View(p);
         }
 
